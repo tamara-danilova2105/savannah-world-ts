@@ -2,7 +2,7 @@ import { Suspense, useCallback } from "react"
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from "../config/routerConfig";
 import { RequireAdmin } from "./RequireAdmin";
-import { AppRoutesProps } from "../../../../shared/type/router";
+import { AppRoutesProps } from "@/shared/type/router";
 
 const AppRouter = () => {
 

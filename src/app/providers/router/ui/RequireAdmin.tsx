@@ -1,5 +1,5 @@
+import { getRouteMain } from "@/shared/const/router";
 import { Navigate, useLocation } from "react-router";
-import { getRouteMain } from "../../../../shared/const/router";
 
 interface RequireAdminProps {
     children: JSX.Element;
