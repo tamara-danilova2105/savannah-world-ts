@@ -1,7 +1,7 @@
+import cls from './MainPage.module.scss';
+
 export const MainPage = () => {
     return (
-        <div>
-            Main Page
-        </div>
+        <div>MainPage</div>
     );
 };
