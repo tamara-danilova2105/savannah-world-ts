@@ -56,7 +56,7 @@ export const Stack = (props: FlexProps) => {
         ...otherProps
     } = props;
 
-    const classes = [
+    const additional = [
         className,
         justifyClasses[justify],
         alignClasses[align],
@@ -70,7 +70,7 @@ export const Stack = (props: FlexProps) => {
 
     return (
         <div
-            className={classNames(cls.Flex, mods, classes)}
+            className={classNames(cls.Flex, mods, additional)}
             {...otherProps}
         >
             {children}
