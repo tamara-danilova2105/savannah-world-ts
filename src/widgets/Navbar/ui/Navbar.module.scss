@@ -1,0 +1,21 @@
+.images {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.navbar {
+    position: absolute;
+    top: 65px;
+    right: 5%; //FIX LATER
+    color: var(--white-color);
+    font-size: var(--font-size-l);
+    width: 718px;
+    font-family: Montserrat;
+}
+
+.button {
+    position: absolute;
+    top: 60%; //FIX LATER
+    left: 7%; //FIX LATER
+}
