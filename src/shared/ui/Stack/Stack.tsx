@@ -1,5 +1,5 @@
 import cls from './Stack.module.scss';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Additional, classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 export type StackDirection = 'row' | 'column';
@@ -56,7 +56,7 @@ export const Stack = (props: FlexProps) => {
         ...otherProps
     } = props;
 
-    const additional = [
+    const additional: Additional = [
         className,
         justifyClasses[justify],
         alignClasses[align],
