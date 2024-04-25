@@ -1,4 +1,4 @@
-import cls from './Stack.module.scss';
+import styles from './Stack.module.scss';
 import { Additional, classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
@@ -8,28 +8,28 @@ export type StackAlign = 'start' | 'center' | 'end';
 export type StackGap = '4' | '8' | '16' | '32';
 
 const directionClasses: Record<StackDirection, string> = {
-    row: cls.directionRow,
-    column: cls.directionColumn,
+    row: styles.directionRow,
+    column: styles.directionColumn,
 };
 
 const justifyClasses: Record<StackJustify, string> = {
-    start: cls.justifyStart,
-    center: cls.justifyCenter,
-    end: cls.justifyEnd,
-    between: cls.justifyBetween,
+    start: styles.justifyStart,
+    center: styles.justifyCenter,
+    end: styles.justifyEnd,
+    between: styles.justifyBetween,
 };
 
 const alignClasses: Record<StackAlign, string> = {
-    start: cls.alignStart,
-    center: cls.alignCenter,
-    end: cls.alignEnd,
+    start: styles.alignStart,
+    center: styles.alignCenter,
+    end: styles.alignEnd,
 };
 
 const gapClasses: Record<StackGap, string> = {
-    4: cls.gap4,
-    8: cls.gap8,
-    16: cls.gap16,
-    32: cls.gap32,
+    4: styles.gap4,
+    8: styles.gap8,
+    16: styles.gap16,
+    32: styles.gap32,
 };
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -65,12 +65,12 @@ export const Stack = (props: FlexProps) => {
     ];
 
     const mods: Mods = {
-        [cls.max]: max,
+        [styles.max]: max,
     };
 
     return (
         <div
-            className={classNames(cls.Flex, mods, additional)}
+            className={classNames(styles.Flex, mods, additional)}
             {...otherProps}
         >
             {children}

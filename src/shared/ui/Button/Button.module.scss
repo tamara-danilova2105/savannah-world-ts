@@ -1,0 +1,21 @@
+.button {
+    border-radius: 15px;
+    font-family: Montserrat;
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    font-size: var(--font-size-m);
+}
+
+.accent {
+    background-color: var(--dark-brown-color);
+    color: var(--white-color);
+    border: none;
+}
+
+.secondary {
+    border: 3px solid var(--dark-brown-color);
+}
