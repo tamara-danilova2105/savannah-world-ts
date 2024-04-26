@@ -5,9 +5,9 @@
 }
 
 .navbar {
-    position: absolute;
-    top: 65px;
-    right: 5%; //FIX LATER
+    position: relative;
+    top: 25px;
+    left: 50%;
     color: var(--white-color);
     font-size: var(--font-size-l);
     width: 718px;
@@ -15,7 +15,7 @@
 }
 
 .button {
-    position: absolute;
+    position: relative;
     top: 60%; //FIX LATER
     left: 7%; //FIX LATER
 }

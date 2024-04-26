@@ -6,7 +6,7 @@ import { Button } from "@/shared/ui/Button/Button";
 
 export const Navbar = memo(() => {
     return (
-        <header>
+        <header className={styles.header}>
             <img
                 className={classNames(styles.images, {}, [])}
                 src={banner} alt="savannah"
