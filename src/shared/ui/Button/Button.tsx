@@ -1,7 +1,6 @@
 import { Additional, classNames, Mods } from "@/shared/lib/classNames/classNames";
 import { ButtonHTMLAttributes, memo, ReactNode } from "react";
 import styles from './Button.module.scss';
-import { arrowButton } from "@/shared/assets/svg/arrowButton";
 
 export type ButtonVariant = 'accent' | 'secondary';
 
@@ -10,7 +9,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: ReactNode;
     disabled?: boolean;
     variant?: ButtonVariant;
-    cta?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -19,7 +17,6 @@ export const Button = memo((props: ButtonProps) => {
         children,
         disabled,
         variant = 'accent',
-        cta = true,
     } = props;
 
     const mode: Mods = {};
@@ -35,7 +32,6 @@ export const Button = memo((props: ButtonProps) => {
             disabled={disabled}
         >
             {children}
-            {cta && arrowButton()}
         </button>
     )
 });

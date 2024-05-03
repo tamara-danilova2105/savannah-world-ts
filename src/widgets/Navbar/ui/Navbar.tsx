@@ -3,6 +3,7 @@ import banner from '@/shared/assets/images/banner.png';
 import styles from './Navbar.module.scss';
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button/Button";
+import { arrowIcon } from "@/shared/assets/svg/arrowIcon";
 
 export const Navbar = memo(() => {
     return (
@@ -16,7 +17,9 @@ export const Navbar = memo(() => {
                 NAVBAR
                 NAVBAR
             </nav>
-            <Button className={styles.button}>В КАТАЛОГ</Button>
+            <Button className={styles.button}>
+                В КАТАЛОГ {arrowIcon()}
+            </Button>
         </header>
     );
 });

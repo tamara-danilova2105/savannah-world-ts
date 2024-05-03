@@ -1,4 +1,4 @@
-export const arrowButton = () => {
+export const arrowIcon = () => {
     return (
         <svg
             height="32" viewBox="0 0 32 32" width="32"
