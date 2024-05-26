@@ -14,9 +14,19 @@
     background-color: var(--dark-brown-color);
     color: var(--white-color);
     border: none;
+
+    &:hover {
+        background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
+        background-size: 250% 100%;
+    }
 }
 
 .secondary {
     border: 3px solid var(--dark-brown-color);
     color: var(--dark-brown-color);
+
+    &:hover {
+        background: linear-gradient(to left, var(--brown-color), transparent);
+        background-size: 350% 100%;
+    }
 }

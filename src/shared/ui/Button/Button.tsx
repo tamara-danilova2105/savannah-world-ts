@@ -17,6 +17,7 @@ export const Button = memo((props: ButtonProps) => {
         children,
         disabled,
         variant = 'accent',
+        ...otherProps
     } = props;
 
     const mode: Mods = {};
@@ -29,7 +30,7 @@ export const Button = memo((props: ButtonProps) => {
     return (
         <button
             className={classNames(styles.button, mode, additional)}
-            disabled={disabled}
+            {...otherProps}
         >
             {children}
         </button>
