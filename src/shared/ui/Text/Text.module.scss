@@ -1,0 +1,29 @@
+$font-size-xs: var(--font-size-xs);
+$font-size-s: var(--font-size-s);
+$font-size-m: var(--font-size-m);
+$font-size-l: var(--font-size-l);
+$font-size-xl: var(--font-size-xl);
+$font-sixe-xxl: var(--font-size-xxl);
+
+$sizes: (
+    xs: $font-size-xs,
+    s: $font-size-s,
+    m: $font-size-m,
+    l: $font-size-l,
+    xl: $font-size-xl,
+    xxl: $font-sixe-xxl
+);
+
+@each $name, $size in $sizes {
+    .#{$name} {
+        font-size: $size;
+    }
+}
+
+h1, h2, h3 {
+    color: var(--dark-brown-color);
+}
+
+p, li {
+    color: var(--black-color);
+}
