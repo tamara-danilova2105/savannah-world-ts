@@ -8,3 +8,8 @@ body,
   height: 100%;
   font-family: var(--font-family-main);
 }
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}

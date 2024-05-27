@@ -1,0 +1,16 @@
+.buttonSocial {
+    position: fixed;
+    bottom: 90px; //FIX LATER
+    right: 12px; //FIX LATER
+    background-color: transparent;
+}
+
+.iconChat {
+    width: 50px;
+    height: 50px;
+
+    @media all and (max-width:590px) {
+        width: 30px;
+        height: 30px;
+    }
+}

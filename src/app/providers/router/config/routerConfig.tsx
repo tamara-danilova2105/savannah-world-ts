@@ -1,7 +1,7 @@
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
 import { CatalogPage } from "@/pages/CatalogPage";
 import { MainPage } from "@/pages/MainPage";
-import { AppRouters, getRouteAdminPanel, getRouteCatalog, getRouteMain } from "@/shared/const/router";
+import { PetsPage } from "@/pages/PetsPage/ui/PetsPage";
+import { AppRouters, getRouteCatalog, getRouteMain, getRoutePets } from "@/shared/const/router";
 import { AppRoutesProps } from "@/shared/type/router";
 
 export const routeConfig: Record<AppRouters, AppRoutesProps> = {
@@ -13,9 +13,8 @@ export const routeConfig: Record<AppRouters, AppRoutesProps> = {
         path: getRouteCatalog(),
         element: <CatalogPage />,
     },
-    [AppRouters.ADMIN_PANEL]: {
-        path: getRouteAdminPanel(),
-        element: <AdminPanelPage />,
-        adminOnly: true,
+    [AppRouters.PETS]: {
+        path: getRoutePets(),
+        element: <PetsPage />,
     },
 }
