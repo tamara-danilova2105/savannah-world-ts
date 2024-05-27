@@ -1,7 +1,9 @@
+import { NavbarContainer } from "../NavbarContainer/NavbarContainer";
+
 export const HeaderMain = () => {
     return (
         <>
-            HeaderMain
+            <NavbarContainer />
         </>
     );
 };

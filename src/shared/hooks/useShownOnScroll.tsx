@@ -21,7 +21,6 @@ export const useShownOnScroll = () => {
             left: 0,
             behavior: "smooth",
         });
-
     };
     
 

@@ -7,7 +7,9 @@ export const Navbar = memo(() => {
     return (
         <nav className={styles.navbar}>
             {
-                Object.values(routeConfig).map(route => (
+                Object.values(routeConfig)
+                .filter(route => !route.adminOnly)
+                .map(route => (
                     <NavLink
                         key={route.path}
                         className={({ isActive }) =>
