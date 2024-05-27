@@ -1,0 +1,16 @@
+.upButton {
+    position: fixed;
+    bottom: 20px; //FIX LATER
+    right: 12px; //FIX LATER
+    background-color: transparent;
+}
+
+.upImage {
+    width: 50px;
+    height: 50px;
+
+    @media all and (max-width:590px) {
+        width: 40px;
+        height: 40px;
+    }
+}
