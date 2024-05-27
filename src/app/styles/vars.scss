@@ -12,7 +12,33 @@
   // Размеры
   --font-size-xs: 14px;
   --font-size-s: 20px;
-  --font-size-m: 25px;
-  --font-size-l: 30px;
+  --font-size-m: 24px;
+  --font-size-ml: 30px;
+  --font-size-l: 40px;
   --font-size-xl: 50px;
+  --font-size-xxl: 70px;
+
+    //Размер экрана
+    --width-desktop-md: 1440px;
+    --width-desktop: 1280px;
+    --width-tablet: 820px;
+    --width-mobile: 450px;
+
+      //Паддинги
+    --desktop-padding: calc(16%/2);
+    --tablet-padding: calc(18%/2);
+    --mobile-padding: calc(12%/2);
+
+      //Text-transform
+  --text-uppercase: uppercase; 
+  --text-capitalize: capitalize;
+
+  //Переменные для header
+  --gap-desktop: 48px;
+  --gap-tablet: 15px;
+  --gap-mobile: 5px;
+  
+  //Контейнер
+  --container-max-width: 1440px;
+  --container-padding-x: 90px;
 }

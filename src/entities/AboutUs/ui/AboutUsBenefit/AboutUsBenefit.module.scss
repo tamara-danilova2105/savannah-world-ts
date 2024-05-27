@@ -1,0 +1,101 @@
+.benefits {
+    padding: 55px 0;
+    background-color: var(--white-color);
+    border-radius: 40px; 
+
+
+    @media all and (max-width:820px) {
+        display: flex;
+        flex-direction: column;   
+    }
+
+    @media all and (max-width:460px) {
+        padding: 35px 0;
+    }
+}
+
+.title {
+    font-weight: 500;
+
+    @media all and (max-width:1440px) {    
+        font-size: var(--font-size-l);
+    }
+    @media all and (max-width:1280px) {    
+        font-size: var(--font-size-ml);
+    }
+    @media all and (max-width:820px) {    
+        font-size: var(--font-size-m);
+        text-align: center;
+    }
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-s);
+        width: 75%;
+    }
+}
+
+.text {
+    font-weight: 400;
+    max-width: 240px;
+
+    @media all and (max-width:820px) {
+        max-width: 100%;
+        font-size: var(--font-size-s);
+    }
+
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-xs);
+    }
+}
+
+.row {
+    @media all and (max-width:820px) {
+        flex-direction: column;
+        row-gap: 32px;
+    }
+}
+
+@mixin responsive-icon($image-url, $pad-large: 100px, $pad-medium: 80px, $pad-small: 65px, $icon-large: 80px, $icon-medium: 60px, $icon-small: 50px) {
+    position: relative;
+    padding-left: $pad-large;
+
+    @media all and (max-width: 1240px) {    
+        padding-left: $pad-medium;          
+    }
+    @media all and (max-width: 860px) {    
+        padding-left: $pad-small;          
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: $icon-large;
+        height: $icon-large;
+        position: absolute;
+        left: 0;
+        background-image: url($image-url);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media all and (max-width: 1280px) {    
+            width: $icon-medium;
+            height: $icon-medium;
+        }
+
+        @media all and (max-width: 820px) {
+            width: $icon-small;
+            height: $icon-small;
+        }
+    }
+}
+
+.doc {
+    @include responsive-icon('../../../../shared/assets/images/document.png');
+}
+
+.vet {
+    @include responsive-icon('../../../../shared/assets/images/vet.png');
+}
+
+.question {
+    @include responsive-icon('../../../../shared/assets/images/care.png');
+}

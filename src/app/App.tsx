@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Suspense fallback="">
-        <Navbar />
+        {/* <Navbar /> */}
         <AppRouter />
       </Suspense>
     </div>

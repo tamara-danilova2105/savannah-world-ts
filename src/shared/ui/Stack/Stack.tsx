@@ -6,6 +6,7 @@ export type StackDirection = 'row' | 'column';
 export type StackJustify = 'start' | 'center' | 'end' | 'between';
 export type StackAlign = 'start' | 'center' | 'end';
 export type StackGap = '4' | '8' | '16' | '32';
+export type StackTag = 'div' | 'section' | 'article' | 'aside';
 
 const directionClasses: Record<StackDirection, string> = {
     row: styles.directionRow,
@@ -42,6 +43,7 @@ export interface FlexProps extends DivProps {
     align?: StackAlign;
     gap?: StackGap;
     max?: boolean;
+    tag?: StackTag;
 }
 
 export const Stack = (props: FlexProps) => {
@@ -53,8 +55,18 @@ export const Stack = (props: FlexProps) => {
         align = 'center',
         gap,
         max,
+        tag = 'div',
         ...otherProps
     } = props;
+
+    const mapStackTag: Record<StackTag, StackTag> = {
+        div: 'div',
+        section: 'section',
+        article: 'article',
+        aside: 'aside',
+    };
+
+    const StackTag = mapStackTag[tag];
 
     const additional: Additional = [
         className,
@@ -69,11 +81,11 @@ export const Stack = (props: FlexProps) => {
     };
 
     return (
-        <div
+        <StackTag
             className={classNames(styles.Flex, mods, additional)}
             {...otherProps}
         >
             {children}
-        </div>
+        </StackTag>
     )
 }
