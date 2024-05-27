@@ -4,12 +4,13 @@ import styles from './SocialMedia.module.scss';
 import whatsappIcon from '@/shared/assets/images/whatsapp.png';
 import telegramIcon from '@/shared/assets/images/telegram.png';
 import closeIcon from '@/shared/assets/images/close.png';
+import { memo } from "react";
 
 interface SocialMediaProps {
     onClick: () => void;
 }
 
-export const SocialMedia = ({ onClick }: SocialMediaProps) => {
+export const SocialMedia = memo(({ onClick }: SocialMediaProps) => {
     return (
         <Stack
             direction='column'
@@ -30,5 +31,5 @@ export const SocialMedia = ({ onClick }: SocialMediaProps) => {
                 <span className='visually-hidden'>закрыть</span>
             </button>
         </Stack>
-    )
-}
+    );
+});
