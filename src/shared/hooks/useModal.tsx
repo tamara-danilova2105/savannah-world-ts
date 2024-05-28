@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Modal } from "../ui/Modal/Modal";
 
 type UseModalReturn = [
@@ -14,13 +14,20 @@ export const useModal = (): UseModalReturn => {
         setIsOpen(p => !p);
     };
 
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? 'hidden' : ''
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [isOpen])
+
     const drawModal = (children: ReactNode): JSX.Element | null => {
         return (
-            isOpen 
-            ? <Modal setIsOpen={setIsOpen}>
-                {children}
-            </Modal>
-            : null
+            isOpen
+                ? <Modal setIsOpen={setIsOpen}>
+                    {children}
+                </Modal>
+                : null
         );
     };
 
