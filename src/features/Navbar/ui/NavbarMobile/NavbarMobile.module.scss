@@ -1,0 +1,35 @@
+.container {
+    background: rgba(253, 253, 253); //FIX LATER
+    width: 100%;
+    padding: 12px 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    color: var(--dark-brown-color);
+    text-transform: var(--text-uppercase);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opened_page {
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--dark-brown-color);
+    text-transform: var(--text-uppercase);
+}

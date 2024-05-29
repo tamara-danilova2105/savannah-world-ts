@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import { RouteProps } from "react-router-dom";
 
-export type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = {
     path: string;
-    element: ReactNode; 
+    element?: ReactNode; 
     navlink?: string;
     adminOnly?: boolean;
     icon?: ReactNode;
