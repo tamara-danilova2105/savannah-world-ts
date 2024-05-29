@@ -3,6 +3,17 @@
     padding: 20px 100px 80px 100px;
     background-color: var(--light-brown-color);
     border-radius: 15px;
+
+    @media all and (max-width:460px) {
+        width: 95%;
+        padding: 15px 20px 40px 20px;
+    }
+
+    input {
+        @media all and (max-width:460px) {
+            font-size: var(--font-size-xs);
+        }      
+    }
 }
 
 .closeButton {
@@ -11,6 +22,12 @@
     left: 250px;
     width: 50px;
     height: 50px;
+
+    @media all and (max-width:460px) {
+        left: 160px;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .buttonSignin {
@@ -18,4 +35,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-xs);
+    } 
 }

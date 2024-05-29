@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { Modal } from "../ui/Modal/Modal";
 
 type UseModalReturn = [
-    () => Promise<void>,
+    () => void,
     (children: ReactNode) => JSX.Element | null,
     boolean
 ];
@@ -10,7 +10,7 @@ type UseModalReturn = [
 export const useModal = (): UseModalReturn => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const changeOpen = async () => {
+    const changeOpen = () => {
         setIsOpen(p => !p);
     };
 

@@ -3,6 +3,11 @@
     bottom: 90px; //FIX LATER
     right: 12px; //FIX LATER
     background-color: transparent;
+
+    @media all and (max-width: 1024px) {
+        bottom: 115px; //FIX LATER
+        right: 8px; //FIX LATER
+    }
 }
 
 .iconChat {

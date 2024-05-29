@@ -1,5 +1,7 @@
-import { Navbar } from "./ui/Navbar";
+import { NavbarDesktop } from "./ui/NavbarDesktop/NavbarDesktop";
+import { NavbarMobile } from './ui/NavbarMobile/NavbarMobile';
 
 export {
-    Navbar,
+    NavbarDesktop,
+    NavbarMobile,
 };

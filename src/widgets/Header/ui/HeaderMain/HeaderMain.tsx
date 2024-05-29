@@ -1,5 +1,4 @@
-import { NavbarDesktop } from "@/features/Navbar/ui/NavbarDesktop/NavbarDesktop";
-import { NavbarMobile } from "@/features/Navbar/ui/NavbarMobile/NavbarMobile";
+import { NavbarDesktop, NavbarMobile } from "@/features/Navbar";
 import { BrowserView, MobileView } from "react-device-detect";
 
 export const HeaderMain = () => {

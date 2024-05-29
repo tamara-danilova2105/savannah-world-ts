@@ -38,9 +38,9 @@ export const signinIcon = () => {
     return (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <rect width="40" height="40" fill="#F5F5F5" />
-            <g clip-path="url(#clip0_0_1)">
+            <g clipPath="url(#clip0_0_1)">
                 <rect width="430" height="1088" transform="translate(-363 -1040)" fill="#F7F1EB" />
-                <rect x="-363" y="-35" width="430" height="83" fill="#FDFDFD" fill-opacity="0.67" />
+                <rect x="-363" y="-35" width="430" height="83" fill="#FDFDFD" fillOpacity="0.67" />
                 <rect width="40" height="40" fill="url(#pattern0_0_1)" />
             </g>
             <defs>

@@ -5,8 +5,11 @@
 html,
 body,
 #root {
-  height: 100%;
   font-family: var(--font-family-main);
+
+  @media all and (max-width: 1024px) {
+    padding-bottom: 25px;
+}
 }
 
 .visually-hidden {
