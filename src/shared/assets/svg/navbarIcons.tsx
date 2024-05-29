@@ -1,21 +1,7 @@
 export const homeIcon = () => {
     return (
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <rect width="40" height="40" fill="#F5F5F5"/>
-            <g clipPath="url(#clip0_0_1)">
-                <rect width="430" height="1088" transform="translate(-35 -1040)" fill="#F7F1EB"/>
-                <rect x="-35" y="-35" width="430" height="83" fill="#FDFDFD" fillOpacity="0.67"/>
-                <rect width="40" height="40" fill="url(#pattern0_0_1)"/>
-            </g>
-            <defs>
-                <pattern id="pattern0_0_1" patternContentUnits="objectBoundingBox" width="1" height="1">
-                    <use xlinkHref="#image0_0_1" transform="scale(0.0104167)"/>
-                </pattern>
-                <clipPath id="clip0_0_1">
-                    <rect width="430" height="1088" fill="white" transform="translate(-35 -1040)"/>
-                </clipPath>
-                <image id="image0_0_1" width="96" height="96" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADnUlEQVR4nO2aP2gUQRSHV0URBcFCBBuxsbER0mijYKUYdee9GQ0mELBIYWMh4s07YS1tLQULm3RWClpZWQlWFoIWFhZiERBBxKDmZOKfRDHczu7MzdvZ98GUt/v7zbu73W/vikIQBEEQBEEQBKFDDEw55VbqHL1kaNQJi+ojofpEWJ5KnadXDLWataiWScPILavhKyFeSp2rF1gDVyyq7783f91asahups6XM5ushlv/2fi/ltVwu6qqzanDZkVlzDZCtThu89eGoO5X8/PbU+fOgqtzczsJ4XHdzf8zBIQn1ezJXanzdxo7c2YvITz33fx1Q3hxbebsvtQ9OsnQmANWq9dNN39tCOrN4EJ5MHWfTjEw5RQhvG+7+evW0sCUR1P36pZg6WCb/3OJsPkLFo3f1Lurq/7X0bI7xwTeR1kJ1miD+/1bzg3cawnVdY9PgwhbE8GitXf9N9Lq8r8HcY8iVh9J1B+gCFvlKVik4YtFPL/hpwigJFSf6w+hx8LmK1hWw4chwLFxxyWljri7nvrXhR4Km69gWQ3vyJw7XPf4NxAPWYS3HkPoj7D5CpZFeDkE2O97HrehbmM97pDyFzZfwbIIz6wxexqf7+Lp3Rbhqcc1Zsl9hRU54itYVqsH1fT0jrbndRdZd7HttbB5C5ZW9xYWFraGOr8xZotFdcfjmpPPL2xtBCs0fRO2IIIVml4IW2jBCk3WwtZEsKwpj086p3s8nZ2wxRas0GQlbE6wCOFVbMEKTRbCNmnBCk2nha3BL1gPQwhWaDopbKkFKzSdEjZOgtU3YWMpWL0QtgaCNSIALDoKAaBXV1SLbo+iCZbV8MgrkIZR0XHIs28UYWvzF8Gi41CDzkGFzVewZAAQTthC/EWw6DjUonsrYQv1F8Gi41DL/o2EzV+wZAAUSth8BUsGAHX3YsUJXhGavg+gSA37gLn3Yx8w937sA+beL3RACnTxn1SeIjUygMTIABIjA0iMDCAxMoDEyAASIwNIDLf7bmKWJzrcChOzPNHhVpiY5YkOt8LELE90uBUmZnmiw60wMcsTHW6FiVme6HArTMzyRIdbYWKWJzrcChOzPNHhVpiY5YkOt8LELE90uBUmZnmiw60wMcsTHW6FiVme6HArTMzyRGdcwNCr6Fie6HArTMzyRIdbYWKWJzrcChOzPNHhVpiY5YkOt8LELE90uBUmZnmiw60wMcsjCIIgCIIgCIIgCIIgCMUvfgAXrOX5EhTG/wAAAABJRU5ErkJggg=="/>
-            </defs>
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px">
+            <path fill="var(--dark-brown-color)" d="M 16 2.59375 L 15.28125 3.28125 L 2.28125 16.28125 L 3.71875 17.71875 L 5 16.4375 L 5 28 L 14 28 L 14 18 L 18 18 L 18 28 L 27 28 L 27 16.4375 L 28.28125 17.71875 L 29.71875 16.28125 L 16.71875 3.28125 Z M 16 5.4375 L 25 14.4375 L 25 26 L 20 26 L 20 16 L 12 16 L 12 26 L 7 26 L 7 14.4375 Z"/>
         </svg>
     );
 };
