@@ -1,9 +1,9 @@
-import { NavbarContainer } from "../NavbarContainer/NavbarContainer";
+import { NavbarDesktop } from "@/features/Navbar/ui/NavbarDesktop/NavbarDesktop";
 
 export const HeaderMain = () => {
     return (
-        <>
-            <NavbarContainer />
-        </>
+        <div>
+            <NavbarDesktop />
+        </div>
     );
 };

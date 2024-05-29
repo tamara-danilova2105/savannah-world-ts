@@ -6,4 +6,5 @@ export type AppRoutesProps = RouteProps & {
     element: ReactNode; 
     navlink?: string;
     adminOnly?: boolean;
+    icon?: ReactNode;
 }
