@@ -1,12 +1,5 @@
-.section {
-    margin: 0 auto;
-    max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
-    padding: 0 var(--container-padding-x); 
+@import '../../../../app/styles/mixin.scss';
 
-    @media all and (max-width:820px) {
-        padding: 0 40px; 
-    }
-    @media all and (max-width:460px) {
-        padding: 0 30px; 
-    }
+.section {
+    @include section-styles;
 }
