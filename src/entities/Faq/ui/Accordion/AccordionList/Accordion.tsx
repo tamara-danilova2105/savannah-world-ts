@@ -1,10 +1,11 @@
 import { FC, useCallback, useState } from 'react';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { IAccordionItem } from '@/entities/Faq/model/types';
+import styles from './Accordion.module.scss';
 
 interface AccordionProps {
     data: IAccordionItem[];
-}
+};
 
 export const Accordion: FC<AccordionProps> = ({ data }) => {
 
@@ -15,7 +16,7 @@ export const Accordion: FC<AccordionProps> = ({ data }) => {
     }, []);
 
     return (
-        <ul>
+        <ul className={styles.accordion}>
             {data.map(element =>
                 <AccordionItem
                     key={element.id}
@@ -25,5 +26,5 @@ export const Accordion: FC<AccordionProps> = ({ data }) => {
                 />
             )}
         </ul>
-    )
-}
+    );
+};

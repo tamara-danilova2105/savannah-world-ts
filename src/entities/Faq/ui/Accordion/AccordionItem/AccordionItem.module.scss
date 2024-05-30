@@ -1,3 +1,53 @@
-// .accordionitem {
+.accordionitem {
+    margin-bottom: 10px;
+}
 
-// }
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-s);
+    text-transform: var(--text-capitalize);
+    padding: 10px 50px;
+
+    @media all and (max-width:820px) {    
+        padding: 10px 30px;
+    }
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-xs);
+        padding: 10px 15px;
+    }
+
+    .question {
+        width: 80%;
+        text-align: start;
+    }
+
+    svg {
+        @media all and (max-width:460px) {
+            width: 30px;
+            height: 30px;
+        }
+    
+    }
+}
+
+.open {
+    border-radius: 15px 15px 0 0;
+}
+
+.answer {
+    background-color: var(--white-color);
+    border-radius: 0 0 15px 15px;
+    padding: 15px 50px;
+    font-size: var(--font-size-s);
+
+    @media all and (max-width:820px) {    
+        padding: 10px 30px;
+    }
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-xs);
+        padding: 10px 15px;
+    }
+}

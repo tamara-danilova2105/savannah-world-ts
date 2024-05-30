@@ -11,7 +11,7 @@
     color: var(--white-color);
 
     &:hover {
-        background: linear-gradient(to left, var(--brown-color), var(--dark-brown));
+        background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
         background-size: 250% 100%;
     }
 }

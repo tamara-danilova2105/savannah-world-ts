@@ -9,6 +9,7 @@ export const Faq = () => {
         <Stack
             tag='section'
             direction='column'
+            className={styles.section}
         >
             <Text tag="h2" size="xl" className={styles.title}>
                 ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ

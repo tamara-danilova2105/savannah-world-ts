@@ -3,7 +3,7 @@ import { IAccordionItem } from "../model/types";
 export const accordionFaq: IAccordionItem[] = [
     {
         id: 1,
-        question: 'Lorem ipsum dolor sit amet',
+        question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?',
         answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?'
     },
     {
