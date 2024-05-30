@@ -9,11 +9,11 @@ const rl = readline.createInterface({
 
 const cssFileName = name => `${name}.module.scss`
 
-const tsxContent = name => `import style from './${cssFileName(name)}'
+const tsxContent = name => `import styles from './${cssFileName(name)}'
 
 export const ${name} = () => {
     return (
-        <div className={style.${name.toLowerCase()}}>
+        <div className={styles.${name.toLowerCase()}}>
         </div>
     )
 }`
