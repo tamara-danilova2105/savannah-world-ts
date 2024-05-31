@@ -3,8 +3,14 @@ import styles from './OurKittensList.module.scss';
 import { Text } from '@/shared/ui/Text/Text';
 import { kittensMock } from '@/entities/CarCard/libs/data';
 import { CatCard } from '@/entities/CarCard';
+import { useCallback } from 'react';
 
 export const OurKittensList = () => {
+
+    const handleClick = useCallback(() => {
+        console.log('в каталог');       
+    }, []);
+    
     return (
         <Stack
             tag='section'
@@ -24,6 +30,8 @@ export const OurKittensList = () => {
                         <CatCard
                             key={kitten.id}
                             kitten={kitten}
+                            isMain
+                            onClick={handleClick}
                         />)
                 }
             </Stack>

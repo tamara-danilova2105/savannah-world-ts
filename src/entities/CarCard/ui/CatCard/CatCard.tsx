@@ -1,14 +1,19 @@
 import { Text } from '@/shared/ui/Text/Text';
 import { KittensMock } from '../../libs/data'
-import styles from './CatCard.module.scss'
 import { Stack } from '@/shared/ui/Stack/Stack';
+import { Button } from '@/shared/ui/Button/Button';
+import { arrowIcon } from '@/shared/assets/svg/arrowIcon';
+import styles from './CatCard.module.scss';
 
 interface CatCardProps {
     kitten: KittensMock;
+    isMain?: boolean;
+    onClick?: () => void;
 }
 
 export const CatCard = (props: CatCardProps) => {
     const { images, name_cat, generate, sex, age, shipment } = props.kitten;
+    const { isMain, onClick } = props;
 
     return (
         <Stack
@@ -33,6 +38,12 @@ export const CatCard = (props: CatCardProps) => {
             <Text size="m" className={styles.text}>
                 Статус: {shipment}
             </Text>
+            <Button
+                className={styles.btn}
+                onClick={onClick}
+            >
+                {isMain ? 'в катагалог' : 'подробнее'} {arrowIcon()}
+            </Button>
         </Stack>
     )
 }

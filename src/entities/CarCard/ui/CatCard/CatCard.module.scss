@@ -18,7 +18,8 @@
 .name {
     font-weight: bold;
     text-transform: var(--text-capitalize);
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 
     @media all and (max-width:460px) {
         font-size: var(--font-size-s);
@@ -28,5 +29,18 @@
 .text {
     @media all and (max-width:460px) {
         font-size: var(--font-size-xs);
+    }
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    @media all and (max-width:460px) {
+        font-size: var(--font-size-xs);
+        padding: 5px 25px;
     }
 }
