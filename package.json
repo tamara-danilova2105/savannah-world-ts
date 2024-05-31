@@ -26,7 +26,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "generete:component": "node ./scripts/createComponent.js"
+    "generate:component": "node ./scripts/createComponent.js"
   },
   "eslintConfig": {
     "extends": [

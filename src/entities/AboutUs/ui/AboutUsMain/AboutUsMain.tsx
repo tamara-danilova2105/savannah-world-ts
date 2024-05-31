@@ -8,6 +8,7 @@ export const AboutUs = () => {
         <Stack
             tag='section'
             direction='column'
+            gap="32"
             className={styles.section}
         >
             <AboutUsDescription />

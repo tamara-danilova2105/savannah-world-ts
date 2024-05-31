@@ -1,4 +1,4 @@
-@import '../../../../app/styles/mixin.scss';
+@import '@/app/styles/mixin.scss';
 
 .section {
     @include section-styles;
@@ -28,3 +28,10 @@
     }
 }
 
+.card {
+    @media all and (max-width:820px) {
+        display: flex;
+        flex-direction: column;   
+        gap: 16px;
+    }
+}

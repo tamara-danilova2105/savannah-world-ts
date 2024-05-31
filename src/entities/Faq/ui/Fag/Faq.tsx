@@ -9,6 +9,7 @@ export const Faq = () => {
         <Stack
             tag='section'
             direction='column'
+            gap="32"
             className={styles.section}
         >
             <Text tag="h2" size="xl" className={styles.title}>
