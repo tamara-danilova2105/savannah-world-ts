@@ -1,4 +1,8 @@
-import { IAccordionItem } from "../model/types";
+export interface IAccordionItem {
+    id: number;
+    question: string;
+    answer: string;
+}
 
 export const accordionFaq: IAccordionItem[] = [
     {

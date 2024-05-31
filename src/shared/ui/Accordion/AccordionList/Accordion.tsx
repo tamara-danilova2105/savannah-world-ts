@@ -1,6 +1,6 @@
 import { FC, useCallback, useState } from 'react';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
-import { IAccordionItem } from '@/entities/Faq/model/types';
+import { IAccordionItem } from '@/entities/Faq/libs/data';
 import styles from './Accordion.module.scss';
 
 interface AccordionProps {

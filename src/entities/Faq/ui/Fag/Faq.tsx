@@ -1,6 +1,6 @@
 import { Stack } from "@/shared/ui/Stack/Stack";
 import { Text } from "@/shared/ui/Text/Text";
-import { Accordion } from "../Accordion/AccordionList/Accordion";
+import { Accordion } from "../../../../shared/ui/Accordion/AccordionList/Accordion";
 import { accordionFaq } from "../../libs/data";
 import styles from './Faq.module.scss';
 

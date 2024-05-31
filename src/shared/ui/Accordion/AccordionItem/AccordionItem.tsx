@@ -1,9 +1,9 @@
-import { IAccordionItem } from '@/entities/Faq/model/types';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button/Button';
 import styles from './AccordionItem.module.scss';
 import { plusIcon } from '@/shared/assets/svg/plusIcon';
 import { minusIcon } from '@/shared/assets/svg/minusIcon';
+import { IAccordionItem } from '@/entities/Faq/libs/data';
 
 interface AccordionItemProps {
     className?: string;
@@ -29,10 +29,9 @@ export const AccordionItem = (props: AccordionItemProps) => {
                 onClick={onClick}
             >
                 <span className={styles.question}>{question}</span>
-                {isOpen 
-                    ? <span>{plusIcon()}</span> 
-                    : <span>{minusIcon()}</span>
-                }
+                <span className={`${styles.icon} ${isOpen && styles.rotate}`}>
+                    {isOpen ? minusIcon() : plusIcon()}
+                </span>
             </Button>
             {
                 isOpen &&

@@ -3,6 +3,8 @@ import AppRouter from "./providers/router/ui/AppRouter";
 import { ButtonUp } from "@/shared/ui/ButtonUp/ButtonUp";
 import { ContactUs } from "@/features/ContactUs";
 import { Header } from "@/widgets/Header";
+import { MobileOnlyView } from "react-device-detect";
+import { NavbarMobile } from "@/features/Navbar";
 
 function App() {
   return (
@@ -10,7 +12,10 @@ function App() {
       <Header />
       <AppRouter />
       <ButtonUp />
-      <ContactUs />
+      <ContactUs />      
+      <MobileOnlyView>
+        <NavbarMobile />
+      </MobileOnlyView>
     </Suspense>
   );
 }

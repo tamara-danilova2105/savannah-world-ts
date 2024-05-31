@@ -1,13 +1,15 @@
+@import './media-queries';
+
 @mixin section-styles {
     margin: 0 auto;
     max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
     padding: 0 var(--container-padding-x);
 
-    @media all and (max-width: 820px) {
+    @include tablet-m {
         padding: 0 40px;
     }
 
-    @media all and (max-width: 460px) {
+    @include mobile-l {
         padding: 0 30px;
     }
 }
