@@ -1,4 +1,4 @@
-import { OurKittensList as OurKittens } from "./ui/OurKittensList/OurKittensList";
+import { OurKittens } from "./ui/OurKittens/OurKittensList";
 
 export {
     OurKittens,
