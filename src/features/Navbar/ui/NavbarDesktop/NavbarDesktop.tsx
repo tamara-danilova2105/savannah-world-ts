@@ -5,14 +5,13 @@ import { useModal } from '@/shared/hooks/useModal';
 import { Signin } from '@/features/Signin';
 import { useAppRoutes } from '@/shared/hooks/useAppRoutes';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
-import { BrowserView } from 'react-device-detect';
 
 export const NavbarDesktop = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig);
 
     return (
-        <BrowserView>
+        <>
             {drawSiginModal(
                 <Signin changeSigninModal={changeSigninModal} />
             )}
@@ -37,6 +36,6 @@ export const NavbarDesktop = () => {
                     войти
                 </Button>
             </nav>
-        </BrowserView>
+        </>
     );
 };

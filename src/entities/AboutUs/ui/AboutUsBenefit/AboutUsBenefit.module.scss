@@ -47,7 +47,7 @@
 }
 
 .row {
-    @media all and (max-width:460px) {
+    @media all and (max-width:560px) {
         flex-direction: column;
         row-gap: 32px;
     }
