@@ -1,6 +1,7 @@
 import { MouseEvent, ReactNode } from 'react';
-import styles from './Modal.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { motion as m } from "framer-motion";
+import styles from './Modal.module.scss';
 
 interface ModalProps {
     className?: string;
@@ -26,7 +27,13 @@ export const Modal = (props: ModalProps) => {
                 data-class="overlay"
                 onClick={handleClick}
             >
-                {children}
+                <m.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {children}
+                </m.div>
             </div>
         </div>
     );
