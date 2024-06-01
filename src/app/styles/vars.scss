@@ -23,19 +23,19 @@
     --width-tablet: 820px;
     --width-mobile: 450px;
 
-      //Паддинги
+    //Паддинги
     --desktop-padding: calc(16%/2);
     --tablet-padding: calc(18%/2);
     --mobile-padding: calc(12%/2);
 
-      //Text-transform
+    //Text-transform
     --text-uppercase: uppercase; 
     --text-capitalize: capitalize;
 
     //Переменные для header
     --gap-desktop: 48px;
-    --gap-tablet: 15px;
-    --gap-mobile: 5px;
+    --gap-tablet: 16px;
+    --gap-mobile: 8px;
   
     //Контейнер
     --container-max-width: 1440px;

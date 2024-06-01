@@ -1,0 +1,18 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.picture {
+    width: 230px;
+    height: auto;
+    margin-right: 80px;
+
+    @include desktop-l {
+        width: 150px;
+        margin-right: 40px;
+    }
+
+    @include tablet-m {
+        display: none;
+        // width: 100px;
+        // margin-right: 0;
+    }
+}

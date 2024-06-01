@@ -7,13 +7,12 @@
     width: 100%;
     min-height: 100%;
     display: block;
-    // z-index: -1;
 
     @media (max-width: 1439px) {
         min-height: 820px;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
         min-height: 550px;
     }
 
@@ -29,7 +28,6 @@
         position: absolute;
         width: 100%;
         min-height: 230px;
-        // z-index: -1;
         background-color: var(--brown-color);
     }
 }

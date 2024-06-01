@@ -1,0 +1,19 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.header {
+    background-color: var(--brown-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px var(--desktop-padding);
+
+    @include desktop-l {
+        padding: 20px var(--tablet-padding);
+    }
+
+    @include tablet-m {
+        padding: 20px var(--mobile-padding);
+        justify-content: center;
+    }
+}
