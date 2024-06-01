@@ -22,20 +22,23 @@ export const CatCard = (props: CatCardProps) => {
             gap='4'
             className={styles.catCard}
         >
-            <img className={styles.images} src={images} alt='котята Саванны' />
+            <img 
+                className={styles.images} 
+                src={images} alt='котята Саванны' 
+            />
             <Text size="l" className={styles.name}>
                 {name_cat}
             </Text>
-            <Text size="m" className={styles.text}>
+            <Text size="s" className={styles.text}>
                 Цвет: {generate}
             </Text>
-            <Text size="m" className={styles.text}>
+            <Text size="s" className={styles.text}>
                 Пол: {sex}
             </Text>
-            <Text size="m" className={styles.text}>
+            <Text size="s" className={styles.text}>
                 Возраст: {age}
             </Text>
-            <Text size="m" className={styles.text}>
+            <Text size="s" className={styles.text}>
                 Статус: {shipment}
             </Text>
             <Button
