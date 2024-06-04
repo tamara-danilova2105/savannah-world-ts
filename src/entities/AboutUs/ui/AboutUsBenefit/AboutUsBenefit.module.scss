@@ -1,8 +1,9 @@
 @import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
 
 .benefits {
     padding: 35px;
-    background-color: var(--white-color);
+    background-color: var(--opacity-color);
     border-radius: 40px; 
     margin-top: 40px;
 
@@ -18,19 +19,7 @@
 }
 
 .title {
-    font-weight: 500;
-
-    @media all and (max-width:1440px) {    
-        font-size: var(--font-size-l);
-    }
-    @media all and (max-width:820px) {    
-        font-size: var(--font-size-m);
-        text-align: center;
-    }
-    @media all and (max-width:460px) {
-        font-size: var(--font-size-s);
-        width: 75%;
-    }
+    @include title-section;
 }
 
 .text {

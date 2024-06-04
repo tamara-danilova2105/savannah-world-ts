@@ -1,0 +1,46 @@
+@import '../../../../app/styles/mixin.scss';
+@import '../../../../app/styles/media-queries.scss';
+
+.section {
+    @include section-styles;
+}
+
+.title {
+    @include title-section;
+}
+
+.block {
+    background-color: var(--opacity-color);
+    border-radius: 40px;
+    width: 100%;
+    padding: 20px 70px;
+
+    @include mobile-l {
+        padding: 20px;
+    }
+}
+
+.images {
+    width: 50px;
+
+    @include tablet-l {
+        width: 40px;
+    }
+
+    @include mobile-l {
+        width: 30px;
+    }
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    color: var(--dark-brown-color);
+
+    @include mobile-l {
+        gap: 16px;
+        font-size: var(--font-size-xs);
+        margin-bottom: 10px;
+    }
+}

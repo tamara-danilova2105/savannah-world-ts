@@ -4,6 +4,7 @@
     margin: 0 auto;
     max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
     padding: 0 var(--container-padding-x);
+    margin-top: 70px;
 
     @include tablet-m {
         padding: 0 40px;
@@ -11,5 +12,24 @@
 
     @include mobile-l {
         padding: 0 30px;
+        margin-top: 50px;
+    }
+}
+
+@mixin title-section {
+    font-weight: 500;
+
+    @include desktop-l {
+        font-size: var(--font-size-l);
+    }
+
+    @include tablet-m {
+        font-size: var(--font-size-m);
+        text-align: center;
+    }
+
+    @include mobile-l {
+        font-size: var(--font-size-s);
+        width: 100%;
     }
 }
