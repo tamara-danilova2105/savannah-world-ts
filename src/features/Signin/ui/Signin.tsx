@@ -6,6 +6,7 @@ import { Button } from "@/shared/ui/Button/Button";
 import { arrowIcon } from "@/shared/assets/svg/arrowIcon";
 import { Text } from "@/shared/ui/Text/Text";
 import styles from './Signin.module.scss';
+import { hidePasswordIcon, showPasswordIcon } from "@/shared/assets/svg/passwordIcons";
 
 interface SignInProps {
     changeSigninModal?: () => void;
@@ -13,6 +14,7 @@ interface SignInProps {
 
 export const Signin = memo(({ changeSigninModal }: SignInProps) => {
     const [isError, setIsError] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     return (
         <Stack
@@ -33,30 +35,37 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                 Введите данные, чтобы войти в систему
             </Text>
 
-            <Input
-                isError={isError}
-                placeholder='логин'
-                onChange={() => console.log()}
-            />
-            <Input
-                isError={isError}
-                type="password"
-                placeholder='пароль'
-                onChange={() => console.log()}
-            />
+            <form className={styles.form}>
+                <Input
+                    isError={isError}
+                    placeholder='логин'
+                    onChange={() => {}}
+                />
+                <Input
+                    isError={isError}
+                    type={!showPassword ? 'password' : 'text'}
+                    placeholder='пароль'
+                    onChange={() => {}}
+                />
+                <div className={styles.error}>
+                    {
+                        isError &&
+                        <Text size='xs' className={styles.text}>
+                            Введен неверный логин и/или пароль
+                        </Text>
+                    }
+                </div>
+                <Button className={styles.buttonSignin}>
+                    войти {arrowIcon()}
+                </Button>
+            </form>
 
-            <div className={styles.error}>
-                {
-                    isError &&
-                    <Text size='xs' className={styles.text}>
-                        Введен неверный логин и/или пароль
-                    </Text>
-                }
+            <div
+                className={styles.password}
+                onClick={() => setShowPassword(!showPassword)}
+            >
+                {showPassword ? hidePasswordIcon() : showPasswordIcon()}
             </div>
-
-            <Button className={styles.buttonSignin}>
-                войти {arrowIcon()}
-            </Button>
         </Stack>
     );
 });
