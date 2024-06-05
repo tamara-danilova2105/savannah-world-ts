@@ -11,7 +11,7 @@
 
 .block {
     background-color: var(--opacity-color);
-    border-radius: 40px;
+    border-radius: var(--border-radius-container);
     width: 100%;
     padding: 20px 70px;
 

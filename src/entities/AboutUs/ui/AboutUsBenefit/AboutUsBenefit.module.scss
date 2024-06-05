@@ -4,7 +4,7 @@
 .benefits {
     padding: 35px;
     background-color: var(--opacity-color);
-    border-radius: 40px; 
+    border-radius: var(--border-radius-container); 
     margin-top: 40px;
 
     @include tablet-m {

@@ -1,15 +1,15 @@
 .input {
     padding: 15px;  
     width: 100%; 
-    border-radius: 15px;
+    border-radius: var(--border-radius-element);
     border: 2px solid transparent;   
     background-color: var(--white-color);
     font-family: var(--font-family-main);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-xs);
     color: var(--dark-brown-color); 
     height: 50px;   
     word-wrap: break-word;
-    text-transform: uppercase;
+    text-transform: var(--text-uppercase);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
     &::placeholder {
@@ -31,4 +31,8 @@
         -webkit-box-shadow: 0 0 0px 1000px var(--white-color) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         -webkit-font-size: var(--font-size-m);
     }
+}
+
+.isError {
+    border: 2px solid var(--red-color);
 }
