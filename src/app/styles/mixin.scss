@@ -1,19 +1,29 @@
 @import './media-queries';
 
-@mixin section-styles {
+@mixin main-styles {
     margin: 0 auto;
     max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
-    padding: 0 var(--container-padding-x);
-    margin-top: 70px;
+    padding: 0 var(--container-padding-x); 
 
     @include tablet-m {
-        padding: 0 40px;
+        padding: 0 70px; 
     }
 
-    @include mobile-l {
-        padding: 0 30px;
-        margin-top: 50px;
+    @include mobile-l{
+        padding: 0 40px; 
+    }   
+}
+
+@mixin section-styles {
+    margin-top: 60px;
+      
+    @include tablet-l {        
+        margin-top: 40px;
     }
+
+    @include mobile-l{
+        margin-top: 40px;
+    }     
 }
 
 @mixin title-section {
@@ -32,4 +42,21 @@
         font-size: var(--font-size-s);
         width: 100%;
     }
+}
+
+@mixin modal-content {
+    padding: 10px 100px 60px 100px;
+    background-color: var(--light-brown-color);
+    border-radius: var(--border-radius-container);
+    box-shadow: 4px 6px 6px 4px rgba(0, 0, 0, 0.25);
+
+    @include mobile-l {
+        padding: 15px 20px 40px 20px;
+    }
+}
+
+@mixin button-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

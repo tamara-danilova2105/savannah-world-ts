@@ -1,16 +1,13 @@
-@import '../../../app/styles/media-queries.scss';
+@import '@/app/styles/media-queries.scss';
+@import '@/app/styles/mixin.scss';
 
 .signin {
     width: 600px;
-    padding: 10px 100px 60px 100px;
-    background-color: var(--light-brown-color);
-    border-radius: var(--border-radius-container);
-    box-shadow: 4px 6px 6px 4px rgba(0, 0, 0, 0.25);
+    @include modal-content;
     
 
     @include mobile-l {
         width: 95%;
-        padding: 15px 20px 40px 20px;
         margin-left: 10px;
     }
 
@@ -50,9 +47,7 @@
 }
 
 .buttonSignin {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include button-icon;
     width: 100%;
 
     @include mobile-l {

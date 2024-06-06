@@ -1,4 +1,5 @@
-@import '../../../../app/styles/media-queries.scss';
+@import '@/app/styles/media-queries.scss';
+@import '@/app/styles/mixin.scss';
 
 .header {
     background-color: transparent;
@@ -55,9 +56,7 @@
 
 .btn {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include button-icon;
 
     @include mobile-l {
         font-size: var(--font-size-xs);
