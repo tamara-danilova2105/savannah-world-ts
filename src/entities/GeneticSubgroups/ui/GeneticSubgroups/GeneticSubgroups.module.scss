@@ -1,0 +1,20 @@
+@import '@/app/styles/mixin.scss';
+@import '@/app/styles/media-queries.scss';
+
+.section {
+    @include section-styles;
+}
+
+.title {
+    @include title-section;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include tablet-l {
+        flex-direction: column;
+    }
+}

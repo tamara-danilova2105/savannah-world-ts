@@ -1,0 +1,60 @@
+@import '@/app/styles/media-queries.scss';
+
+.item {
+    background-color: var(--opacity-color);
+    border-radius: var(--border-radius-container);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+
+    @include mobile-l {
+        padding: 20px;
+
+        img {
+            display: none;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    font-size: var(--font-size-xxl);
+    font-weight: 500;
+    line-height: 1;
+    padding-bottom: 20px;
+    text-transform: var(--text-uppercase);
+    margin-bottom: 30px;
+    color: var(--dark-brown-color);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: var(--dark-brown-color);
+    }
+
+    @include mobile-l {
+        font-size: var(--font-size-xl);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.text {
+    @include mobile-l {
+        font-size: var(--font-size-xs)
+    }
+}
