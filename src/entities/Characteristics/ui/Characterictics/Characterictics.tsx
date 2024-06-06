@@ -14,14 +14,14 @@ export const Characterictics = () => {
             className={styles.section}
         >
             <Text tag="h2" size="xl" className={styles.title}>
-                ХАРАКТЕРИСТИКИ САВАНН
+                ХАРАКТЕРИСТИКИ <strong>САВАНН</strong>
             </Text>
 
             <ul className={styles.block}>
                 {
-                    characteristicsData.map(characteristic => {
+                    characteristicsData.map((characteristic, index) => {
                         return (
-                            <Text tag='li' className={styles.text}>
+                            <Text key={index} tag='li' className={styles.text}>
                                 <img className={styles.images} src={check} alt="icon" />
                                 {characteristic}
                             </Text>

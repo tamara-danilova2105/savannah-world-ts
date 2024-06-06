@@ -31,7 +31,7 @@ export const AboutUsBenefit = () => {
             className={styles.benefits}
         >
             <Text tag="h2" size="xl" className={styles.title}>
-                ПИТОМНИК <strong>SAVANNAH WORLD</strong> ЭТО -
+                ПОЧЕМУ ИМЕННО МЫ -
             </Text>
 
             <Stack

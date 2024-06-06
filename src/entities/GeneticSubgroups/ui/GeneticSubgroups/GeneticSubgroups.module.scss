@@ -16,5 +16,6 @@
 
     @include tablet-l {
         flex-direction: column;
+        gap: 16px;
     }
 }
