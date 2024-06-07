@@ -1,10 +1,5 @@
 @import '@/app/styles/mixin.scss';
 
-.section {
+.container {
     @include section-styles;
 }
-
-.title {
-    @include title-section;
-}
-
