@@ -2,8 +2,9 @@ import { AboutUs } from '@/entities/AboutUs';
 import { Faq } from '@/entities/Faq';
 import { OurKittens } from '@/entities/OurKittens';
 import { Characterictics } from '@/entities/Characteristics';
-import styles from './MainPage.module.scss';
 import { GeneticSubgroups } from '@/entities/GeneticSubgroups';
+import { Advices } from '@/entities/Advices';
+import styles from './MainPage.module.scss';
 
 export const MainPage = () => {
     return (
@@ -12,6 +13,7 @@ export const MainPage = () => {
             <OurKittens />
             <Characterictics />
             <GeneticSubgroups />
+            <Advices />
             <Faq />
         </main>
     );

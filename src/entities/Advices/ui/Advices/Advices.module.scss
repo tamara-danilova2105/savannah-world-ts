@@ -1,0 +1,13 @@
+@import '@/app/styles/mixin.scss';
+
+.section {
+    @include section-styles;
+
+    @include mobile-l {
+        gap: 16px;
+    }
+}
+
+.title {
+    @include title-section;
+}
