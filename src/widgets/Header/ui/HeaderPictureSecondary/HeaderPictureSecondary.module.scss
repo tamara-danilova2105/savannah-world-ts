@@ -1,4 +1,4 @@
-@import '../../../../app/styles/media-queries.scss';
+@import '@/app/styles/media-queries.scss';
 
 .picture {
     width: 230px;
@@ -10,9 +10,12 @@
         margin-right: 40px;
     }
 
-    @include tablet-m {
+    @include tablet-l {
         display: none;
-        // width: 100px;
-        // margin-right: 0;
+    }
+
+    @include mobile-l {
+        display: flex;
+        margin-right: 0;
     }
 }

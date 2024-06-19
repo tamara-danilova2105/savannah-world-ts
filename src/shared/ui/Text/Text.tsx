@@ -3,7 +3,7 @@ import styles from './Text.module.scss';
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 export type TextTag = 'h1' | 'h2' | 'h3' | 'p' | 'li';
-export type TextSize = 'xs' | 's' | 'm' | 'ml' | 'l' | 'xl' | 'xxl';
+export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
 
 interface TextProps {
     className?: string ,

@@ -71,27 +71,36 @@
     margin-top: 200px;
 
     @include desktop-l {
-        margin-top: 90px;
+        margin-top: 150px;
     }
 
     @include tablet-l {
-        margin-top: 10px;
+        margin-top: 70px;
     }
 
     .text {
         color: var(--white-color);        
         font-weight: 400;
         line-height: 2;
+        margin-bottom: 40px;
+
+        @include tablet-l {
+            font-size: var(--font-size-l);
+        }
     }
 
     .title {
         color: var(--white-color);
         width: min-content;
         font-weight: 600;
-        margin-bottom: 56px;
-        font-size: 70px;
+        margin-bottom: 40px;
+        font-size: 90px;
 
-        @include tablet-l {
+        @include desktop-l {
+            font-size: 70px;
+        }
+
+        @include desktop-m {
             font-size: var(--font-size-xxl);
             margin-bottom: 25px;
         }

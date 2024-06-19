@@ -16,7 +16,10 @@ export const HeaderMain = () => {
                 <NavbarDesktop />
                 <div className={styles.titleContainer}>
                     <Text tag='h1' className={styles.title}>
-                        <span className={styles.text}>Питомник </span> SAVANNAH WORLD
+                        SAVANNAH WORLD
+                    </Text>
+                    <Text tag="h3" size="xl" className={styles.text}>
+                        Питомник кошек Саванны
                     </Text>
                     <Link to={getRouteCatalog()}>
                         <Button className={styles.btn}>
