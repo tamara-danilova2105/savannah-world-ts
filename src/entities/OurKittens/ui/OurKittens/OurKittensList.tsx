@@ -1,7 +1,7 @@
 import { Stack } from '@/shared/ui/Stack/Stack';
 import styles from './OurKittensList.module.scss';
 import { Text } from '@/shared/ui/Text/Text';
-import { kittensMock } from '@/entities/CarCard/libs/data';
+import { kittensMock } from '@/entities/CarCard/lib/data';
 import { CatCard } from '@/entities/CarCard';
 import { useCallback } from 'react';
 

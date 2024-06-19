@@ -1,5 +1,5 @@
 import { Text } from '@/shared/ui/Text/Text';
-import { KittensMock } from '../../libs/data'
+import { KittensMock } from '../../lib/data'
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcon';
@@ -30,7 +30,7 @@ export const CatCard = (props: CatCardProps) => {
                 {name_cat}
             </Text>
             <Text size="s" className={styles.text}>
-                Цвет: {generate}
+                Группа: {generate}
             </Text>
             <Text size="s" className={styles.text}>
                 Пол: {sex}
