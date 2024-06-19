@@ -2,6 +2,8 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headless
 import { MouseEvent, useState } from "react";
 import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
+import { arrowDownIcon } from "@/shared/assets/svg/arrowDownIcon";
+import { arrowUpIcon } from "@/shared/assets/svg/arrowUpIcon";
 
 interface ListBoxProps {
     filter: string;
@@ -28,35 +30,42 @@ export const ListBox = ({ filter, options }: ListBoxProps) => {
             value={selected}
             onChange={setSelected}
         >
-            <ListboxButton
-                className={styles.button}
-            >
-                {filter}
-                {
-                    selected.length > 0 &&
-                    <div className={styles.badge}>
-                        {selected.length}
-                    </div>
-                }
-            </ListboxButton>
-
-            <ListboxOptions className={styles.options} anchor="bottom">
-                {options.map(option => (
-                    <ListboxOption
-                        key={option}
-                        value={option}
-                        className={styles.option}
-                        onClick={(e) => handleOptionClick(option, e)}
+            {({ open }) => (
+                <>
+                    <ListboxButton
+                        className={styles.button}
                     >
-                        <Checkbox
-                            nameField={option}
-                            idInput={option}
-                            checked={selected.includes(option)}
-                        />
-                        {option}
-                    </ListboxOption>
-                ))}
-            </ListboxOptions>
+                        <div className={styles.text}>
+                            {filter}
+                            {open ? arrowUpIcon() : arrowDownIcon()}
+                        </div>
+                        {
+                            selected.length > 0 &&
+                            <div className={styles.badge}>
+                                {selected.length}
+                            </div>
+                        }
+                    </ListboxButton>
+
+                    <ListboxOptions className={styles.options} anchor="bottom">
+                        {options.map(option => (
+                            <ListboxOption
+                                key={option}
+                                value={option}
+                                className={styles.option}
+                                onClick={(e) => handleOptionClick(option, e)}
+                            >
+                                <Checkbox
+                                    nameField={option}
+                                    idInput={option}
+                                    checked={selected.includes(option)}
+                                />
+                                {option}
+                            </ListboxOption>
+                        ))}
+                    </ListboxOptions>
+                </>
+            )}
         </Listbox>
     );
 };
