@@ -1,18 +1,13 @@
+@import '@/app/styles/media-queries.scss';
+
 .upButton {
     position: fixed;
     bottom: 20px; //FIX LATER
     right: 12px; //FIX LATER
     background-color: transparent;
 
-    @media all and (max-width: 1024px) {
-        bottom: 80px; //FIX LATER
+    @include tablet-l {
+        bottom: 90px; //FIX LATER
         right: 8px; //FIX LATER
-    }
-
-    svg {
-        @media all and (max-width:590px) {
-            width: 30px;
-            height: 30px;
-        }
     }
 }
