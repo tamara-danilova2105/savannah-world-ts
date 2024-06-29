@@ -57,7 +57,7 @@
 .titleContainer {
     width: fit-content;
     z-index: 10;
-    margin-top: 200px;
+    margin-top: 150px;
 
     @include desktop-l {
         margin-top: 150px;
@@ -85,7 +85,6 @@
     .title {
         color: var(--white-color);
         width: min-content;
-        font-weight: 600;
         margin-bottom: 40px;
         font-size: 90px;
 
