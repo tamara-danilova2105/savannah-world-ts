@@ -5,6 +5,7 @@
     bottom: 90px; //FIX LATER
     right: 12px; //FIX LATER
     background-color: transparent;
+    z-index: 10;
 
     @include tablet-l {
         bottom: 130px; //FIX LATER

@@ -1,17 +1,20 @@
 import { useCallback } from 'react';
 import styles from './OurKittensList.module.scss';
 import { CatCard } from '@/entities/CatCard';
+import { kittensMock } from '@/entities/CatCard/lib/data';
+import { Text } from '@/shared/ui/Text/Text';
+import { useNavigate } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { kittensMock } from '@/entities/CatCard/lib/data';
-import { Text } from '@/shared/ui/Text/Text';
 
 export const OurKittensList = () => {
 
+    const navigate = useNavigate();
+
     const handleClick = useCallback(() => {
-        console.log('в каталог');       
+        navigate("/catalog");      
     }, []);
 
     return (
