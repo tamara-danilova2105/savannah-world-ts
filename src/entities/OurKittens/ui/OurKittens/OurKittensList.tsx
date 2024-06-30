@@ -15,7 +15,7 @@ export const OurKittensList = () => {
 
     const handleClick = useCallback(() => {
         navigate("/catalog");      
-    }, []);
+    }, [navigate]);
 
     return (
         <section className={styles.section}>
