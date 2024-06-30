@@ -2,18 +2,18 @@
 
 .buttonSocial {
     position: fixed;
-    bottom: 90px; //FIX LATER
-    right: 12px; //FIX LATER
+    bottom: 90px;
+    right: 12px;
     background-color: transparent;
     z-index: 10;
 
     @include tablet-l {
-        bottom: 150px; //FIX LATER
-        right: 8px; //FIX LATER
+        bottom: 140px;
+        right: 8px;
     }
 
     @include mobile-l {
-        bottom: 130px; //FIX LATER
+        bottom: 130px;
     }
 }
 

@@ -2,8 +2,8 @@
 
 .media {
     position: fixed;
-    bottom: 75px; //FIX LATER
-    right: 5px; //FIX LATER
+    bottom: 75px;
+    right: 5px;
     padding: 25px 32px;
     width: 64px;
     z-index: 10;
@@ -11,11 +11,11 @@
     @include tablet-l {
         width: max-content;
         padding: 15px 3px;
-        bottom: 140px; //FIX LATER
+        bottom: 130px;
     }
 
     @include mobile-l {
-        bottom: 120px; //FIX LATER
+        bottom: 120px;
     }
 
     .button {
