@@ -45,7 +45,7 @@ export const CatCard = (props: CatCardProps) => {
                 className={styles.btn}
                 onClick={onClick}
             >
-                {isMain ? 'в катагалог' : 'подробнее'} {arrowIcon()}
+                {isMain ? 'в каталог' : 'подробнее'} {arrowIcon()}
             </Button>
         </Stack>
     )

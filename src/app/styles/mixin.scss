@@ -16,7 +16,7 @@
 
 @mixin section-styles {
     margin-top: 60px;
-      
+    
     @include tablet-l {        
         margin-top: 40px;
     }

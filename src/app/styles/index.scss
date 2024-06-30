@@ -8,10 +8,11 @@ body,
 #root {
   font-family: var(--font-family-main);
   background-color: var(--light-brown-color);
+  --swiper-theme-color: var(--dark-brown-color);
 
-  @media all and (max-width: 1024px) {
+  @include tablet-l {
     padding-bottom: 25px;
-}
+  }
 }
 
 .visually-hidden {
