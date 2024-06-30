@@ -7,9 +7,13 @@
     background-color: transparent;
     z-index: 10;
 
+    @include tablet-l {
+        bottom: 150px; //FIX LATER
+        right: 8px; //FIX LATER
+    }
+
     @include mobile-l {
         bottom: 130px; //FIX LATER
-        right: 8px; //FIX LATER
     }
 }
 
