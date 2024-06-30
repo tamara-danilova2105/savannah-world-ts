@@ -97,8 +97,8 @@
         }
 
         @include mobile-l {
-            font-size: var(--font-size-xl);
-            width: 100%;
+            // font-size: var(--font-size-xl);
+            // width: 100%;
             margin-bottom: 10px;
         }
     }
