@@ -5,8 +5,12 @@
     max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
     padding: 0 var(--container-padding-x); 
 
+    @include tablet-l {
+        padding: 0 100px; 
+    }
+
     @include tablet-m {
-        padding: 0 70px; 
+        padding: 0 60px; 
     }
 
     @include mobile-l{
