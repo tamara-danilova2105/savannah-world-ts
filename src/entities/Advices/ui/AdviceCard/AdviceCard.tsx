@@ -16,7 +16,7 @@ export const AdviceCard = ({ advice, index }: AdviceCardProps) => {
             className={styles.container}
         >
             <img
-                src={advice.cat} width='240 px' alt="Cat"
+                src={advice.cat} alt="cat Savannah"
                 className={index % 2 === 0 ? styles.img : styles.imgRev} />
             <div>
                 <Text className={styles.title} tag="h2">

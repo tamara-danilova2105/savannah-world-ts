@@ -33,7 +33,7 @@ export const OurKittensList = () => {
                         slidesPerView: 1,
                         spaceBetween: 10,
                     },
-                    820: {
+                    768: {
                         slidesPerView: 2,
                         spaceBetween: 10,
                     },

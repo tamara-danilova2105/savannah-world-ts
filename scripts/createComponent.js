@@ -9,14 +9,20 @@ const rl = readline.createInterface({
 
 const cssFileName = name => `${name}.module.scss`
 
-const tsxContent = name => `import styles from './${cssFileName(name)}'
+const tsxContent = name => `import { memo } from 'react';
+import styles from './${cssFileName(name)}';
 
-export const ${name} = () => {
+interface ${name}Props {};
+
+export const ${name} = memo((props: ${name}Props) => {
+    const {} = props;
+
     return (
         <div className={styles.${name.toLowerCase()}}>
         </div>
-    )
-}`
+    );
+});
+`
 
 const cssContent = name =>
     `.${name.toLowerCase()} {

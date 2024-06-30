@@ -1,0 +1,5 @@
+@import '@/app/styles/mixin.scss';
+
+.create {
+    @include modal-content;
+}

@@ -16,13 +16,16 @@
         height: 550px;
     }
 
+    @include tablet-m {
+        height: calc(100vh - 80px);
+    }
+
     @include mobile-l {
         display: flex;
         align-items: center;
         background-color: transparent;
         justify-content: flex-start;
         padding: 20px var(--mobile-padding);
-        height: calc(100vh - 80px);
     }
 }
 
@@ -66,8 +69,16 @@
         margin-top: 70px;
     }
 
+    @include tablet-m {
+        margin-top: 500px;
+    }
+
     @include mobile-l {
         margin-top: 380px;
+    }
+
+    @include mobile-m {
+        margin-top: 300px;
     }
 
     .text {
@@ -78,6 +89,10 @@
 
         @include tablet-l {
             font-size: var(--font-size-l);
+        }
+
+        @include mobile-m {
+            font-size: var(--font-size-m);
         }
     }
 
@@ -98,6 +113,10 @@
 
         @include mobile-l {
             margin-bottom: 10px;
+        }
+
+        @include mobile-m {
+            font-size: var(--font-size-xl);
         }
     }
 }
