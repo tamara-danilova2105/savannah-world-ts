@@ -18,8 +18,8 @@
         padding: 0 15px;
     }
 
-    @include desktop-m {
-        width: 180px;
+    @include desktop-l {
+        width: 165px;
     }
 }
 
@@ -36,8 +36,8 @@
         border: none
     }
 
-    @include desktop-m {
-        width: 180px;
+    @include desktop-l {
+        width: 165px;
     }
 }
 
@@ -62,7 +62,7 @@
     align-items: center;
     border-radius: 50%;
 
-    @include desktop-m {
-        left: 150px;
+    @include desktop-l {
+        left: 135px;
     }
 }

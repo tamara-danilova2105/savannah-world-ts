@@ -6,7 +6,7 @@
   padding: 70px 90px;
 
   @include tablet-l {
-    width: 720px;
+    width: 100%;
     height: auto;
     padding: 40px;
     gap: 16px;
@@ -15,7 +15,6 @@
 
   @include mobile-l {
     width: 100%;
-    height: auto;
     flex-direction: column;
     padding: 20px;
   }
@@ -25,10 +24,7 @@
   max-width: 100%;
   object-fit: cover;
   border-radius: var(--border-radius-container);
-
-  @include tablet-l {
-    width: 30%;
-  }
+  width: 240px;
 
   @include mobile-l {
     width: 100%;
@@ -40,11 +36,8 @@
   max-width: 100%;
   object-fit: cover;
   border-radius: var(--border-radius-container);
+  width: 240px;
   order: 2;
-
-  @include tablet-l {
-    width: 30%;
-  }
 
   @include mobile-l {
     width: 100%;
@@ -53,7 +46,6 @@
 
   @include mobile-m {
     width: 80%;
-
   }
 }
 

@@ -5,8 +5,12 @@
     max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
     padding: 0 var(--container-padding-x); 
 
+    @include tablet-l {
+        padding: 0 80px; 
+    }
+
     @include tablet-m {
-        padding: 0 70px; 
+        padding: 0 60px; 
     }
 
     @include mobile-l{
@@ -16,7 +20,7 @@
 
 @mixin section-styles {
     margin-top: 60px;
-      
+    
     @include tablet-l {        
         margin-top: 40px;
     }
@@ -34,7 +38,6 @@
     }
 
     @include tablet-m {
-        font-size: var(--font-size-m);
         text-align: center;
     }
 

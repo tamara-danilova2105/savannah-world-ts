@@ -9,17 +9,15 @@
     padding: 20px 107px;
 
     @include desktop-l {
-        height: fit-content;
-        min-height: 820px;
         padding: 20px var(--tablet-padding);
     }
 
     @include tablet-l {
-        min-height: 550px;
+        height: 550px;
     }
 
     @include tablet-m {
-        min-height: 480px;
+        height: calc(100vh - 80px);
     }
 
     @include mobile-l {
@@ -27,7 +25,6 @@
         align-items: center;
         background-color: transparent;
         justify-content: flex-start;
-        min-height: 230px;
         padding: 20px var(--mobile-padding);
     }
 }
@@ -48,10 +45,6 @@
     @include tablet-m {
         margin-left: 0;
     }
-
-    @include mobile-l {
-        width: 40%;
-    }
 }
 
 .btn {
@@ -59,16 +52,14 @@
     @include button-icon;
 
     @include mobile-l {
-        font-size: var(--font-size-xs);
-        padding: 3px 10px;
-        width: 165px;
+        display: none;
     }
 }
 
 .titleContainer {
     width: fit-content;
     z-index: 10;
-    margin-top: 200px;
+    margin-top: 150px;
 
     @include desktop-l {
         margin-top: 150px;
@@ -78,21 +69,36 @@
         margin-top: 70px;
     }
 
+    @include tablet-m {
+        margin-top: 500px;
+    }
+
+    @include mobile-l {
+        margin-top: 380px;
+    }
+
+    @include mobile-m {
+        margin-top: 300px;
+    }
+
     .text {
         color: var(--white-color);        
         font-weight: 400;
         line-height: 2;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
 
         @include tablet-l {
             font-size: var(--font-size-l);
+        }
+
+        @include mobile-m {
+            font-size: var(--font-size-m);
         }
     }
 
     .title {
         color: var(--white-color);
         width: min-content;
-        font-weight: 600;
         margin-bottom: 40px;
         font-size: 90px;
 
@@ -106,8 +112,11 @@
         }
 
         @include mobile-l {
-            font-size: var(--font-size-l);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        @include mobile-m {
+            font-size: var(--font-size-xl);
         }
     }
 }

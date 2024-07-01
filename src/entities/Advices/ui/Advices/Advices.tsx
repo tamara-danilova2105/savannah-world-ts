@@ -19,6 +19,7 @@ export const Advices = () => {
             {
                 dataAdvices.map((advice, index) =>
                     <AdviceCard
+                        key={index}
                         advice={advice}
                         index={index}
                     />

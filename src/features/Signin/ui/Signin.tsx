@@ -13,7 +13,7 @@ interface SignInProps {
 }
 
 export const Signin = memo(({ changeSigninModal }: SignInProps) => {
-    const [isError, setIsError] = useState(false);
+    const [isError ] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
     return (

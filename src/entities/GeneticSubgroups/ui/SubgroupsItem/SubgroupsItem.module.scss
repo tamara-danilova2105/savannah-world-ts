@@ -11,7 +11,7 @@
     flex: 1;
     gap: 8px;
 
-    @include mobile-l {
+    @include tablet-l {
         padding: 20px;
 
         img {

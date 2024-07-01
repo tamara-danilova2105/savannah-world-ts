@@ -1,12 +1,19 @@
+@import '@/app/styles/media-queries.scss';
+
 .buttonSocial {
     position: fixed;
-    bottom: 90px; //FIX LATER
-    right: 12px; //FIX LATER
+    bottom: 90px;
+    right: 12px;
     background-color: transparent;
+    z-index: 10;
 
-    @media all and (max-width: 1024px) {
-        bottom: 115px; //FIX LATER
-        right: 8px; //FIX LATER
+    @include tablet-l {
+        bottom: 140px;
+        right: 8px;
+    }
+
+    @include mobile-l {
+        bottom: 130px;
     }
 }
 
@@ -14,8 +21,8 @@
     width: 50px;
     height: 50px;
 
-    @media all and (max-width:590px) {
-        width: 30px;
-        height: 30px;
+    @include tablet-l {
+        width: 40px;
+        height: 40px;
     }
 }

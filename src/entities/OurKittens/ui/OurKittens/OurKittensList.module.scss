@@ -1,17 +1,16 @@
 @import '@/app/styles/mixin.scss';
 
 .section {
-    @include section-styles;
+    @include section-styles
+}
+
+.container {
+    display: flex;
+    justify-content: center;
 }
 
 .title {
     @include title-section;
-}
-
-.card {
-    @media all and (max-width:1024px) {
-        display: flex;
-        flex-direction: column;   
-        gap: 16px;
-    }
+    margin-bottom: 32px;
+    text-align: center;
 }
