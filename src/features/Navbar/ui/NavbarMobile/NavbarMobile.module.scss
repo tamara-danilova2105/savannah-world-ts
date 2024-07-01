@@ -1,11 +1,18 @@
+@import '@/app/styles/media-queries.scss';
+
 .container {
-    background: rgba(253, 253, 253); //FIX LATER
-    width: 100%;
-    padding: 12px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 99;
+    display: none;
+
+    @include mobile-l {
+        display: block;
+        background: var(--white-color);
+        width: 100%;
+        padding: 12px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+    }
 }
 
 .navbar {
@@ -16,10 +23,14 @@
 
 .link {
     color: var(--dark-brown-color);
-    text-transform: var(--text-uppercase);
+    text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mobile-m {
+        font-size: 14px;
+    }
 }
 
 .opened_page {
@@ -31,6 +42,10 @@
     flex-direction: column;
     align-items: center;
     color: var(--dark-brown-color);
-    text-transform: var(--text-uppercase);
+    text-transform: uppercase;
     background-color: transparent;
+
+    @include mobile-m {
+        font-size: 14px;
+    }
 }

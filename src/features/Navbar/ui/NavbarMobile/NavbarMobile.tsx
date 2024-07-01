@@ -5,45 +5,36 @@ import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { Signin } from '@/features/Signin';
 import { signinIcon } from '@/shared/assets/svg/navbarIcons';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
-import { MobileOnlyView, useMobileOrientation } from "react-device-detect";
 
 export const NavbarMobile = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig, true);
-    const { isLandscape } = useMobileOrientation();
 
     return (
-        <>
-            {
-                !isLandscape &&
-                <MobileOnlyView>
-                    <div className={styles.container}>
-                        {drawSiginModal(
-                            <Signin changeSigninModal={changeSigninModal} />
-                        )}
+        <div className={styles.container}>
+            {drawSiginModal(
+                <Signin changeSigninModal={changeSigninModal} />
+            )}
 
-                        <nav className={styles.navbar}>
-                            {
-                                routes.map(route => (
-                                    <AppNavLink
-                                        key={route.path}
-                                        route={route}
-                                        styles={styles}
-                                        isDefaultStyle={true}
-                                    />
-                                ))
-                            }
-                            <button
-                                className={styles.button}
-                                onClick={changeSigninModal}
-                            >
-                                войти
-                                {signinIcon()}
-                            </button>
-                        </nav>
-                    </div>
-                </MobileOnlyView>
-            }
-        </>
+            <nav className={styles.navbar}>
+                {
+                    routes.map(route => (
+                        <AppNavLink
+                            key={route.path}
+                            route={route}
+                            styles={styles}
+                            isDefaultStyle={true}
+                        />
+                    ))
+                }
+                <button
+                    className={styles.button}
+                    onClick={changeSigninModal}
+                >
+                    войти
+                    {signinIcon()}
+                </button>
+            </nav>
+        </div>
     );
 };

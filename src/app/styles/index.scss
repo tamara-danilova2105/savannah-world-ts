@@ -10,8 +10,8 @@ body,
   background-color: var(--light-brown-color);
   --swiper-theme-color: var(--dark-brown-color);
 
-  @include tablet-l {
-    padding-bottom: 25px;
+  @include mobile-l {
+    padding-bottom: 30px;
   }
 }
 

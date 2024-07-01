@@ -19,7 +19,11 @@
     }
 
     @include tablet-m {
-        height: calc(100vh - 80px);
+        height: 100vh;
         object-position: 80% center;
+    }
+
+    @include mobile-l {
+        height: calc(100vh - 80px);
     }
 }
