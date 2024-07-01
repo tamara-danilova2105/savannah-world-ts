@@ -4,6 +4,7 @@ import { ButtonUp } from "@/shared/ui/ButtonUp/ButtonUp";
 import { ContactUs } from "@/features/ContactUs";
 import { Header } from "@/widgets/Header";
 import { NavbarMobile } from "@/features/Navbar";
+import { Footer } from "@/widgets/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <AppRouter />
       <ButtonUp />
       <ContactUs />
+      <Footer />
       <NavbarMobile />
     </Suspense>
   );
