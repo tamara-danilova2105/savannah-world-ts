@@ -1,4 +1,5 @@
 @import '@/app/styles/mixin.scss';
+@import "@/app/styles/media-queries.scss";
 
 .footer {
     @include main-styles;
@@ -7,9 +8,62 @@
     margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
+
+    @include mobile-l {
+        font-size: var(--font-size-s);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.container {
+    @include mobile-l {
+        flex-direction: column;
+        gap: 48px;
+    }
 }
 
 .main {
     display: flex;
     justify-content: space-between;
+}
+
+.mediaMobile {
+    display: none;
+
+    @include mobile-l {
+        display: flex;
+        gap: 60px;
+    }
+}
+
+.mediaDesktop {
+    @include mobile-l {
+        display: none;
+    }
+}
+
+.text{
+    span{
+        color: var(--dark-brown-color);
+        font-weight: 700;
+    }
+
+    @include tablet-m {
+        font-size: var(--font-size-m);
+    } 
+    
+    @include mobile-l {
+        font-size: 14px;
+    }  
+}
+
+.info {
+    margin-top: 50px;
+
+    @include mobile-l {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 }
