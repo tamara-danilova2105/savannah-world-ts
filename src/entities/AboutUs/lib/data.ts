@@ -1,3 +1,4 @@
+import { consultationIcon, documentIcon, veterinaryIcon } from "@/shared/assets/svg/benefitIcons";
 import { ReactNode } from "react";
 
 export interface IBenefits {
@@ -8,15 +9,15 @@ export interface IBenefits {
 
 export const benefits: IBenefits[]  = [
     {
-        icon: <></>,
+        icon: documentIcon(),
         text: 'Документация согласно стандартам породы',
     },
     {
-        icon: <></>,
+        icon: veterinaryIcon(),
         text: 'Полное ветеринарное обследование и вакцинация',
     },
     {
-        icon: <></>,
+        icon: consultationIcon(),
         text: 'Консультация по вопросам содержания и воспитания',
     },
 ]

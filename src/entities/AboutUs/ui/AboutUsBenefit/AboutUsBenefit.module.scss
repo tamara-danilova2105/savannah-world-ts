@@ -1,16 +1,11 @@
 @import '@/app/styles/media-queries.scss';
 @import '@/app/styles/mixin.scss';
 
-.benefits {
+.main {
     padding: 35px;
     background-color: var(--opacity-color);
     border-radius: var(--border-radius-container); 
     margin-top: 40px;
-
-    @include tablet-m {
-        display: flex;
-        flex-direction: column;   
-    }
 
     @include mobile-l {
         padding: 35px 25px;
@@ -22,12 +17,25 @@
     @include title-section;
 }
 
+.benefits {
+    @include tablet-l {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    @include mobile-l {
+        gap: 0;
+    }
+}
+
+
 .text {
     font-weight: 400;
     max-width: 240px;
 
     @include tablet-l {
-        max-width: 300px;
+        max-width: 400px;
         font-size: var(--font-size-s);
     }
 
@@ -35,57 +43,4 @@
         max-width: 100%;
         font-size: var(--font-size-xs);
     }
-}
-
-.row {
-    @include tablet-l {
-        flex-direction: column;
-        row-gap: 32px;
-    }
-}
-
-@mixin responsive-icon($image-url, $pad-large: 100px, $pad-medium: 80px, $pad-small: 65px, $icon-large: 80px, $icon-medium: 60px, $icon-small: 50px) {
-    position: relative;
-    padding-left: $pad-large;
-
-    @media all and (max-width: 1240px) {    
-        padding-left: $pad-medium;          
-    }
-    @media all and (max-width: 860px) {    
-        padding-left: $pad-small;          
-    }
-
-    &::before {
-        content: '';
-        display: block;
-        width: $icon-large;
-        height: $icon-large;
-        position: absolute;
-        left: 0;
-        background-image: url($image-url);
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        @include desktop-m {
-            width: $icon-medium;
-            height: $icon-medium;
-        }
-
-        @include tablet-m {
-            width: $icon-small;
-            height: $icon-small;
-        }
-    }
-}
-
-.doc {
-    @include responsive-icon('../../../../shared/assets/images/document.png');
-}
-
-.vet {
-    @include responsive-icon('../../../../shared/assets/images/vet.png');
-}
-
-.question {
-    @include responsive-icon('../../../../shared/assets/images/care.png');
 }

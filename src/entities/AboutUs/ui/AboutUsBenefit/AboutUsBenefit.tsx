@@ -1,26 +1,7 @@
 import { Stack } from "@/shared/ui/Stack/Stack";
 import styles from './AboutUsBenefit.module.scss';
 import { Text } from "@/shared/ui/Text/Text";
-
-interface IBenefits {
-    className: string;
-    text: string;
-}
-
-const benefits: IBenefits[] = [
-    {
-        className: styles.doc,
-        text: 'Документация согласно стандартам породы',
-    },
-    {
-        className: styles.vet,
-        text: 'Полное ветеринарное обследование и вакцинация',
-    },
-    {
-        className: styles.question,
-        text: 'Консультация по вопросам содержания и воспитания',
-    },
-];
+import { benefits } from "../../lib/data";
 
 export const AboutUsBenefit = () => {
     return (
@@ -28,23 +9,29 @@ export const AboutUsBenefit = () => {
             gap='32'
             direction='column'
             justify='center' max
-            className={styles.benefits}
+            className={styles.main}
         >
             <Text tag="h2" size="xl" className={styles.title}>
-                ПОЧЕМУ ИМЕННО МЫ -
+                ПОЧЕМУ ИМЕННО МЫ?
             </Text>
 
             <Stack
-                className={styles.row}
-                max justify='between'
+                max
+                justify='between'
+                className={styles.benefits}
             >
                 {
-                    benefits.map(({ className, text }) => (
-                        <div className={className} key={text}>
+                    benefits.map(({ icon, text }) => (
+                        <Stack
+                            key={text}
+                            gap='32'
+                            justify='center'
+                        >
+                            {icon}
                             <Text tag="h3" size="s" className={styles.text}>
                                 {text}
                             </Text>
-                        </div>
+                        </Stack>
                     ))
                 }
             </Stack>
