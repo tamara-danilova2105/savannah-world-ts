@@ -54,10 +54,10 @@ export const Footer = memo(() => {
                 className={styles.info}
             >
                 <Text className={styles.text}>
-                    2024 <span>Savannah World.</span> Все права защищены
+                    © 2024 Savannah World. Все права защищены
                 </Text>
                 <Text className={styles.text}>
-                    Сайт сделан в <span>AL TECH LABS LTD.</span>
+                    Создание сайта - AL TECH LABS LTD.
                 </Text>
             </Stack>
         </footer>

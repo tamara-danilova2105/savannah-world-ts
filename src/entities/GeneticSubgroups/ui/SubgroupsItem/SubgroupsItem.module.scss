@@ -54,6 +54,9 @@
 }
 
 .text {
+    text-indent: 20px;
+    text-align: justify;
+
     @include mobile-l {
         font-size: var(--font-size-xs)
     }

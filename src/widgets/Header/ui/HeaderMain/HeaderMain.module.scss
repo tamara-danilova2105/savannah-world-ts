@@ -60,10 +60,10 @@
 .titleContainer {
     width: fit-content;
     z-index: 10;
-    margin-top: 150px;
+    margin-top: 250px;
 
     @include desktop-l {
-        margin-top: 150px;
+        margin-top: 200px;
     }
 
     @include tablet-l {
