@@ -1,6 +1,7 @@
 import { 
     emailIcons, 
     instagramIcon, 
+    locationIcon, 
     phoneIcon, 
     telegrmaIcon, 
     vkIcon 
@@ -29,7 +30,7 @@ export const contacts: Contacts[] = [
     },
     {
         id: 3,
-        icon: telegrmaIcon(),
+        icon: locationIcon(),
         text: 'г.Москва, ул.Отрадная, дом 1'
     },
     {
