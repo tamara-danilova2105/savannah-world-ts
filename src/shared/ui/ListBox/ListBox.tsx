@@ -1,5 +1,5 @@
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import { MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
 import { arrowDownIcon } from "@/shared/assets/svg/arrowDownIcon";
@@ -8,27 +8,30 @@ import { arrowUpIcon } from "@/shared/assets/svg/arrowUpIcon";
 interface ListBoxProps {
     filter: string;
     options: string[];
+    selected: string | string[];
+    changeSelect: (option: string) => void;
+    badge?: boolean;
 }
 
-export const ListBox = ({ filter, options }: ListBoxProps) => {
-
-    const [selected, setSelected] = useState<string[]>([]);
-
+export const ListBox = (props: ListBoxProps) => {
+    const { 
+        filter, 
+        options, 
+        selected, 
+        changeSelect,
+        badge = false 
+    } = props;
+    
     const handleOptionClick = (option: string, event: MouseEvent<HTMLElement>) => {
         event.preventDefault();
         event.stopPropagation();
-
-        setSelected(
-            selected.includes(option)
-                ? selected.filter(item => item !== option)
-                : [...selected, option]
-        )
+        changeSelect(option);
     };
 
     return (
         <Listbox
             value={selected}
-            onChange={setSelected}
+            // onChange={setSelected}
         >
             {({ open }) => (
                 <>
@@ -40,10 +43,11 @@ export const ListBox = ({ filter, options }: ListBoxProps) => {
                             {open ? arrowUpIcon() : arrowDownIcon()}
                         </div>
                         {
-                            selected.length > 0 &&
-                            <div className={styles.badge}>
-                                {selected.length}
-                            </div>
+                            selected.length > 0 && badge
+                                ? <div className={styles.badge}>
+                                    {selected.length}
+                                </div>
+                                : <></>
                         }
                     </ListboxButton>
 

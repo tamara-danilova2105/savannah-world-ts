@@ -1,4 +1,4 @@
-import { FormCatCard } from "./ui/FormCatCard";
+import { FormCatCard } from "./ui/FormCatCard/FormCatCard";
 
 export {
     FormCatCard,

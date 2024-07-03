@@ -7,7 +7,7 @@ import { Text } from '@/shared/ui/Text/Text';
 export const Footer = memo(() => {
     return (
         <footer className={styles.footer}>
-            <Stack 
+            <Stack
                 justify='between' max
                 className={styles.container}
             >
@@ -18,38 +18,40 @@ export const Footer = memo(() => {
                     className={styles.main}
                 >
                     {contacts.slice(0, 3).map(contact =>
-                        <Stack gap='16'>
+                        <Stack key={contact.id} gap='16'>
                             {contact.icon}
                             {contact.text}
                         </Stack>
                     )}
                 </Stack>
 
-                <Stack 
-                    direction='column' 
-                    gap='16' 
+                <Stack
+                    direction='column'
+                    gap='16'
                     align='end'
                     className={styles.mediaDesktop}
                 >
                     {contacts.slice(3).map(contact =>
-                        <Stack gap='16'>
+                        <Stack key={contact.id} gap='16'>
                             {contact.text}
                             {contact.icon}
                         </Stack>
                     )}
                 </Stack>
-                <Stack 
+                <Stack
                     max
                     justify='center'
                     className={styles.mediaMobile}
                 >
                     {contacts.slice(3).map(contact =>
-                        <>{contact.icon}</>
+                        <span key={contact.id}>
+                            {contact.icon}
+                        </span>
                     )}
                 </Stack>
             </Stack>
 
-            <Stack 
+            <Stack
                 justify='between' max
                 className={styles.info}
             >

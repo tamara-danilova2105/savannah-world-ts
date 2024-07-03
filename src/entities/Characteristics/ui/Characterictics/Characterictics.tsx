@@ -1,9 +1,8 @@
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Text } from '@/shared/ui/Text/Text';
-import check from '../../../../shared/assets/images/check.png';
 import { characteristicsData } from '../../lib/data';
-
 import styles from './Characterictics.module.scss';
+import { checkIcon } from '@/shared/assets/svg/checkIcon';
 
 export const Characterictics = () => {
     return (
@@ -22,7 +21,7 @@ export const Characterictics = () => {
                     characteristicsData.map((characteristic, index) => {
                         return (
                             <Text key={index} tag='li' className={styles.text}>
-                                <img className={styles.images} src={check} alt="icon" />
+                                <span>{checkIcon()}</span>
                                 {characteristic}
                             </Text>
                         )
