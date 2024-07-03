@@ -1,0 +1,15 @@
+@import '@/app/styles/media-queries.scss';
+
+.filterDesktop {
+    @include tablet-l {
+        display: none;
+    }
+}
+
+.filterMobile {
+    display: none;
+
+    @include tablet-l {
+        display: block;
+    }
+}

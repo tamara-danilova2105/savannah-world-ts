@@ -1,4 +1,4 @@
-import { Filter } from "./ui/FilterBar/Filter";
+import { Filter } from "./ui/Filter/Filter";
 
 export {
     Filter,

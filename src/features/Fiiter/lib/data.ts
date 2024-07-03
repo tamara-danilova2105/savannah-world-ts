@@ -15,3 +15,7 @@ export const filters: Filters = {
     age: 'возраст',
     shipment: 'статус',
 }
+
+export const getFilterText = (filter: string) => {
+    return filters[filter]
+};

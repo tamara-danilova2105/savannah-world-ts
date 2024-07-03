@@ -1,10 +1,11 @@
 import { dataFilter } from "../../lib/data";
-import styles from './Filter.module.scss';
+import styles from './FilterBar.module.scss';
 import { Stack } from "@/shared/ui/Stack/Stack";
 import { Button } from "@/shared/ui/Button/Button";
-import { FilterItem } from "../Filter/Filter";
+import { FilterItem } from "../FilterItem/FilterItem";
+import { memo } from "react";
 
-export const Filter = () => {
+export const FilterBar = memo(() => {
     return (
         <Stack
             justify='between'
@@ -25,4 +26,4 @@ export const Filter = () => {
             </Button>
         </Stack>
     );
-};
+});

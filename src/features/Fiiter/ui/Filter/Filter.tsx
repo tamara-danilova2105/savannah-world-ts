@@ -1,36 +1,32 @@
-import { memo, useCallback, useState } from 'react';
-import { filters } from '../../lib/data';
-import { ListBox } from '@/shared/ui/ListBox/ListBox';
+import { memo, useCallback, useState } from "react";
+import { FilterBar } from "../FilterBar/FilterBar";
+import styles from './Filter.module.scss';
+import { FilterDrawer } from "../FilterDrawer/FilterDrawer";
+import { Drawer } from "@/shared/ui/Drawer/Drawer";
 
-interface FilterProps {
-    filter: string;
-    options: string[];
-}
+export const Filter = memo(() => {
+    const [isOpen, setIsOpen] = useState(false);
 
-export const FilterItem = memo((props: FilterProps) => {
-    const { filter, options } = props;
-
-    const [selected, setSelected] = useState<string[]>([]);
-
-    const changeSelect = useCallback((option: string) => {
-        setSelected(
-            selected.includes(option)
-                ? selected.filter(item => item !== option)
-                : [...selected, option]
-        )
-    }, [selected]);
-
-    const getFilterText = (filter: string) => {
-        return filters[filter]
-    };
+    const toggleDrawer = useCallback(() => {
+        setIsOpen(isOpen => !isOpen)
+    }, []);
 
     return (
-        <ListBox
-            filter={getFilterText(filter)}
-            options={options}
-            selected={selected}
-            changeSelect={changeSelect}
-            badge
-        />
-    )
+        <>
+            <div className={styles.filterDesktop}>
+                <FilterBar />
+            </div>
+            <div className={styles.filterMobile}>
+                <button onClick={toggleDrawer}>
+                    DRAWER
+                </button>
+                <Drawer
+                    isOpen={isOpen}
+                    close={toggleDrawer}
+                >
+                    <FilterDrawer />
+                </Drawer>
+            </div>
+        </>
+    );
 });

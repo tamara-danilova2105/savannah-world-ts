@@ -17,5 +17,5 @@ export const FormCatCard = memo(() => {
                     )
             }
         </div>
-    )
-})
+    );
+});

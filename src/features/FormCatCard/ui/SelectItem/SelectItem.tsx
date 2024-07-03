@@ -1,4 +1,4 @@
-import { filters } from '@/features/Fiiter/lib/data';
+import { getFilterText } from '@/features/Fiiter/lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
 import { memo, useCallback, useState } from 'react';
 
@@ -16,13 +16,9 @@ export const SelectItem = memo((props: SelectItemProps) => {
         setSelected(option)
     }, []);
 
-    const getFilterText = (filter: string) => {
-        return filters[filter]
-    };
-
     return (
         <ListBox
-            filter={getFilterText(filter)}
+            filter={selected === '' ? getFilterText(filter) : selected}
             options={options}
             selected={selected}
             changeSelect={changeSelect}
