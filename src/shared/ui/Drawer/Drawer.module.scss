@@ -24,11 +24,19 @@
 
     &.open {
         right: 0; 
-        box-shadow: -2px 0 5px var(--dark-brown-color);
+        box-shadow: -1px 0 3px var(--brown-color);
     }
 
     @include mobile-l {
         right: -100%;
-        width: 100%; 
+        width: 55%; 
     }
+}
+
+.button_container {
+    padding: 10px;
+}
+
+.button {
+    background-color: inherit;
 }

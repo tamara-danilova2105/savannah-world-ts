@@ -1,4 +1,9 @@
 @import '@/app/styles/media-queries.scss';
+@import '@/app/styles/mixin.scss';
+
+.container {
+    @include section-styles;
+}
 
 .filterDesktop {
     @include tablet-l {
@@ -10,6 +15,11 @@
     display: none;
 
     @include tablet-l {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
+}
+
+.button {
+    background-color: inherit;
 }

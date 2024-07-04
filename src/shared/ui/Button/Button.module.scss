@@ -1,6 +1,7 @@
+@import '@/app/styles/media-queries.scss';
+
 .button {
     border-radius: var(--border-radius-element);
-    padding: 10px 25px;
     font-size: var(--font-size-m);
     font-weight: 700;
     text-transform: var(--text-uppercase);
@@ -9,20 +10,30 @@
 .accent {
     background-color: var(--dark-brown-color);
     color: var(--white-color);
+    padding: 10px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
         background-size: 250% 100%;
     }
+
+    @include mobile-l {
+        padding: 10px;
+    }
 }
 
 .secondary {
-    border: 3px solid var(--dark-brown-color);
+    border: 2px solid var(--dark-brown-color);
     color: var(--dark-brown-color);
     background-color: transparent;
+    padding: 8px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), transparent);
         background-size: 350% 100%;
+    }
+
+    @include mobile-l {
+        padding: 8px 10px;
     }
 }

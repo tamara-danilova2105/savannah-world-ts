@@ -1,5 +1,7 @@
 import { memo, ReactNode } from "react";
 import styles from './Drawer.module.scss';
+import { closeIcon } from "@/shared/assets/svg/closeIcon";
+import { Stack } from "../Stack/Stack";
 
 interface DrawerProps {
     children: ReactNode;
@@ -19,7 +21,14 @@ export const Drawer = memo((props: DrawerProps) => {
                 />
             }
             <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
-                <button onClick={close}>close</button>
+                <Stack justify='end' className={styles.button_container}>
+                    <button
+                        onClick={close}
+                        className={styles.button}
+                    >
+                        {closeIcon()}
+                    </button>
+                </Stack>
                 {children}
             </div>
         </>

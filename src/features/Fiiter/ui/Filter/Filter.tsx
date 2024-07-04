@@ -3,6 +3,7 @@ import { FilterBar } from "../FilterBar/FilterBar";
 import styles from './Filter.module.scss';
 import { FilterDrawer } from "../FilterDrawer/FilterDrawer";
 import { Drawer } from "@/shared/ui/Drawer/Drawer";
+import { filterIcon } from "@/shared/assets/svg/filterIcon";
 
 export const Filter = memo(() => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +13,16 @@ export const Filter = memo(() => {
     }, []);
 
     return (
-        <>
+        <div className={styles.container}>
             <div className={styles.filterDesktop}>
                 <FilterBar />
             </div>
             <div className={styles.filterMobile}>
-                <button onClick={toggleDrawer}>
-                    DRAWER
+                <button
+                    className={styles.button}
+                    onClick={toggleDrawer}
+                >
+                    {filterIcon()}
                 </button>
                 <Drawer
                     isOpen={isOpen}
@@ -27,6 +31,6 @@ export const Filter = memo(() => {
                     <FilterDrawer />
                 </Drawer>
             </div>
-        </>
+        </div>
     );
 });

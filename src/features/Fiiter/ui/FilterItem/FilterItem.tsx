@@ -1,6 +1,7 @@
-import { memo, useCallback, useState } from 'react';
+import { memo } from 'react';
 import { getFilterText } from '../../lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
+import useFilter from '@/shared/hooks/useFilter';
 
 interface FilterProps {
     filter: string;
@@ -9,16 +10,7 @@ interface FilterProps {
 
 export const FilterItem = memo((props: FilterProps) => {
     const { filter, options } = props;
-
-    const [selected, setSelected] = useState<string[]>([]);
-
-    const changeSelect = useCallback((option: string) => {
-        setSelected(
-            selected.includes(option)
-                ? selected.filter(item => item !== option)
-                : [...selected, option]
-        )
-    }, [selected]);
+    const { selected, changeSelect } = useFilter();
 
     return (
         <ListBox
