@@ -2,7 +2,6 @@
 
 .button {
     width: 250px;
-    // padding: 15px;  
     border-radius: var(--border-radius-element);
     border: 2px solid transparent;   
     background-color: var(--white-color);
@@ -31,6 +30,7 @@
     padding: 0px 15px; 
     border-radius: var(--border-radius-element);
     border: 1px solid var(--dark-brown-color);
+    z-index: 100;
 
     :last-child {
         border: none

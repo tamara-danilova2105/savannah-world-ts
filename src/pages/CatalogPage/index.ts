@@ -1,5 +1,5 @@
-import { CatalogPage } from "./ui/CatalogPage";
+import { CatalogPageAsync } from "./ui/CatalogPage.async";
 
 export {
-    CatalogPage,
+    CatalogPageAsync as CatalogPage,
 };

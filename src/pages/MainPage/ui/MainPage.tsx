@@ -6,7 +6,7 @@ import { GeneticSubgroups } from '@/entities/GeneticSubgroups';
 import { Advices } from '@/entities/Advices';
 import styles from './MainPage.module.scss';
 
-export const MainPage = () => {
+const MainPage = () => {
     return (
         <main className={styles.main}>
             <AboutUs />
@@ -18,3 +18,5 @@ export const MainPage = () => {
         </main>
     );
 };
+
+export default MainPage;
