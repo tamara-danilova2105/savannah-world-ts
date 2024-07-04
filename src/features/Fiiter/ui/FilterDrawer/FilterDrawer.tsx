@@ -13,7 +13,7 @@ export const FilterDrawer = memo(() => {
     return (
         <Stack
             direction='column'
-            gap="32"
+            gap="16"
             align='start'
             className={styles.main}
         >
