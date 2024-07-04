@@ -25,7 +25,7 @@ export const FilterDrawer = memo(() => {
                         key={filter}
                         direction='column'
                         align='start'
-                        gap="16"
+                        gap="8"
                         className={styles.filter}
                     >
                         <Text tag="h3" size='m'>
