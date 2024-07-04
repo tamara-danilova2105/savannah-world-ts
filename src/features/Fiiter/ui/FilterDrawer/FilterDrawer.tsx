@@ -46,7 +46,11 @@ export const FilterDrawer = memo(() => {
                     </Stack>
                 )}
 
-            <Stack direction='column' gap="16" max>
+            <Stack
+                direction='column'
+                gap="16" max
+                className={styles.button_container}
+            >
                 <Button className={styles.button}>
                     применить
                 </Button>

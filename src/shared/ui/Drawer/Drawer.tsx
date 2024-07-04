@@ -21,7 +21,10 @@ export const Drawer = memo((props: DrawerProps) => {
                 />
             }
             <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
-                <Stack justify='end' className={styles.button_container}>
+                <Stack
+                    justify='end'
+                    className={styles.button_container}
+                >
                     <button
                         onClick={close}
                         className={styles.button}
