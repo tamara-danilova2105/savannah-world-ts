@@ -2,7 +2,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { KittensMock } from '../../lib/data'
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Button } from '@/shared/ui/Button/Button';
-import { arrowIcon } from '@/shared/assets/svg/arrowIcon';
+import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import styles from './CatCard.module.scss';
 
 interface CatCardProps {

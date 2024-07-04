@@ -2,8 +2,7 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headless
 import { MouseEvent } from "react";
 import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
-import { arrowDownIcon } from "@/shared/assets/svg/arrowDownIcon";
-import { arrowUpIcon } from "@/shared/assets/svg/arrowUpIcon";
+import { arrowDownIcon, arrowUpIcon } from "@/shared/assets/svg/arrowIcons";
 
 interface ListBoxProps {
     filter: string;
@@ -29,10 +28,7 @@ export const ListBox = (props: ListBoxProps) => {
     };
 
     return (
-        <Listbox
-            value={selected}
-            // onChange={setSelected}
-        >
+        <Listbox value={selected}>
             {({ open }) => (
                 <>
                     <ListboxButton

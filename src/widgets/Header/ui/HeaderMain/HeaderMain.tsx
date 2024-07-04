@@ -4,7 +4,7 @@ import { HeaderPictureMain } from "../HeaderPictureMain/HeaderPictureMain";
 import styles from './HeaderMain.module.scss';
 import { Text } from "@/shared/ui/Text/Text";
 import { Link } from "react-router-dom";
-import { arrowIcon } from "@/shared/assets/svg/arrowIcon";
+import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
 import { getRouteCatalog } from "@/shared/const/router";
 import { Button } from "@/shared/ui/Button/Button";
 
