@@ -1,6 +1,7 @@
 @import '@/app/styles/media-queries.scss';
 
 .button {
+    position: relative;
     width: 250px;
     border-radius: var(--border-radius-element);
     border: 2px solid transparent;   
@@ -15,6 +16,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 15px;
+    }
+
+    @include desktop {
+        width: 200px;
     }
 
     @include desktop-l {
@@ -36,6 +41,10 @@
         border: none
     }
 
+    @include desktop {
+        width: 200px;
+    }
+
     @include desktop-l {
         width: 165px;
     }
@@ -51,9 +60,9 @@
 }
 
 .badge {
-    position: relative;
-    bottom: 70px;
-    left: 220px;
+    position: absolute;
+    bottom: 35px;
+    right: -10px;
     width: 35px;
     height: 35px;
     background-color: var(--brown-color);
@@ -61,8 +70,4 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-
-    @include desktop-l {
-        left: 135px;
-    }
 }

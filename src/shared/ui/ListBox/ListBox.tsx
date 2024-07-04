@@ -43,7 +43,7 @@ export const ListBox = (props: ListBoxProps) => {
                                 ? <div className={styles.badge}>
                                     {selected.length}
                                 </div>
-                                : <></>
+                                : null
                         }
                     </ListboxButton>
 
