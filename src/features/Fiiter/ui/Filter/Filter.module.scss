@@ -3,6 +3,7 @@
 
 .container {
     @include section-styles;
+    margin-bottom: 60px;
 }
 
 .filterDesktop {
