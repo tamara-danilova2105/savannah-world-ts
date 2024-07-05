@@ -5,12 +5,8 @@
     box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
     overflow: hidden;
     border-radius: var(--border-radius-container);
-    width: 290px;
+    width: 300px;
     height: 560px;
-
-    @include desktop {
-        width: 300px;
-    }
 
     @include mobile-l {
         width: 100%;

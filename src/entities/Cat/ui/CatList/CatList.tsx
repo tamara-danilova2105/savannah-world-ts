@@ -34,7 +34,7 @@ export const CatList = memo((props: CatListProps) => {
 
     return (
         <Stack
-            gap="32"
+            gap="32" justify='between'
             className={styles.catlist}
         >
             {cats.map(cat => (

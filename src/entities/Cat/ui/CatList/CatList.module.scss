@@ -2,8 +2,4 @@
 
 .catlist {
     flex-wrap: wrap;
-
-    @include desktop {
-        justify-content: space-between;
-    }
 }

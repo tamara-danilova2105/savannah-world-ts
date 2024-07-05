@@ -6,16 +6,11 @@
     border-radius: var(--border-radius-container);
     background-color: var(--opacity-color);
     box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
-    width: 290px;
-
-    @include desktop {
-        width: 300px;
-    }
+    width: 300px;
 
     @include mobile-l {
         width: 100%;
     }
-
 }
 
 .images {
