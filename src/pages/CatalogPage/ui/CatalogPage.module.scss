@@ -3,3 +3,7 @@
 .main {
     @include main-styles;
 }
+
+.title {
+    @include title-section;
+}

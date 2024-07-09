@@ -4,16 +4,14 @@
 .contact_container {
     background-color: var(--dark-brown-color);
     height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: white;
     font-size: var(--font-size-m);
     @include main-styles;
 
     .contact {
-        display: flex;
-        gap: 32px;
+        svg {
+            fill: var(--white-color)
+        }
     }
 
     @include mobile-l {

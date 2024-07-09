@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { kittensMock } from '@/entities/Cat/ui/CatCard/lib/data';
 import { CatCard } from '@/entities/Cat';
 import { HeaderSection } from '@/entities/HeaderSection';
+import { Stack } from '@/shared/ui/Stack/Stack';
 
 export const OurKittensList = () => {
 
@@ -27,35 +28,46 @@ export const OurKittensList = () => {
                 </Text>
             </HeaderSection>
 
-            <Swiper
-                className={styles.container}
-                modules={[Pagination]}
-                loop={true}
-                pagination={{ clickable: true }}
-                breakpoints={{
-                    0: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 10,
-                    },
-                    1280: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                }}
+            <Stack 
+                justify='between'
+                className={styles.container_desktop}
             >
                 {kittensMock.map(kitten =>
-                    <SwiperSlide key={kitten.id}>
-                        <CatCard
-                            kitten={kitten}
-                            onClick={handleClick}
-                        />
-                    </SwiperSlide>
+                    <CatCard
+                        key={kitten.id}
+                        kitten={kitten}
+                        onClick={handleClick}
+                    />
                 )}
-            </Swiper>
+            </Stack>
+
+            <div className={styles.container_mobile}>
+                <Swiper
+                    
+                    modules={[Pagination]}
+                    loop={true}
+                    pagination={{ clickable: true }}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 120,
+                        },
+                    }}
+                >
+                    {kittensMock.map(kitten =>
+                        <SwiperSlide key={kitten.id}>
+                            <CatCard
+                                kitten={kitten}
+                                onClick={handleClick}
+                            />
+                        </SwiperSlide>
+                    )}
+                </Swiper>
+            </div>
         </section>
     );
 };

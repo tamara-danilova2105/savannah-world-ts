@@ -4,11 +4,25 @@
     @include section-styles;
 }
 
-.container {
+.container_desktop {
     margin-top: 40px;
+
+    @include tablet-l {
+        display: none;
+    }
+}
+
+.container_mobile {
+    display: none;
+
+    @include tablet-l {
+        margin-top: 40px;
+        display: block;
+    }
 }
 
 .title {
     @include title-section;
     margin-bottom: 32px;
 }
+

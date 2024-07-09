@@ -5,6 +5,8 @@ import { Signin } from '@/features/Signin';
 import { useAppRoutes } from '@/shared/hooks/useAppRoutes';
 import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
+import { Stack } from '@/shared/ui/Stack/Stack';
+import { emailIcons, instagramIcon, phoneIcon, telegrmaIcon, vkIcon } from '@/shared/assets/svg/footerIcons';
 
 export const Navbar = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
@@ -16,15 +18,25 @@ export const Navbar = () => {
                 <Signin changeSigninModal={changeSigninModal} />
             )}
 
-            <div className={styles.contact_container}>
-                <div className={styles.contact}>
-                    <div>+999 888-77-66</div>
-                    <div>savannahworld@gmail.com</div>
-                </div>
-                <div>
-                    иконки соцсетей
-                </div>
-            </div>
+            <Stack 
+                justify='between'
+                className={styles.contact_container}
+            >
+                <Stack gap='32' className={styles.contact}>
+                    <Stack gap='8'> 
+                        {phoneIcon()} +999 888-77-66
+                    </Stack>
+                    <Stack gap='8'>
+                        {emailIcons()} savannahworld@gmail.com
+                    </Stack>
+                </Stack>
+                <Stack gap='32' className={styles.contact}>
+                    {telegrmaIcon()}
+                    {vkIcon()}
+                    {instagramIcon()}
+                </Stack>
+            </Stack>
+            
             <div className={styles.navbar_container}>
                 <div className={styles.name}>SAVANNAH WORLD</div>
 

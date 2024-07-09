@@ -15,7 +15,7 @@ export const routeConfig: Record<AppRouters, AppRoutesProps> = {
     [AppRouters.CATALOG]: {
         path: getRouteCatalog(),
         element: <CatalogPage />,
-        navlink: 'каталог',
+        navlink: 'котята',
         icon: catalogIcon(),
     },
     [AppRouters.PETS]: {
