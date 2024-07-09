@@ -1,7 +1,9 @@
+import styles from './PetsPage.module.scss';
+
 export const PetsPage = () => {
     return (
-        <div>
+        <main className={styles.main}>
             Pets Page
-        </div>
+        </main>
     );
 };

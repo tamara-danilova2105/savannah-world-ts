@@ -10,7 +10,7 @@
 .accent {
     background-color: var(--dark-brown-color);
     color: var(--white-color);
-    padding: 10px 25px;
+    padding: 5px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
@@ -18,7 +18,7 @@
     }
 
     @include mobile-l {
-        padding: 10px;
+        padding: 5px 10px;
     }
 }
 
@@ -26,7 +26,7 @@
     border: 2px solid var(--dark-brown-color);
     color: var(--dark-brown-color);
     background-color: transparent;
-    padding: 8px 25px;
+    padding: 3px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), transparent);
@@ -34,6 +34,6 @@
     }
 
     @include mobile-l {
-        padding: 8px 10px;
+        padding: 3px 10px;
     }
 }

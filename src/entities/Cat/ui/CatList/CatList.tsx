@@ -41,6 +41,7 @@ export const CatList = memo((props: CatListProps) => {
                 <CatCard
                     key={cat.id}
                     kitten={cat}
+                    isCatalog
                 />
             ))}
             {isLoading && getSkeletons()}

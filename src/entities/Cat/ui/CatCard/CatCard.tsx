@@ -7,13 +7,13 @@ import { KittensMock } from './lib/data';
 
 interface CatCardProps {
     kitten: KittensMock;
-    isMain?: boolean;
+    isCatalog?: boolean;
     onClick?: () => void;
 }
 
 export const CatCard = (props: CatCardProps) => {
     const { images, name_cat, generate, sex, age, shipment } = props.kitten;
-    const { isMain, onClick } = props;
+    const { isCatalog, onClick } = props;
 
     return (
         <Stack
@@ -22,9 +22,9 @@ export const CatCard = (props: CatCardProps) => {
             gap='4'
             className={styles.catCard}
         >
-            <img 
-                className={styles.images} 
-                src={images} alt='котята Саванны' 
+            <img
+                className={styles.images}
+                src={images} alt='котята Саванны'
             />
             <Text size="l" className={styles.name}>
                 {name_cat}
@@ -41,12 +41,14 @@ export const CatCard = (props: CatCardProps) => {
             <Text size="s" className={styles.text}>
                 Статус: {shipment}
             </Text>
-            <Button
-                className={styles.btn}
-                onClick={onClick}
-            >
-                {isMain ? 'в каталог' : 'подробнее'} {arrowIcon()}
-            </Button>
+            {isCatalog &&
+                <Button
+                    className={styles.btn}
+                    onClick={onClick}
+                >
+                    подробнее {arrowIcon()}
+                </Button>
+            }
         </Stack>
     )
 }

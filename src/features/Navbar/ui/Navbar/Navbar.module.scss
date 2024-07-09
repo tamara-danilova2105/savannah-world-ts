@@ -1,4 +1,43 @@
+@import '@/app/styles/mixin.scss';
 @import '@/app/styles/media-queries.scss';
+
+.contact_container {
+    background-color: var(--dark-brown-color);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: var(--font-size-m);
+    @include main-styles;
+
+    .contact {
+        display: flex;
+        gap: 32px;
+    }
+
+    @include mobile-l {
+        display: none;
+    }
+}
+
+.name {
+    color: var(--black-color);
+    font-size: var(--font-size-l);
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: inherit;
+    @include main-styles;
+
+    @include mobile-l {
+        display: none;
+    }
+}
 
 @mixin afterElement($width: 0) {
     &:after {
@@ -6,7 +45,7 @@
         left: 0;
         width: $width;
         height: 2px;
-        background-color: var(--white-color);
+        background-color: var(--dark-brown-color);
         content: "";
         transition: width 0.3s ease-out;
     }
@@ -25,14 +64,10 @@
     @include tablet-m {
         gap: var(--gap-tablet);
     }
-
-    @include mobile-l {
-        display: none;
-    }
 }
 
 .link {
-    color: var(--white-color);
+    color: var(--dark-brown-color);
     text-transform: var(--text-uppercase);
     min-width: 150px;
     text-align: center;
@@ -43,7 +78,7 @@
 .default {
     font-weight: 400;
     @include afterElement(0);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: var(--black-color);
 
     &:hover {
         transition: color 0.3s ease-out;

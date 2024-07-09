@@ -8,20 +8,24 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { kittensMock } from '@/entities/Cat/ui/CatCard/lib/data';
 import { CatCard } from '@/entities/Cat';
+import { HeaderSection } from '@/entities/HeaderSection';
 
 export const OurKittensList = () => {
 
     const navigate = useNavigate();
 
     const handleClick = useCallback(() => {
-        navigate("/catalog");      
+        navigate("/catalog");
     }, [navigate]);
 
     return (
         <section className={styles.section}>
-            <Text tag="h2" size="xl" className={styles.title}>
-                НАШИ КОТЯТА
-            </Text>
+            
+            <HeaderSection section="Наши котята" hasButton>
+                <Text tag="h2" size='xl' className={styles.title}>
+                    Выберите себе <span>питомца</span> в нашем каталоге
+                </Text>
+            </HeaderSection>
 
             <Swiper
                 className={styles.container}
@@ -39,7 +43,7 @@ export const OurKittensList = () => {
                     },
                     1280: {
                         slidesPerView: 3,
-                        spaceBetween: 20,
+                        spaceBetween: 30,
                     },
                 }}
             >
@@ -47,7 +51,6 @@ export const OurKittensList = () => {
                     <SwiperSlide key={kitten.id}>
                         <CatCard
                             kitten={kitten}
-                            isMain
                             onClick={handleClick}
                         />
                     </SwiperSlide>

@@ -22,11 +22,15 @@
 }
 
 .link {
-    color: var(--dark-brown-color);
+    color: var(--black-color);
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    svg {
+        fill: var(--black-color);
+    }
 
     @include mobile-m {
         font-size: 14px;
@@ -35,15 +39,25 @@
 
 .opened_page {
     font-weight: bold;
+    color: var(--dark-brown-color);
+
+    svg {
+        fill: var(--dark-brown-color);
+    }
 }
 
 .button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--dark-brown-color);
+    color: var(--black-color);
     text-transform: uppercase;
     background-color: transparent;
+
+    svg {
+        fill: var(--black-color);
+    }
+
 
     @include mobile-m {
         font-size: 14px;

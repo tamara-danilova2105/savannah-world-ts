@@ -2,18 +2,22 @@ import { Stack } from "@/shared/ui/Stack/Stack";
 import styles from './AboutUsBenefit.module.scss';
 import { Text } from "@/shared/ui/Text/Text";
 import { benefits } from "../../lib/data";
+import { HeaderSection } from "@/entities/HeaderSection";
 
 export const AboutUsBenefit = () => {
     return (
         <Stack
             gap='32'
             direction='column'
-            justify='center' max
+            align='start'
+            max
             className={styles.main}
         >
-            <Text tag="h2" size="xl" className={styles.title}>
-                ПОЧЕМУ ИМЕННО МЫ?
-            </Text>
+            <HeaderSection section="Почему мы">
+                <Text tag="h2" size='xl' className={styles.title}>
+                    Наши преимущества: <span>опыт и забота</span> о вашем питомце
+                </Text>
+            </HeaderSection>
 
             <Stack
                 max

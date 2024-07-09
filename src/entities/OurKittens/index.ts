@@ -1,5 +1,5 @@
-import { OurKittensList as OurKittens } from "./ui/OurKittens/OurKittensList";
+import { OurKittensList } from "./ui/OurKittens/OurKittensList";
 
 export {
-    OurKittens,
+    OurKittensList as OurKittens,
 };
