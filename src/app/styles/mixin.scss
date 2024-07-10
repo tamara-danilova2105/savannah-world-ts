@@ -6,7 +6,7 @@
     padding: 0 var(--container-padding-x); 
 
     @include tablet-l {
-        padding: 0 80px; 
+        padding: 0 100px; 
     }
 
     @include tablet-m {
@@ -19,14 +19,14 @@
 }
 
 @mixin section-styles {
-    margin-top: 100px;
+    margin-top: 80px;
 
     @include tablet-l {        
         margin-top: 40px;
     }
 
     @include mobile-l{
-        margin-top: 20px;
+        margin-top: 30px;
     }     
 }
 

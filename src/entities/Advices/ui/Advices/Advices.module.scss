@@ -4,7 +4,8 @@
     @include section-styles;
 
     @include mobile-l {
-        gap: 16px;
+        margin-top: 50px;
+        gap: 32px;
     }
 }
 

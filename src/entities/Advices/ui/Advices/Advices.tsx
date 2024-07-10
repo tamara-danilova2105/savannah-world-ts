@@ -3,18 +3,23 @@ import styles from './Advices.module.scss'
 import { Text } from "@/shared/ui/Text/Text";
 import { dataAdvices } from "../../lib/data";
 import { AdviceCard } from "../AdviceCard/AdviceCard";
+import { HeaderSection } from "@/shared/ui/HeaderSection";
 
 export const Advices = () => {
     return (
         <Stack
             tag='section'
             direction='column'
-            gap='32'
+            align='start'
+            gap='48'
             className={styles.section}
         >
-            <Text tag="h2" size="xl" className={styles.title}>
-                СОВЕТЫ НОВЫМ ВЛАДЕЛЬЦАМ <strong>САВАНН</strong>
-            </Text>
+
+            <HeaderSection section="Советы">
+                <Text tag="h2" size='xl' className={styles.title}>
+                    На заметку владельцам: <span>советы и рекомендации</span>
+                </Text>
+            </HeaderSection>
 
             {
                 dataAdvices.map((advice, index) =>

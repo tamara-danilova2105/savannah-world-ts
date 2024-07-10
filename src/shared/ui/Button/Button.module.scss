@@ -10,7 +10,7 @@
 .accent {
     background-color: var(--dark-brown-color);
     color: var(--white-color);
-    padding: 5px 25px;
+    padding: 12px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
@@ -26,7 +26,7 @@
     border: 2px solid var(--dark-brown-color);
     color: var(--dark-brown-color);
     background-color: transparent;
-    padding: 3px 25px;
+    padding: 10px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), transparent);

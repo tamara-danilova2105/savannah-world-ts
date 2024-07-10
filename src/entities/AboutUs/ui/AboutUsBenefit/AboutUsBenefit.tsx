@@ -2,12 +2,12 @@ import { Stack } from "@/shared/ui/Stack/Stack";
 import styles from './AboutUsBenefit.module.scss';
 import { Text } from "@/shared/ui/Text/Text";
 import { benefits } from "../../lib/data";
-import { HeaderSection } from "@/entities/HeaderSection";
+import { HeaderSection } from "@/shared/ui/HeaderSection";
 
 export const AboutUsBenefit = () => {
     return (
         <Stack
-            gap='32'
+            gap='48'
             direction='column'
             align='start'
             max

@@ -5,7 +5,7 @@
 }
 
 .container_desktop {
-    margin-top: 40px;
+    margin-top: 48px;
 
     @include tablet-l {
         display: none;
@@ -16,7 +16,7 @@
     display: none;
 
     @include tablet-l {
-        margin-top: 40px;
+        margin-top: 20px;
         display: block;
     }
 }

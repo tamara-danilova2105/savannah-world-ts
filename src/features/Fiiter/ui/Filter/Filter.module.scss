@@ -1,9 +1,7 @@
 @import '@/app/styles/media-queries.scss';
-@import '@/app/styles/mixin.scss';
 
 .container {
-    @include section-styles;
-    margin-bottom: 60px;
+    margin: 50px 0;
 }
 
 .filterDesktop {

@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { kittensMock } from '@/entities/Cat/ui/CatCard/lib/data';
 import { CatCard } from '@/entities/Cat';
-import { HeaderSection } from '@/entities/HeaderSection';
+import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
 
 export const OurKittensList = () => {

@@ -6,6 +6,7 @@
 
     @include mobile-l {
         margin-top: 20px;
+        gap: 16px;
     }
 }
 
@@ -26,7 +27,7 @@
 
     @include mobile-l {
         gap: 0;
-        padding: 35px 25px;
+        padding: 25px;
     }
 }
 

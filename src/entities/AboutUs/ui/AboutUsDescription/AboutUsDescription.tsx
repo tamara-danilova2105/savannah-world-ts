@@ -2,15 +2,15 @@ import { Stack } from "@/shared/ui/Stack/Stack";
 import { Text } from "@/shared/ui/Text/Text";
 import styles from './AboutUsDescription.module.scss';
 import aboutPicture from '@/shared/assets/images/aboutus.png';
-import { HeaderSection } from "@/entities/HeaderSection";
+import { HeaderSection } from "@/shared/ui/HeaderSection";
 
 export const AboutUsDescription = () => {
     return (
         <Stack
             direction='column'
-            gap='32'
+            gap='48'
             align='start'
-            className={styles.description}
+            className={styles.main}
         >
             <HeaderSection section="O питомнике">
                 <Text tag="h2" size='xl' className={styles.title}>

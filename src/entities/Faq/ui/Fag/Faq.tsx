@@ -3,18 +3,23 @@ import { Text } from "@/shared/ui/Text/Text";
 import { Accordion } from "../../../../shared/ui/Accordion/AccordionList/Accordion";
 import { accordionFaq } from "../../libs/data";
 import styles from './Faq.module.scss';
+import { HeaderSection } from "@/shared/ui/HeaderSection";
 
 export const Faq = () => {
     return (
         <Stack
             tag='section'
             direction='column'
-            gap="32"
+            align='start'
+            gap="48"
             className={styles.section}
         >
-            <Text tag="h2" size="xl" className={styles.title}>
-                ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
-            </Text>
+            <HeaderSection section="FAQ">
+                <Text tag="h2" size='xl' className={styles.title}>
+                    <span>Есть вопросы?</span> Посмотри здесь:
+                </Text>
+            </HeaderSection>
+
             <Accordion data={accordionFaq} />
         </Stack>
     );

@@ -10,6 +10,7 @@
     align-items: center;
     flex: 1;
     gap: 8px;
+    box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
 
     @include tablet-l {
         padding: 20px;

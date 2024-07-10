@@ -29,7 +29,8 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background-color: inherit;
+    background-color: var(--white-color);
+
     @include main-styles;
 
     @include mobile-l {

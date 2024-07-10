@@ -2,7 +2,7 @@ import { Filter } from "@/features/Fiiter";
 import styles from './CatalogPage.module.scss';
 import { CatList } from "@/entities/Cat";
 import { kittensMock } from "@/entities/Cat/ui/CatCard/lib/data";
-import { HeaderSection } from "@/entities/HeaderSection";
+import { HeaderSection } from "@/shared/ui/HeaderSection";
 import { Text } from "@/shared/ui/Text/Text";
 
 const CatalogPage = () => {
@@ -10,7 +10,7 @@ const CatalogPage = () => {
         <main className={styles.main}>
             <HeaderSection section="Продаются котята">
                 <Text tag="h2" size='xl' className={styles.title}>
-                    Котята породы <span>Саванна</span> готовы стать частью семьи
+                    Котята <span>готовые стать</span> частью семьи
                 </Text>
             </HeaderSection>
             <Filter />
