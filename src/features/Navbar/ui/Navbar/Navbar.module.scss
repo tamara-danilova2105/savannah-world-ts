@@ -14,7 +14,7 @@
         }
     }
 
-    @include mobile-l {
+    @include tablet-m {
         display: none;
     }
 }
@@ -30,10 +30,9 @@
     align-items: center;
     height: 100px;
     background-color: var(--white-color);
-
     @include main-styles;
 
-    @include mobile-l {
+    @include tablet-m {
         display: none;
     }
 }

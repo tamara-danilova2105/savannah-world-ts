@@ -3,7 +3,7 @@
 .container {
     display: none;
 
-    @include mobile-l {
+    @include tablet-m {
         display: block;
         background: var(--white-color);
         width: 100%;

@@ -1,0 +1,96 @@
+@import '@/app/styles/mixin.scss';
+@import '@/app/styles/media-queries.scss';
+
+.hero {
+    height: calc(100vh - 180px);
+
+    @include tablet-m {
+        height: calc(100vh - 75px);
+    }
+}
+
+.picture {
+    position: relative;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    object-position: 80% center;
+    height: calc(100vh - 180px);
+
+    @include tablet-m {
+        height: calc(100vh - 75px);
+    }
+}
+
+
+.title {
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 96px;
+    max-width: min-content;
+    position: relative;
+    left: 150px; 
+    top: -570px;
+
+    @include desktop-l {
+        top: -590px;
+    }
+
+    @include desktop-m {
+        font-size: 80px;
+        top: -650px;
+    }
+
+    @include tablet-m {
+        left: 80px; 
+        top: -300px;
+    }
+
+    @include mobile-l {
+        max-width: 80%;
+        left: 40px; 
+        font-size: 45px;
+    }
+}
+
+.text {
+    color: var(--white-color);        
+    font-weight: 400;
+    font-size: 40px;
+
+    @include desktop-m {
+        font-size: 30px;
+    }
+
+    @include mobile-l {
+        font-size: 24px;
+    }
+}
+
+.button {
+    position: relative;
+    left: 150px; 
+    top: -520px;
+    width: 550px;
+
+    a {
+        color: inherit;
+        @include button-icon;
+    }
+
+    @include desktop-l {
+        top: -540px;
+    }
+
+    @include desktop-m {
+        width: 480px;
+        top: -600px;
+    }
+
+    @include tablet-m {
+        display: none;
+    }
+}
