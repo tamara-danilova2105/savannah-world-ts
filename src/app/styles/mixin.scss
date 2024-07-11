@@ -19,15 +19,11 @@
 }
 
 @mixin section-styles {
-    margin-top: 80px;
+    margin-top: 120px;
 
     @include tablet-l {        
-        margin-top: 40px;
+        margin-top: 60px;
     }
-
-    @include mobile-l{
-        margin-top: 30px;
-    }     
 }
 
 @mixin title-section {
