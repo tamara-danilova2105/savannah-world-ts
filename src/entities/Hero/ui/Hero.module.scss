@@ -35,13 +35,14 @@
     left: 150px; 
     top: -570px;
 
-    @include desktop-l {
-        top: -590px;
+    @include desktop {
+        font-size: 70px;
+        max-width: 700px;
+        top: -450px;
     }
 
     @include desktop-m {
-        font-size: 80px;
-        top: -650px;
+        font-size: 50px;
     }
 
     @include tablet-m {
@@ -62,12 +63,12 @@
     font-weight: 400;
     font-size: 40px;
 
-    @include desktop-m {
+    @include desktop {
         font-size: 30px;
     }
 
     @include mobile-l {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
@@ -82,13 +83,9 @@
         @include button-icon;
     }
 
-    @include desktop-l {
-        top: -540px;
-    }
-
-    @include desktop-m {
-        width: 480px;
-        top: -600px;
+    @include desktop {
+        width: 410px;
+        top: -400px;
     }
 
     @include tablet-m {
