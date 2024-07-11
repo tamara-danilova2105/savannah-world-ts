@@ -2,8 +2,13 @@
 
 @mixin main-styles {
     margin: 0 auto;
-    max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
-    padding: 0 var(--container-padding-x); 
+    max-width: calc(1920px + 300px * 2);
+    padding: 0 300px; 
+
+    @include desktop {
+        max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
+        padding: 0 var(--container-padding-x); 
+    }
 
     @include tablet-l {
         padding: 0 100px; 
