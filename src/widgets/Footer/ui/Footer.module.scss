@@ -2,21 +2,24 @@
 @import "@/app/styles/media-queries.scss";
 
 .footer {
-    @include main-styles;
     font-size: var(--font-size-m);
     background-color: var(--white-color);
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 50px;
+    padding: 30px var(--container-padding-x);
+    max-width: calc(var(--container-max-width) + var(--container-padding-x)* 2);
 
     @include tablet-l {
         font-size: var(--font-size-s);
-        padding-top: 30px;
+        padding-top: 0 100px;
         padding-bottom: 30px;    
     }
 
+    @include tablet-m {
+        padding: 0 60px; 
+    }
+
     @include mobile-l {
-        padding-top: 20px;
+        padding: 0 40px; 
         padding-bottom: 20px;
     }
 }

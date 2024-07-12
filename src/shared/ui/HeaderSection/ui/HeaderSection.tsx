@@ -1,25 +1,26 @@
-import { ReactNode, useCallback } from 'react';
+import { ReactNode } from 'react';
 import styles from './HeaderSection.module.scss';
 import { Text } from '@/shared/ui/Text/Text';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
-import { useNavigate } from 'react-router';
 
 interface HeaderSectionProps {
     section: string;
     children: ReactNode;
     hasButton?: boolean;
+    handleClick?: () => void;
+    button?: string;
 }
 
 export const HeaderSection = (props: HeaderSectionProps) => {
-    const { section, children, hasButton = false } = props;
-
-    const navigate = useNavigate();
-
-    const handleClick = useCallback(() => {
-        navigate("/catalog");
-    }, [navigate]);
+    const { 
+        section, 
+        children, 
+        hasButton = false,
+        handleClick,
+        button,
+     } = props;
 
     return (
         <Stack
@@ -45,10 +46,10 @@ export const HeaderSection = (props: HeaderSectionProps) => {
             </div>
             {hasButton &&
                 <Button
-                    className={styles.btn}
+                    className={styles.button}
                     onClick={handleClick}
                 >
-                    в каталог {arrowIcon()}
+                    {button} {arrowIcon()}
                 </Button>
             }
         </Stack>

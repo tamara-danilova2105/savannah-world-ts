@@ -58,7 +58,7 @@ export const Hero = () => {
                 </Text>
                 <Button className={styles.button}>
                     <Link to={getRouteCatalog()}>
-                        в каталог {arrowIcon()}
+                        купить котенка {arrowIcon()}
                     </Link>
                 </Button>
             </div>

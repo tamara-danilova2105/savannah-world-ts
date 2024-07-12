@@ -1,0 +1,14 @@
+@import '@/app/styles/media-queries.scss';
+
+.gallery {
+    display: none;
+
+    @include tablet-l {
+        margin-top: 20px;
+        display: block;
+    }
+}
+
+.images {
+    width: 100%;
+}
