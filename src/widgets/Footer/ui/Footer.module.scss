@@ -10,17 +10,15 @@
 
     @include tablet-l {
         font-size: var(--font-size-s);
-        padding-top: 0 100px;
-        padding-bottom: 30px;    
+        padding-top: 30px 100px;   
     }
 
     @include tablet-m {
-        padding: 0 60px; 
+        padding: 30px 60px; 
     }
 
     @include mobile-l {
-        padding: 0 40px; 
-        padding-bottom: 20px;
+        padding: 20px 40px; 
     }
 }
 
