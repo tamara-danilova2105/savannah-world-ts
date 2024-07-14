@@ -7,7 +7,7 @@ import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import styles from './CatList.module.scss';
 
 interface CatListProps {
-    cats: Cat[];
+    cats?: Cat[];
     isLoading?: boolean;
 };
 
@@ -24,7 +24,7 @@ export const CatList = memo((props: CatListProps) => {
         isLoading,
     } = props;
 
-    if (!isLoading && !cats.length) {
+    if (!isLoading && !cats?.length) {
         <Stack justify='center' align='start'>
             <Text>
                 Не найдено - FIX LATER
@@ -37,7 +37,7 @@ export const CatList = memo((props: CatListProps) => {
             gap="32" justify='between'
             className={styles.catlist}
         >
-            {cats.map(cat => (
+            {cats?.map(cat => (
                 <CatCard
                     key={cat.id}
                     kitten={cat}
