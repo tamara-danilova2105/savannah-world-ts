@@ -6,8 +6,23 @@ import { Text } from "@/shared/ui/Text/Text";
 import { useGetCatsQuery } from "../api/api";
 
 const CatalogPage = () => {
-    const { data: cats, error, isLoading } = useGetCatsQuery({});
+    const filterParams = {
+        group: [],
+        sex: ['самка'],
+        age: ['котята'],
+        shipment: []
+    }; //TEST - из REDUX потом брать 
 
+    const params: Record<string, string> = {
+        generate: filterParams.group?.join(','),
+        sex: filterParams.sex?.join(','),
+        age: filterParams.age?.join(','),
+        shipment: filterParams.shipment?.join(',')
+    };
+
+    const { data: cats, error, isLoading } = useGetCatsQuery(params);
+    console.log(cats);
+    
     return (
         <main className={styles.main}>
             <HeaderSection section="Продаются котята">

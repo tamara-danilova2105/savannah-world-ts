@@ -39,7 +39,7 @@ export const CatList = memo((props: CatListProps) => {
         >
             {cats?.map(cat => (
                 <CatCard
-                    key={cat.id}
+                    key={cat._id}
                     kitten={cat}
                     isCatalog
                 />

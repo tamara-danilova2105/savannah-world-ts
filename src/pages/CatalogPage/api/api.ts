@@ -1,22 +1,11 @@
 import { api } from "@/shared/api/api";
-import { getQueryParams } from "@/shared/lib/getQueryParams/getQueryParams";
 
 const catsApi = api.injectEndpoints({
     endpoints: (build) => ({
         getCats: build.query({
-            query: (filterParams) => {
-                const params: Record<string, string> = {
-                    group: filterParams.group?.join(','),
-                    sex: filterParams.sex?.join(','),
-                    age: filterParams.age?.join(','),
-                    shipment: filterParams.shipment?.join(',')
-                };
-
-                const queryParams = getQueryParams(params);
-
-                return {
-                    url: `/${queryParams}`,
-                };
+            query: (params) => {
+                const query = new URLSearchParams(params).toString();
+                return `?${query}`;
             },
         }),
         saveCat: build.mutation({
@@ -26,10 +15,24 @@ const catsApi = api.injectEndpoints({
                 body: newCats,
             })
         }),
+        updateCat: build.mutation({
+            query: ({ id, ...updatedCat }) => ({
+                url: `/${id}`,
+                method: 'PUT',
+                body: updatedCat,
+            })
+        }),
+        deleteCat: build.mutation({
+            query: (id) => ({
+                url: `/${id}`,
+                method: 'DELETE',
+            })
+        }),
     }),
 });
 
 export const {
     useGetCatsQuery,
     useSaveCatMutation,
+    useDeleteCatMutation,
 } = catsApi;

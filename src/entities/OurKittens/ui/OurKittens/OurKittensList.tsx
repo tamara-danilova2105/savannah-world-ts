@@ -39,7 +39,7 @@ export const OurKittensList = () => {
             >
                 {kittensMock.map(kitten =>
                     <CatCard
-                        key={kitten.id}
+                        key={kitten._id}
                         kitten={kitten}
                         onClick={handleClick}
                     />
@@ -63,7 +63,7 @@ export const OurKittensList = () => {
                     }}
                 >
                     {kittensMock.map(kitten =>
-                        <SwiperSlide key={kitten.id}>
+                        <SwiperSlide key={kitten._id}>
                             <CatCard
                                 kitten={kitten}
                                 onClick={handleClick}
