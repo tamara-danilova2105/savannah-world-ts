@@ -34,5 +34,6 @@ const catsApi = api.injectEndpoints({
 export const {
     useGetCatsQuery,
     useSaveCatMutation,
+    useUpdateCatMutation,
     useDeleteCatMutation,
 } = catsApi;
