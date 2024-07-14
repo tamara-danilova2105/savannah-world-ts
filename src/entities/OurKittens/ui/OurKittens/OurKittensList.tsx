@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { kittensMock } from '@/entities/Cat/ui/CatCard/lib/data';
+import { kittensMock } from '@/entities/Cat/lib/data';
 import { CatCard } from '@/entities/Cat';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
@@ -21,14 +21,19 @@ export const OurKittensList = () => {
 
     return (
         <section className={styles.section}>
-            
-            <HeaderSection section="Наши котята" hasButton>
+
+            <HeaderSection
+                section="Наши котята"
+                hasButton
+                handleClick={handleClick}
+                button='купить котенка'
+            >
                 <Text tag="h2" size='xl' className={styles.title}>
-                    Выберите себе <span>питомца</span> в нашем каталоге
+                    Выберите себе <span>питомца</span>
                 </Text>
             </HeaderSection>
 
-            <Stack 
+            <Stack
                 justify='between'
                 className={styles.container_desktop}
             >
@@ -43,7 +48,6 @@ export const OurKittensList = () => {
 
             <div className={styles.container_mobile}>
                 <Swiper
-                    
                     modules={[Pagination]}
                     loop={true}
                     pagination={{ clickable: true }}

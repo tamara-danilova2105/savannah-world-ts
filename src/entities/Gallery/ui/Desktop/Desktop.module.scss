@@ -1,0 +1,28 @@
+@import '@/app/styles/media-queries.scss';
+@import '@/app/styles/mixin.scss';
+
+.gallery {
+    flex-wrap: wrap;
+    border-radius: var(--border-radius-container);
+    padding: 40px;
+    background-color: var(--opacity-color);
+    box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
+    margin-top: 48px;
+
+    @include tablet-l {
+        display: none;
+    }
+}
+
+.images {
+    width: 380px;
+
+    @include desktop-l {
+        width: 330px;
+    }
+
+    @include desktop-m {
+        padding: 15px;
+        width: 270px;
+    }
+}

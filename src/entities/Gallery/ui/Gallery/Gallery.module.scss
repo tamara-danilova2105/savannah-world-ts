@@ -1,0 +1,11 @@
+@import '@/app/styles/mixin.scss';
+@import '@/app/styles/media-queries.scss';
+
+.section {
+    @include section-styles;
+}
+
+.title {
+    @include title-section;
+    margin-bottom: 32px;
+}

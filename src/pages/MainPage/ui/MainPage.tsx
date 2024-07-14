@@ -6,6 +6,7 @@ import { GeneticSubgroups } from '@/entities/GeneticSubgroups';
 import { Advices } from '@/entities/Advices';
 import styles from './MainPage.module.scss';
 import { Hero } from '@/entities/Hero/ui/Hero';
+import { Gallery } from '@/entities/Gallery/ui/Gallery/Gallery';
 
 const MainPage = () => {
     return (
@@ -18,6 +19,7 @@ const MainPage = () => {
                 <GeneticSubgroups />
                 <Advices />
                 <Faq />
+                <Gallery />
             </div>
         </main>
     );

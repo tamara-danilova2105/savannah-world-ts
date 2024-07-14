@@ -4,17 +4,18 @@
 .main {
     @include mobile-l {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
     }
 }
 
-.btn {
-    width: 240px;
+.button {
+    width: 390px;
     @include button-icon;
 
     @include mobile-l {
-        font-size: var(--font-size-xs);
-        padding: 3px 25px;
+        width: 100%;
+        font-size: 14px;
+        padding: 2px 25px;
     }
 }
 
