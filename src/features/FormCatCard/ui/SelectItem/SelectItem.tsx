@@ -5,16 +5,18 @@ import { memo, useCallback, useState } from 'react';
 interface SelectItemProps { 
     filter: string;
     options: string[];
+    setForm?: (filter: string, option: string) => void;
 };
 
 export const SelectItem = memo((props: SelectItemProps) => {
-    const { filter, options } = props;
-
+    const { filter, options, setForm } = props;
+    
     const [selected, setSelected] = useState<string>('');
-
+    
     const changeSelect = useCallback((option: string) => {
-        setSelected(option)
-    }, []);
+        setSelected(option);
+        setForm?.(filter, option);
+    }, [filter, setForm]);
 
     return (
         <ListBox

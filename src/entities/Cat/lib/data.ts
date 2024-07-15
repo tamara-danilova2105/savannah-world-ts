@@ -4,7 +4,7 @@ import cat2 from './cat2.png';
 import cat3 from './cat3.png';
 
 export interface KittensMock {
-    _id: number;
+    _id: string;
     name_cat: string;
     generate: string;
     sex: string;
@@ -15,7 +15,7 @@ export interface KittensMock {
 
 export const kittensMock: Cat[] = [
     {
-        _id: 1,
+        _id: '1',
         images: cat1,
         name_cat: "имя 1",
         generate: "Ф1",
@@ -24,7 +24,7 @@ export const kittensMock: Cat[] = [
         shipment: "готов к отправке",
     },
     {
-        _id: 2,
+        _id: '2',
         images: cat2,
         name_cat: "имя 2",
         generate: "Ф2",
@@ -33,7 +33,7 @@ export const kittensMock: Cat[] = [
         shipment: "готов к отправке",
     },
     {
-        _id: 3,
+        _id: '3',
         images: cat3,
         name_cat: "имя 3",
         generate: "Ф6",

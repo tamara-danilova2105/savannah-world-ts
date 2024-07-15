@@ -1,5 +1,5 @@
 export interface Cat {
-    _id: number;
+    _id: string;
     name_cat: string;
     generate: string;
     sex: string;

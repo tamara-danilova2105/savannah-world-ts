@@ -1,5 +1,5 @@
 export const dataFilter = {
-    group: ['Ф2', 'Ф3', 'Ф4'],
+    generate: ['Ф2', 'Ф3', 'Ф4'],
     sex: ['самец', 'самка'],
     age: ['взрослые', 'котята'],
     shipment: ['готов к отправке', 'ожидание', 'продан']
@@ -10,7 +10,7 @@ interface Filters {
 } 
 
 export const filters: Filters = {
-    group: 'группа',
+    generate: 'группа',
     sex: 'пол',
     age: 'возраст',
     shipment: 'статус',

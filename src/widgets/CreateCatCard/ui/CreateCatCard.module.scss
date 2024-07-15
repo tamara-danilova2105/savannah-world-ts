@@ -2,4 +2,25 @@
 
 .create {
     @include modal-content;
+    position: relative;
+    width: 800px;
+}
+
+.closeButton {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+     
+    @include mobile-l {
+        width: 30px;
+        height: 30px;       
+    }  
+}
+
+.title {
+    margin-top: 20px;
 }
