@@ -13,6 +13,10 @@ interface FormCatCardProps {
 
 export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
 
+    const handleChange = (key: string) => (value: string) => {
+        setForm?.(key, value);
+    };
+
     return (
         <Stack
             gap='32'
@@ -30,7 +34,7 @@ export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
                 <Input
                     placeholder="имя"
                     required
-                    onChange={() => { }}
+                    onChange={(value) => handleChange('name_cat')(value)}
                 />
 
                 <Stack
