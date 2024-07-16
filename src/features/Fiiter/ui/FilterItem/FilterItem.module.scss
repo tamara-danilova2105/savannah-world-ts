@@ -1,0 +1,17 @@
+@import '@/app/styles/media-queries.scss';
+
+.listbox {
+    width: 250px;
+
+    @include desktop {
+        width: 230px;
+    }
+
+    @include desktop-l {
+        width: 200px;
+    }
+
+    @include desktop-m {
+        width: 180px;
+    }
+}

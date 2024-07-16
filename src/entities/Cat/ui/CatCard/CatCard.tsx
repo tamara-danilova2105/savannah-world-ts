@@ -4,6 +4,7 @@ import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import styles from './CatCard.module.scss';
 import { KittensMock } from '../../lib/data';
+import { apiUrl } from '@/shared/api/api';
 
 interface CatCardProps {
     kitten: KittensMock;
@@ -24,7 +25,7 @@ export const CatCard = (props: CatCardProps) => {
         >
             <img
                 className={styles.images}
-                src={images} alt='котята Саванны'
+                src={`${apiUrl}/uploads/${images}`} alt='котята Саванны'
             />
             <Text size="l" className={styles.name}>
                 {name_cat}

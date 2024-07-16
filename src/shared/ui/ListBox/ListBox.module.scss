@@ -2,7 +2,7 @@
 
 .button {
     position: relative;
-    width: 250px;
+    // width: 250px;
     border-radius: var(--border-radius-element);
     border: 1px solid rgba(0, 0, 0, 0.25); 
     background-color: var(--white-color);
@@ -18,20 +18,20 @@
         padding: 0 15px;
     }
 
-    @include desktop {
-        width: 200px;
-    }
+    // @include desktop {
+    //     width: 200px;
+    // }
 
-    @include desktop-l {
-        width: 165px;
-    }
+    // @include desktop-l {
+    //     width: 165px;
+    // }
 }
 
 .options {
     background-color: var(--white-color);
     font-size: var(--font-size-xs);
     margin-top: 5px;
-    width: 250px;
+    // width: 250px;
     padding: 0px 15px; 
     border-radius: var(--border-radius-element);
     border: 1px solid var(--dark-brown-color);
@@ -41,13 +41,13 @@
         border: none
     }
 
-    @include desktop {
-        width: 200px;
-    }
+    // @include desktop {
+    //     width: 200px;
+    // }
 
-    @include desktop-l {
-        width: 165px;
-    }
+    // @include desktop-l {
+    //     width: 165px;
+    // }
 }
 
 .option {

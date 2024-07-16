@@ -28,6 +28,17 @@ const catsApi = api.injectEndpoints({
                 method: 'DELETE',
             })
         }),
+        uploadFile: build.mutation({
+            query: (fileData) => {
+                let formData = new FormData();
+                formData.append('image', fileData);
+                return {
+                    url: '/upload',
+                    method: 'POST',
+                    body: formData,
+                };
+            }
+        }),
     }),
 });
 
@@ -36,4 +47,5 @@ export const {
     useSaveCatMutation,
     useUpdateCatMutation,
     useDeleteCatMutation,
+    useUploadFileMutation,
 } = catsApi;

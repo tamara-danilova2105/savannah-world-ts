@@ -13,8 +13,8 @@ const CatalogPage = () => {
 
     const filterParams = {
         group: [],
-        sex: ['самка'],
-        age: ['котята'],
+        sex: [],
+        age: [],
         shipment: []
     }; //TEST - из REDUX потом брать 
 
@@ -26,6 +26,8 @@ const CatalogPage = () => {
     };
 
     const { data: cats, error, isLoading } = useGetCatsQuery(params);
+    console.log(cats);
+    
 
     return (
         <main className={styles.main}>

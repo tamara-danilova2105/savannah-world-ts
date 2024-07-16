@@ -1,39 +1,15 @@
 @import '@/app/styles/mixin.scss';
 @import '@/app/styles/media-queries.scss';
 
-.editSection {
-    @include tablet-l {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-    } 
-}
-
-.images_container {
-    width: 300px;
-    height: 400px;
-    // background-color: red;
-    border-radius: var(--border-radius-element);
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.input {
-    position: absolute;
-    width: 300px;
-    height: 400px;
-    opacity: 0;
-    cursor: pointer;
-}
-
 .form {
     width: 420px;
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include mobile-l {
+        width: 100%;
+    }
 }
 
 .select {

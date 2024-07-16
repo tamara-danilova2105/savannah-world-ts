@@ -20,7 +20,9 @@ export const Button = memo((props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const mode: Mods = {};
+    const mode: Mods = {
+        [styles.disabled]: disabled,
+    };
 
     const additional: Additional = [
         className,

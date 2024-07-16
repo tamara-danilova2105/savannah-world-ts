@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { getFilterText } from '../../lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
 import useFilter from '@/shared/hooks/useFilter';
+import styles from './FilterItem.module.scss';
 
 interface FilterProps {
     filter: string;
@@ -19,6 +20,7 @@ export const FilterItem = memo((props: FilterProps) => {
             selected={selected}
             changeSelect={changeSelect}
             badge
+            className={styles.listbox}
         />
     )
 });

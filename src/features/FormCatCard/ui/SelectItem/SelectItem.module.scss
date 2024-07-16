@@ -1,0 +1,13 @@
+@import '@/app/styles/media-queries.scss';
+
+.listbox {
+    width: 200px;
+
+    @include mobile-l {
+        width: 175px;
+    }
+
+    @include mobile-m {
+        width: 100%;
+    }
+}

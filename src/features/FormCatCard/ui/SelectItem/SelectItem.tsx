@@ -1,6 +1,7 @@
 import { getFilterText } from '@/features/Fiiter/lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
 import { memo, useCallback, useState } from 'react';
+import styles from './SelectItem.module.scss';
 
 interface SelectItemProps { 
     filter: string;
@@ -24,6 +25,7 @@ export const SelectItem = memo((props: SelectItemProps) => {
             options={options}
             selected={selected}
             changeSelect={changeSelect}
+            className={styles.listbox}
         />
     )
 })

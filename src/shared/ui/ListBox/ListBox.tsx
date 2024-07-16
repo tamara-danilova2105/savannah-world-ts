@@ -3,8 +3,10 @@ import { MouseEvent } from "react";
 import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
 import { arrowDownIcon, arrowUpIcon } from "@/shared/assets/svg/arrowIcons";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface ListBoxProps {
+    className?: string;
     filter: string;
     options: string[];
     selected: string | string[];
@@ -13,14 +15,15 @@ interface ListBoxProps {
 }
 
 export const ListBox = (props: ListBoxProps) => {
-    const { 
-        filter, 
-        options, 
-        selected, 
+    const {
+        className,
+        filter,
+        options,
+        selected,
         changeSelect,
-        badge = false 
+        badge = false
     } = props;
-    
+
     const handleOptionClick = (option: string, event: MouseEvent<HTMLElement>) => {
         event.preventDefault();
         event.stopPropagation();
@@ -32,7 +35,7 @@ export const ListBox = (props: ListBoxProps) => {
             {({ open }) => (
                 <>
                     <ListboxButton
-                        className={styles.button}
+                        className={classNames(styles.button, {}, [className])}
                     >
                         <div className={styles.text}>
                             {filter}
@@ -47,7 +50,10 @@ export const ListBox = (props: ListBoxProps) => {
                         }
                     </ListboxButton>
 
-                    <ListboxOptions className={styles.options} anchor="bottom">
+                    <ListboxOptions
+                        className={classNames(styles.options, {}, [className])}
+                        anchor="bottom"
+                    >
                         {options.map(option => (
                             <ListboxOption
                                 key={option}
