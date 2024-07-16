@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps {
     defaultValue?: string | number;
     placeholder?: string;
     isError?: boolean;
-    onChange?: (value: string) => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input = (props: InputProps) => {
@@ -29,7 +29,7 @@ export const Input = (props: InputProps) => {
 
     const handlerInput = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
-        onChange?.(e.target.value);           
+        onChange?.(e);           
     };
 
     const mods: Mods = {

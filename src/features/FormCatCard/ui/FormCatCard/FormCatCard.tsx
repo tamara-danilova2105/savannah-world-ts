@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { ChangeEvent, memo } from 'react';
 import styles from './FormCatCard.module.scss';
 import { dataFilter } from '@/features/Fiiter/lib/data';
 import { SelectItem } from '../SelectItem/SelectItem';
@@ -13,9 +13,14 @@ interface FormCatCardProps {
 
 export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
 
-    const handleChange = (key: string) => (value: string) => {
-        setForm?.(key, value);
-    };
+    // const handleChange = (key: string) => (value: string) => {
+    //     setForm?.(key, value);
+    // };
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target;
+        setForm?.(name, value);
+    }
 
     return (
         <Stack
@@ -34,7 +39,9 @@ export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
                 <Input
                     placeholder="имя"
                     required
-                    onChange={(value) => handleChange('name_cat')(value)}
+                    // onChange={(value) => handleChange('name_cat')(value)}
+                    name='name_cat'
+                    onChange={handleChange}
                 />
 
                 <Stack

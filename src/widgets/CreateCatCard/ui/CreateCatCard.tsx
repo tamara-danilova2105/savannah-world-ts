@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { getCatCard, resetCatCard, setCatCard } from '../model/slices/slice';
+import { getCatCard, resetCatCard, setCatCard } from '../../../features/FormCatCard/model/slices/slice';
 
 interface CreateCatCardProps {
     changeCreateModal: () => void;
