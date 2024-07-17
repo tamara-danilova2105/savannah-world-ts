@@ -1,4 +1,4 @@
-import { getFilterText } from '@/features/Fiiter/lib/data';
+import { getFilterText } from '@/features/Filter/lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
 import { memo, useCallback, useState } from 'react';
 import styles from './SelectItem.module.scss';

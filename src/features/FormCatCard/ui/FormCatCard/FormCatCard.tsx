@@ -1,6 +1,6 @@
 import { ChangeEvent, memo } from 'react';
 import styles from './FormCatCard.module.scss';
-import { dataFilter } from '@/features/Fiiter/lib/data';
+import { dataFilter } from '@/features/Filter/lib/data';
 import { SelectItem } from '../SelectItem/SelectItem';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Input } from '@/shared/ui/Input/Input';

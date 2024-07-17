@@ -1,15 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import createCatCard  from '@/features/FormCatCard/model/slices/slice';
-import { api } from '@/shared/api/api';
+import { createCatCard } from "@/features/FormCatCard";
+import { api } from "@/shared/api/api";
 
 const rootReducer = combineReducers({
     createCatCard,
     [api.reducerPath]: api.reducer,
-})
+});
 
 export const store = configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => 
+    middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api.middleware),
 });
 

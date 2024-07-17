@@ -1,4 +1,4 @@
-import { Filter } from "@/features/Fiiter";
+import { Filter } from "@/features/Filter";
 import styles from './CatalogPage.module.scss';
 import { CatList } from "@/entities/Cat";
 import { HeaderSection } from "@/shared/ui/HeaderSection";
@@ -15,7 +15,7 @@ const CatalogPage = () => {
         group: [],
         sex: [],
         age: [],
-        shipment: []
+        shipment: [],
     }; //TEST - из REDUX потом брать 
 
     const params: Record<string, string> = {
