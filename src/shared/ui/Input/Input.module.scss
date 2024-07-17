@@ -1,3 +1,5 @@
+@import '@/app/styles/media-queries.scss';
+
 .input {
     padding: 15px;  
     width: 100%; 
@@ -28,6 +30,10 @@
         -webkit-text-fill-color: var(--dark-brown-color) !important;
         -webkit-box-shadow: 0 0 0px 1000px var(--white-color) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         -webkit-font-size: var(--font-size-m);
+    };
+
+    @include mobile-l {
+        height: 40px; 
     }
 }
 
