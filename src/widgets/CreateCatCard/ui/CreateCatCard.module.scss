@@ -5,6 +5,7 @@
     @include modal-content;
     position: relative;
     width: 800px;
+    overflow: auto;
 
     @include tablet-m {
         width: 600px;
