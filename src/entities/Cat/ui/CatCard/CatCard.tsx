@@ -13,7 +13,7 @@ interface CatCardProps {
 }
 
 export const CatCard = (props: CatCardProps) => {
-    const { images, name_cat, generate, sex, age, shipment } = props.kitten;
+    const { image, name_cat, generate, sex, age, shipment } = props.kitten;
     const { isCatalog, onClick } = props;
 
     return (
@@ -25,7 +25,7 @@ export const CatCard = (props: CatCardProps) => {
         >
             <img
                 className={styles.images}
-                src={`${apiUrl}/uploads/${images}`} alt='котята Саванны'
+                src={`${apiUrl}/uploads/${image}`} alt='котята Саванны'
             />
             <Text size="l" className={styles.name}>
                 {name_cat}

@@ -5,5 +5,5 @@ export interface Cat {
     sex: string;
     age: string;
     shipment: string;
-    images: string;
+    image: string;
 }

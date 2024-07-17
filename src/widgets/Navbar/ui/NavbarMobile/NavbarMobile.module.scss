@@ -53,6 +53,8 @@
     color: var(--black-color);
     text-transform: uppercase;
     background-color: transparent;
+    font-weight: normal;
+    font-size: var(--font-size-xs);
 
     svg {
         fill: var(--black-color);

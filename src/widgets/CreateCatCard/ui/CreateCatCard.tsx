@@ -9,9 +9,8 @@ import { useSelector } from 'react-redux';
 import { getCatCard, resetCatCard, setCatCard } from '@/features/FormCatCard';
 import { Button } from '@/shared/ui/Button/Button';
 import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
-import { downloadIcon } from '@/shared/assets/svg/downloadIcon';
-import { Input } from '@/shared/ui/Input/Input';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
+import { UploadImage } from '@/shared/ui/UploadImage/UploadImage';
 
 interface CreateCatCardProps {
     changeCreateModal: () => void;
@@ -20,12 +19,13 @@ interface CreateCatCardProps {
 export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
     const cat = useSelector(getCatCard);
     const dispatch = useAppDispatch();
-    const [saveCat] = useSaveCatMutation();
-    const [uploadFile] = useUploadFileMutation();
+    const [saveCat, { isLoading: isSaving }] = useSaveCatMutation();
+    const [uploadFile, { isLoading: isUploading }] = useUploadFileMutation();
     const [file, setFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [disabled, setDisabled] = useState(true);
-    const [statusReq, setStatusReq] = useState({text: '', isError: false});
+    const [statusReq, setStatusReq] = useState({ text: '', isError: false });
+    const isLoading = isSaving || isUploading;
 
     const uploadFileFromDisk = async (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0) {
@@ -58,7 +58,7 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
             const fileResponse = await uploadFile(file).unwrap();
             const updatedCat = {
                 ...cat,
-                images: fileResponse.url.split('/')[2]
+                image: fileResponse.url.split('/')[2]
             };
             await saveCat(updatedCat).unwrap();
             setStatusReq({
@@ -93,18 +93,10 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
                 gap='32'
                 className={styles.editSection}
             >
-                <div className={styles.images_container}>
-                    {downloadIcon()}
-                    <Input
-                        type='file'
-                        className={styles.input}
-                        accept="image/*, .png, .jpg, .jpeg, .jfif, .pjpeg, .pjp, .tif, .tiff, .bmp, .ico, .cur, .gif, .webp, .pdf, .svg, .webm, .avi, .mpeg, .mp4"
-                        onChange={uploadFileFromDisk}
-                    />
-                    {imagePreview &&
-                        <img src={imagePreview} alt="preview" className={styles.previewImage} />
-                    }
-                </div>
+                <UploadImage
+                    uploadFileFromDisk={uploadFileFromDisk}
+                    imagePreview={imagePreview}
+                />
                 <div>
                     <FormCatCard setForm={setFormData} />
                     <Button
@@ -112,8 +104,11 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
                         disabled={disabled}
                         className={styles.button}
                     >
-                        сохранить
-                        {arrowIcon()}
+                        сохранить 
+                        {isLoading
+                            ? <span className={styles.loader} />
+                            : <>{arrowIcon()}</>
+                        }
                     </Button>
                     <Text className={`${styles.text} ${statusReq.isError ? styles.error : styles.default}`}>
                         {statusReq.text}

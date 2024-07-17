@@ -10,13 +10,13 @@ export interface KittensMock {
     sex: string;
     age: string;
     shipment: string;
-    images: string;
+    image: string;
 }
 
 export const kittensMock: Cat[] = [
     {
         _id: '1',
-        images: cat1,
+        image: cat1,
         name_cat: "имя 1",
         generate: "Ф1",
         sex: 'самка',
@@ -25,7 +25,7 @@ export const kittensMock: Cat[] = [
     },
     {
         _id: '2',
-        images: cat2,
+        image: cat2,
         name_cat: "имя 2",
         generate: "Ф2",
         sex: 'самец',
@@ -34,7 +34,7 @@ export const kittensMock: Cat[] = [
     },
     {
         _id: '3',
-        images: cat3,
+        image: cat3,
         name_cat: "имя 3",
         generate: "Ф6",
         sex: 'самец',
