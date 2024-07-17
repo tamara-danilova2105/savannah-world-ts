@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { createCatCard } from "@/features/FormCatCard";
 import { api } from "@/shared/api/api";
+import { filter } from "@/features/Filter";
 
 const rootReducer = combineReducers({
     createCatCard,
+    filter,
     [api.reducerPath]: api.reducer,
 });
 

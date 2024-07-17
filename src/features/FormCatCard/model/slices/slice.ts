@@ -17,9 +17,10 @@ export const createCatCardSlice = createSlice({
     initialState,
     reducers: {
         setCatCard: (state, action: PayloadAction<{ key: string, value: string }>) => {
+            const { key, value } = action.payload; 
             state.cat = {
                 ...state.cat, 
-                [action.payload.key]: action.payload.value
+                [key]: value
             }
         },
         resetCatCard: () => initialState,

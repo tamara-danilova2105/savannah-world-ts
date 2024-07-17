@@ -7,13 +7,13 @@ import { KittensMock } from '../../lib/data';
 import { apiUrl } from '@/shared/api/api';
 
 interface CatCardProps {
-    kitten: KittensMock;
+    cat: KittensMock;
     isCatalog?: boolean;
     onClick?: () => void;
 }
 
 export const CatCard = (props: CatCardProps) => {
-    const { image, name_cat, generate, sex, age, shipment } = props.kitten;
+    const { image, name_cat, generate, sex, age, shipment } = props.cat;
     const { isCatalog, onClick } = props;
 
     return (

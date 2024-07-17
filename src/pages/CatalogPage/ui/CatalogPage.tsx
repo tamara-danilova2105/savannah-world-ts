@@ -7,27 +7,25 @@ import { useGetCatsQuery } from "../api/api";
 import { Button } from "@/shared/ui/Button/Button";
 import { useModal } from "@/shared/hooks/useModal";
 import { CreateCatCard } from "@/widgets/CreateCatCard";
+import { useAppSelector } from "@/app/providers/store/config/hooks";
+import { useMemo } from "react";
 
 const CatalogPage = () => {
     const [changeCreateModal, drawCreateModal] = useModal();
 
-    const filterParams = {
-        group: [],
-        sex: [],
-        age: [],
-        shipment: [],
-    }; //TEST - из REDUX потом брать 
-
-    const params: Record<string, string> = {
-        generate: filterParams.group?.join(','),
-        sex: filterParams.sex?.join(','),
-        age: filterParams.age?.join(','),
-        shipment: filterParams.shipment?.join(',')
-    };
+    const filterParams = useAppSelector(state => ({
+        generate: state.filter.generate,
+        sex: state.filter.sex,
+        age: state.filter.age,
+        shipment: state.filter.shipment,
+    }));
+    
+    const params = useMemo(() => Object.fromEntries(
+        Object.entries(filterParams)
+            .map(([k, v]) => [k, v?.join(',')])
+    ), [filterParams]);
 
     const { data: cats, error, isLoading } = useGetCatsQuery(params);
-    console.log(cats);
-    
 
     return (
         <main className={styles.main}>

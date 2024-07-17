@@ -1,5 +1,8 @@
 import { useCallback, useState } from 'react';
 
+/**
+ * @deprecated
+ */
 const useFilter = () => {
     const [selected, setSelected] = useState<string[]>([]);
 
