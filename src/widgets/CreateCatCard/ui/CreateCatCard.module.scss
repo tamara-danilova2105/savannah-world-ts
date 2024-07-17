@@ -6,6 +6,7 @@
     position: relative;
     width: 800px;
     overflow: auto;
+    max-height: 100vh;
 
     @include tablet-m {
         width: 600px;
