@@ -7,7 +7,7 @@ import { Input } from '@/shared/ui/Input/Input';
 
 interface FormCatCardProps {
     setForm?: (filter: string, option: string) => void;
-}
+};
 
 export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
 

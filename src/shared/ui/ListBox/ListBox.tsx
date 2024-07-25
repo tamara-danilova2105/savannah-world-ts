@@ -1,5 +1,5 @@
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import { MouseEvent } from "react";
+import { memo, MouseEvent } from "react";
 import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
 import { arrowDownIcon, arrowUpIcon } from "@/shared/assets/svg/arrowIcons";
@@ -12,9 +12,9 @@ interface ListBoxProps {
     selected: string | string[];
     changeSelect: (option: string) => void;
     badge?: boolean;
-}
+};
 
-export const ListBox = (props: ListBoxProps) => {
+export const ListBox = memo((props: ListBoxProps) => {
     const {
         className,
         filter,
@@ -74,4 +74,4 @@ export const ListBox = (props: ListBoxProps) => {
             )}
         </Listbox>
     );
-};
+});

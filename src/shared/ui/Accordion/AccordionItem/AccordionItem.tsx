@@ -4,15 +4,16 @@ import styles from './AccordionItem.module.scss';
 import { plusIcon } from '@/shared/assets/svg/plusIcon';
 import { minusIcon } from '@/shared/assets/svg/minusIcon';
 import { IAccordionItem } from '@/entities/Faq/libs/data';
+import { memo } from 'react';
 
 interface AccordionItemProps {
     className?: string;
     element: IAccordionItem;
     isOpen: boolean;
     onClick: () => void;
-}
+};
 
-export const AccordionItem = (props: AccordionItemProps) => {
+export const AccordionItem = memo((props: AccordionItemProps) => {
     const {
         className,
         element,
@@ -40,5 +41,5 @@ export const AccordionItem = (props: AccordionItemProps) => {
                 </div>
             }
         </li>
-    )
-}
+    );
+});

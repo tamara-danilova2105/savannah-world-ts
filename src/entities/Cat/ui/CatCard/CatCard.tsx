@@ -5,14 +5,15 @@ import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import styles from './CatCard.module.scss';
 import { KittensMock } from '../../lib/data';
 import { apiUrl } from '@/shared/api/api';
+import { memo } from 'react';
 
 interface CatCardProps {
     cat: KittensMock;
     isCatalog?: boolean;
     onClick?: () => void;
-}
+};
 
-export const CatCard = (props: CatCardProps) => {
+export const CatCard = memo((props: CatCardProps) => {
     const { image, name_cat, generate, sex, age, shipment } = props.cat;
     const { isCatalog, onClick } = props;
 
@@ -51,5 +52,5 @@ export const CatCard = (props: CatCardProps) => {
                 </Button>
             }
         </Stack>
-    )
-}
+    );
+});

@@ -14,6 +14,4 @@ export const filters: Filters = {
     shipment: 'статус',
 }
 
-export const getFilterText = (filter: string) => {
-    return filters[filter]
-};
+export const getFilterText = (filter: string) => filters[filter];

@@ -27,5 +27,5 @@ export const SelectItem = memo((props: SelectItemProps) => {
             changeSelect={changeSelect}
             className={styles.listbox}
         />
-    )
-})
+    );
+});

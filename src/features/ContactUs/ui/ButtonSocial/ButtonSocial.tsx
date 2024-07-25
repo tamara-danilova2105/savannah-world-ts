@@ -1,5 +1,5 @@
 import { useShownOnScroll } from "@/shared/hooks/useShownOnScroll";
-import { memo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import styles from './ButtonSocial.module.scss';
 import chatIcon from '@/shared/assets/images/chat-icon.png';
 import { SocialMedia } from "../SocialMedia/SocialMedia";
@@ -7,16 +7,16 @@ import { SocialMedia } from "../SocialMedia/SocialMedia";
 export const ButtonSocial = memo(() => {
 
     const { isShow } = useShownOnScroll();
-    const [openMedia, closeMedia] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const handleSocial = () => closeMedia(!openMedia);
+    const handleSocial = useCallback(() => setIsOpen(prev => !prev), []);
 
     return (
         <div>
             {isShow &&
                 <div>
                     {
-                        !openMedia &&
+                        !isOpen &&
                         <button
                             className={styles.buttonSocial}
                             type="button"
@@ -27,7 +27,7 @@ export const ButtonSocial = memo(() => {
                         </button>
                     }
                     {
-                        openMedia &&
+                        isOpen &&
                         <SocialMedia onClick={handleSocial} />
                     }
                 </div>
