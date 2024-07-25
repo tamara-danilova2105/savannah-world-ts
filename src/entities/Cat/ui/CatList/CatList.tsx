@@ -25,12 +25,14 @@ export const CatList = memo((props: CatListProps) => {
     } = props;
 
     if (!isLoading && !cats?.length) {
-        <Stack justify='center' align='start'>
-            <Text>
-                Не найдено - FIX LATER
-            </Text>
-        </Stack>
-    }
+        return (
+            <Stack justify='center' align='start'>
+                <Text>
+                    Не найдено - FIX LATER
+                </Text>
+            </Stack>
+        )
+    };
 
     return (
         <Stack

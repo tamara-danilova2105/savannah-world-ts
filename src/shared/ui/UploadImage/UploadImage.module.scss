@@ -15,23 +15,23 @@
     }
 }
 
-.upload_container {
-    @include size(300px, 400px);
-    border-radius: var(--border-radius-element);
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// .upload_container {
+//     @include size(300px, 400px);
+//     border-radius: var(--border-radius-element);
+//     border: 1px solid rgba(0, 0, 0, 0.25);
+//     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
 
-    svg {
-        z-index: 1;
-    }
-}
+//     svg {
+//         z-index: 1;
+//     }
+// }
 
 .input {
     position: absolute;
-    @include size(300px, 400px);
+    @include size(300px, 50px);
     opacity: 0;
     cursor: pointer;
     z-index: 2;

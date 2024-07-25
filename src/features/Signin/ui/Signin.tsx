@@ -60,12 +60,12 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                 </Button>
             </form>
 
-            <div
+            <button
                 className={styles.password}
                 onClick={() => setShowPassword(!showPassword)}
             >
                 {showPassword ? hidePasswordIcon() : showPasswordIcon()}
-            </div>
+            </button>
         </Stack>
     );
 });
