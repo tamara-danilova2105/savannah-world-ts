@@ -20,21 +20,26 @@ const CatalogPage = () => {
         shipment: state.filter.shipment,
         page: 1, //FIX LATER
     }));
-    
+
     const params = useMemo(() => {
         return Object.fromEntries(
             Object.entries(filterParams).map(([key, value]) => {
                 if (Array.isArray(value)) {
                     return [key, value.join(',')];
                 }
-                return [key, value]; 
+                return [key, value];
             })
         );
     }, [filterParams]);
 
-    const { data: cats, error, isLoading } = useGetCatsQuery(params);
-    console.log(cats);
-    
+    const {
+        data: { cats, totalCount } = {},
+        error,
+        isLoading
+    } = useGetCatsQuery(params);
+    console.log(cats, totalCount);
+
+
     return (
         <main className={styles.main}>
             {/* FIX LATER */}
