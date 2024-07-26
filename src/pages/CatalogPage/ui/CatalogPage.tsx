@@ -18,15 +18,23 @@ const CatalogPage = () => {
         sex: state.filter.sex,
         age: state.filter.age,
         shipment: state.filter.shipment,
+        page: 1, //FIX LATER
     }));
     
-    const params = useMemo(() => Object.fromEntries(
-        Object.entries(filterParams)
-            .map(([k, v]) => [k, v?.join(',')])
-    ), [filterParams]);
+    const params = useMemo(() => {
+        return Object.fromEntries(
+            Object.entries(filterParams).map(([key, value]) => {
+                if (Array.isArray(value)) {
+                    return [key, value.join(',')];
+                }
+                return [key, value]; 
+            })
+        );
+    }, [filterParams]);
 
     const { data: cats, error, isLoading } = useGetCatsQuery(params);
-
+    console.log(cats);
+    
     return (
         <main className={styles.main}>
             {/* FIX LATER */}
