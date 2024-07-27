@@ -3,7 +3,8 @@ import styles from './SearchCats.module.scss';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { CatList } from '@/entities/Cat';
 import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { selectFilterParams } from '@/features/Filter/model/selectors/selectors'
 import { useAppSelector } from '@/app/providers/store/config/hooks';
 import { Text } from '@/shared/ui/Text/Text';
 import ReactPaginate from 'react-paginate';
@@ -18,24 +19,25 @@ export const SearchCats = () => {
 
     const [selectedPage, setSelectedPage] = useState(0);
     const catalogRef = useRef<HTMLDivElement>(null);
-    
-    const filterParams = useAppSelector(state => ({
-        generate: state.filter.generate,
-        sex: state.filter.sex,
-        age: state.filter.age,
-        shipment: state.filter.shipment,
-        page: selectedPage + 1,
-    }));
+
+    const filterParams = useAppSelector(selectFilterParams);
 
     const params = useMemo(() => {
-        return Object.fromEntries(
-            Object.entries(filterParams).map(([key, value]) => {
-                if (Array.isArray(value)) {
-                    return [key, value.join(',')];
-                }
-                return [key, value];
-            })
-        );
+        return {
+            ...Object.fromEntries(
+                Object.entries(filterParams).map(([key, value]) => {
+                    if (Array.isArray(value)) {
+                        return [key, value.join(',')];
+                    }
+                    return [key, value];
+                })
+            ),
+            page: selectedPage + 1,
+        };
+    }, [filterParams, selectedPage]);
+
+    useEffect(() => {
+        setSelectedPage(0);
     }, [filterParams]);
 
     const {
@@ -77,7 +79,7 @@ export const SearchCats = () => {
                     </Stack>
             }
             {
-                totalCount > 0 && 
+                totalCount > countCart && 
                 <Stack justify='center'>
                     <ReactPaginate 
                         nextLabel=">"
