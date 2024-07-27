@@ -3,7 +3,6 @@ import { Stack } from '@/shared/ui/Stack/Stack';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import styles from './CatCard.module.scss';
-import { KittensMock } from '../../lib/data';
 import { apiUrl } from '@/shared/api/api';
 import { memo } from 'react';
 import { Cat } from '../../model/types/cat';
