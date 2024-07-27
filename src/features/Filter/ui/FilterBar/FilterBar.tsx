@@ -11,7 +11,8 @@ export const FilterBar = memo(() => {
 
     const handleClick = () => {
         dispatch(resetFilter());
-    }
+    };
+    
     return (
         <Stack justify='between'>
             {

@@ -8,6 +8,10 @@
     box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
     width: 350px;
 
+    @include tablet-m {
+        width: 300px;
+    }
+
     @include mobile-l {
         width: 100%;
         padding: 25px;

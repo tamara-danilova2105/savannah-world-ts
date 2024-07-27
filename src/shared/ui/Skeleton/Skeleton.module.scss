@@ -8,6 +8,11 @@
     width: 350px;
     height: 530px;
 
+    @include tablet-m {
+        width: 300px;
+        height: 480px;
+    }
+
     @include mobile-l {
         width: 100%;
         height: 450px;

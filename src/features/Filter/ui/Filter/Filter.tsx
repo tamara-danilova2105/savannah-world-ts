@@ -28,7 +28,7 @@ export const Filter = memo(() => {
                     isOpen={isOpen}
                     close={toggleDrawer}
                 >
-                    <FilterDrawer />
+                    <FilterDrawer close={toggleDrawer} />
                 </Drawer>
             </div>
         </div>
