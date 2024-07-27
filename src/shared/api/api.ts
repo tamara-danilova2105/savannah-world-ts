@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const apiUrl = 'http://localhost:8000';
+const config = {
+    production: 'https://savannah-world-backend.onrender.com',
+    develop: 'http://localhost:8000',
+}
+
+export const apiUrl = config.production;
 
 export const api = createApi({
     reducerPath: 'api',
