@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { Cat } from "../../model/types/cat";
-import { Stack } from "@/shared/ui/Stack/Stack";
 import { Text } from "@/shared/ui/Text/Text";
 import { CatCard } from "../CatCard/CatCard";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import styles from './CatList.module.scss';
 
 interface CatListProps {
     cats?: Cat[];
@@ -27,12 +27,10 @@ export const CatList = memo((props: CatListProps) => {
 
     if (!isLoading && !cats?.length) {
         return (
-            <Stack justify='center' align='start'>
-                <Text>
-                    Не найдено - FIX LATER
-                </Text>
-            </Stack>
-        )
+            <Text size="m" className={styles.text}>
+                Мы не нашли котят по вашему запросу. Попробуйте позже или измените критерии поиска.
+            </Text>
+        );
     };
 
     return (

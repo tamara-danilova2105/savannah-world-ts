@@ -20,7 +20,7 @@ export const HeaderSection = (props: HeaderSectionProps) => {
         hasButton = false,
         handleClick,
         button,
-     } = props;
+    } = props;
 
     return (
         <Stack

@@ -2,13 +2,9 @@
 
 .main {
     @include main-styles;
-    padding-top: 50px;
+    padding-top: 50px !important;
 }
 
 .title {
     @include title-section;
-}
-
-.catlist {
-    flex-wrap: wrap;
 }
