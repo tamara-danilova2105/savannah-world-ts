@@ -9,6 +9,7 @@ import { useModal } from "@/shared/hooks/useModal";
 import { CreateCatCard } from "@/widgets/CreateCatCard";
 import { useAppSelector } from "@/app/providers/store/config/hooks";
 import { useMemo } from "react";
+import { Stack } from "@/shared/ui/Stack/Stack";
 
 const CatalogPage = () => {
     const [changeCreateModal, drawCreateModal] = useModal();
@@ -56,7 +57,17 @@ const CatalogPage = () => {
             {
                 error
                     ? <div>Не найдено - FIX LATER</div>
-                    : <CatList cats={cats} isLoading={isLoading} />
+                    : <Stack
+                        gap="32" justify='between'
+                        className={styles.catlist}
+                    >
+                        <CatList 
+                            cats={cats} 
+                            isLoading={isLoading} 
+                            skeletons={6}
+                        />
+                    </Stack>
+                    
             }
 
             {/* FIX LATER */}

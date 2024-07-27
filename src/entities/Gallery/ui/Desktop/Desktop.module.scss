@@ -17,6 +17,10 @@
 .images {
     width: 380px;
 
+    @include desktop {
+        width: 340px;
+    }
+
     @include desktop-l {
         width: 330px;
     }

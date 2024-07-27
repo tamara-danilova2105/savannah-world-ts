@@ -8,3 +8,7 @@
 .title {
     @include title-section;
 }
+
+.catlist {
+    flex-wrap: wrap;
+}

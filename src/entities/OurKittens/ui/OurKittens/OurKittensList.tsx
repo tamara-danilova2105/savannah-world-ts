@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { kittensMock } from '@/entities/Cat/lib/data';
-import { CatCard } from '@/entities/Cat';
+import { Cat, CatCard, CatList } from '@/entities/Cat';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
+import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
 
 export const OurKittensList = () => {
 
@@ -19,9 +19,16 @@ export const OurKittensList = () => {
         navigate("/catalog");
     }, [navigate]);
 
+    const {
+        data: { cats } = {},
+        error,
+        isLoading
+    } = useGetCatsQuery({shipment: ['готов к отправке']});
+
+    if (error) return null;
+
     return (
         <section className={styles.section}>
-
             <HeaderSection
                 section="Наши котята"
                 hasButton
@@ -38,13 +45,11 @@ export const OurKittensList = () => {
                 justify='between'
                 className={styles.container_desktop}
             >
-                {kittensMock.map(kitten =>
-                    <CatCard
-                        key={kitten._id}
-                        cat={kitten}
-                        onClick={handleClick}
-                    />
-                )}
+                <CatList 
+                    cats={cats?.slice(0, 3)} 
+                    isLoading={isLoading} 
+                    skeletons={3}
+                />
             </Stack>
 
             <div className={styles.container_mobile}>
@@ -63,10 +68,10 @@ export const OurKittensList = () => {
                         },
                     }}
                 >
-                    {kittensMock.map(kitten =>
-                        <SwiperSlide key={kitten._id}>
+                    {cats?.slice(0, 3).map((cat: Cat) =>
+                        <SwiperSlide key={cat._id}>
                             <CatCard
-                                cat={kitten}
+                                cat={cat}
                                 onClick={handleClick}
                             />
                         </SwiperSlide>

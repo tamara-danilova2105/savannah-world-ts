@@ -4,25 +4,26 @@ import { Stack } from "@/shared/ui/Stack/Stack";
 import { Text } from "@/shared/ui/Text/Text";
 import { CatCard } from "../CatCard/CatCard";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import styles from './CatList.module.scss';
 
 interface CatListProps {
     cats?: Cat[];
+    isCatalog?: boolean;
     isLoading?: boolean;
+    skeletons: number;
 };
-
-const getSkeletons = () =>
-    new Array(6)
-        .fill(0)
-        .map((_, index) => (
-            <Skeleton key={index} />
-        ));
 
 export const CatList = memo((props: CatListProps) => {
     const {
         cats,
+        isCatalog = false,
         isLoading,
+        skeletons,
     } = props;
+
+    const getSkeletons = () =>
+        new Array(skeletons).fill(0).map((_, index) => (
+            <Skeleton key={index} />
+        ));
 
     if (!isLoading && !cats?.length) {
         return (
@@ -35,18 +36,15 @@ export const CatList = memo((props: CatListProps) => {
     };
 
     return (
-        <Stack
-            gap="32" justify='between'
-            className={styles.catlist}
-        >
+        <>
             {cats?.map(cat => (
                 <CatCard
                     key={cat._id}
                     cat={cat}
-                    isCatalog
+                    isCatalog={isCatalog}
                 />
             ))}
             {isLoading && getSkeletons()}
-        </Stack>
+        </>
     );
 });

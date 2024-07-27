@@ -16,7 +16,7 @@ export const UploadImage = memo((props: UploadImageProps) => {
 
     return (
         <div className={styles.upload_container}>
-            {/* {downloadIcon()} */}
+            {downloadIcon()}
 
             {imagePreview &&
                 <Cropper

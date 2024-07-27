@@ -6,9 +6,10 @@ import styles from './CatCard.module.scss';
 import { KittensMock } from '../../lib/data';
 import { apiUrl } from '@/shared/api/api';
 import { memo } from 'react';
+import { Cat } from '../../model/types/cat';
 
 interface CatCardProps {
-    cat: KittensMock;
+    cat: Cat;
     isCatalog?: boolean;
     onClick?: () => void;
 };
