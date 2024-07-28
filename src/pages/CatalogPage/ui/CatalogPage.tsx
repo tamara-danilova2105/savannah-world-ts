@@ -1,6 +1,6 @@
 import { HeaderSection } from "@/shared/ui/HeaderSection";
 import { Text } from "@/shared/ui/Text/Text";
-// import { Button } from "@/shared/ui/Button/Button";
+import { Button } from "@/shared/ui/Button/Button";
 import { useModal } from "@/shared/hooks/useModal";
 import { CreateCatCard } from "@/widgets/CreateCatCard";
 import { SearchCats } from '@/widgets/SearchCats';

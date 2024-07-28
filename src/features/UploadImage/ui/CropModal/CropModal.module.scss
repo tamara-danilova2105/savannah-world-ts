@@ -1,0 +1,37 @@
+@import '@/app/styles/mixin.scss';
+@import '@/app/styles/media-queries.scss';
+
+.upload_container {
+    @include modal-content;
+    position: relative;
+    width: 800px;
+    height: 700px;
+}
+
+.title {
+    @include mobile-l {
+        font-size: var(--font-size-m);
+    }
+
+    @include mobile-m {
+        font-size: var(--font-size-xs);
+    }
+}
+
+.image {
+    width: auto;
+    max-height: 500px !important;
+}
+
+.button {
+    width: 100%;
+    @include button-icon;
+}
+
+.canvas {
+    display: none;
+    object-fit: contain;
+    width: 330px;
+    height: 374px;
+    border: black;
+}

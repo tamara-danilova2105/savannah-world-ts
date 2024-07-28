@@ -10,7 +10,7 @@ import { getCatCard, resetCatCard, setCatCard } from '@/features/FormCatCard';
 import { Button } from '@/shared/ui/Button/Button';
 import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
-import { UploadImage } from '@/shared/ui/UploadImage/UploadImage';
+import { UploadImage } from '@/features/UploadImage';
 
 interface CreateCatCardProps {
     changeCreateModal: () => void;
@@ -23,6 +23,7 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
     const [uploadFile, { isLoading: isUploading }] = useUploadFileMutation();
     const [file, setFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [fileName, setFileName] = useState<string>("");
     const [disabled, setDisabled] = useState(true);
     const [statusReq, setStatusReq] = useState({ text: '', isError: false });
     const isLoading = isSaving || isUploading;
@@ -31,11 +32,24 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
         if (e.target.files && e.target.files.length > 0) {
             const file = e.target.files[0];
             setFile(file);
+            setFileName(file.name);
 
             const fileUrl = URL.createObjectURL(file);
             setImagePreview(fileUrl);
         } else {
             setImagePreview(null);
+        }
+    };
+
+    const setCroppedFile = async (dataUrl: string) => {
+        try {
+            const response = await fetch(dataUrl);
+            const blob = await response.blob();
+            const file = new File([blob], `${fileName}`, { type: "image/png" });
+            setFile(file);
+            setImagePreview(dataUrl);
+        } catch (error) {
+            console.error("Ошибка при преобразовании dataUrl в файл:", error);
         }
     };
 
@@ -96,6 +110,7 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
                 <UploadImage
                     uploadFileFromDisk={uploadFileFromDisk}
                     imagePreview={imagePreview}
+                    setCroppedFile={setCroppedFile}
                 />
                 <div>
                     <FormCatCard setForm={setFormData} />
