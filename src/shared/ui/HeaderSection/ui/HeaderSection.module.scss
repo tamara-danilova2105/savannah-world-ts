@@ -14,8 +14,7 @@
 
     @include mobile-l {
         width: 100%;
-        font-size: 14px;
-        padding: 2px 25px;
+        font-size: var(--font-size-s);
     }
 }
 

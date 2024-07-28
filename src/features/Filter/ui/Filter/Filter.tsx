@@ -6,6 +6,7 @@ import { Drawer } from "@/shared/ui/Drawer/Drawer";
 import { filterIcon } from "@/shared/assets/svg/filterIcon";
 import { useAppSelector } from "@/app/providers/store/config/hooks";
 import { selectFilterParams } from "../../model/selectors/selectors";
+import { Badge } from "@/shared/ui/Badge/Badge";
 
 export const Filter = memo(() => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +34,10 @@ export const Filter = memo(() => {
                     {filterIcon()}
                 </button>
                 {totalFilter > 0 &&
-                    <div className={styles.badge}>
-                        {totalFilter}
-                    </div>
+                    <Badge 
+                        count={totalFilter} 
+                        className={styles.margin}
+                    />
                 }
                 <Drawer
                     isOpen={isOpen}

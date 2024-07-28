@@ -4,6 +4,7 @@ import styles from './ListBox.module.scss';
 import { Checkbox } from "../CheckBox/CheckBox";
 import { arrowDownIcon, arrowUpIcon } from "@/shared/assets/svg/arrowIcons";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { Badge } from "../Badge/Badge";
 
 interface ListBoxProps {
     className?: string;
@@ -43,9 +44,7 @@ export const ListBox = memo((props: ListBoxProps) => {
                         </div>
                         {
                             selected.length > 0 && badge
-                                ? <div className={styles.badge}>
-                                    {selected.length}
-                                </div>
+                                ? <Badge count={selected.length} className={styles.position} />
                                 : null
                         }
                     </ListboxButton>

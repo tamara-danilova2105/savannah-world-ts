@@ -21,10 +21,6 @@
         background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
         background-size: 250% 100%;
     }
-
-    @include mobile-l {
-        padding: 5px 10px;
-    }
 }
 
 .secondary {
@@ -36,10 +32,6 @@
     &:hover {
         background: linear-gradient(to left, var(--brown-color), transparent);
         background-size: 350% 100%;
-    }
-
-    @include mobile-l {
-        padding: 3px 10px;
     }
 }
 
