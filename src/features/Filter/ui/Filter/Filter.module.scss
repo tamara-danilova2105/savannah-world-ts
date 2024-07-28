@@ -30,3 +30,14 @@
 .button {
     background-color: inherit;
 }
+
+.badge {
+    width: 35px;
+    height: 35px;
+    background-color: var(--brown-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 5px;
+}

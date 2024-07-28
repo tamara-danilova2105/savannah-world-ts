@@ -73,8 +73,4 @@
   @include desktop-l {
     font-size: var(--font-size-s);
   }
-
-  @include tablet-l {
-    font-size: var(--font-size-xs);
-  }
 }

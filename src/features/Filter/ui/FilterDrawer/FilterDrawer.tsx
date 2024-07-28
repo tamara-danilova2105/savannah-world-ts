@@ -17,6 +17,7 @@ export const FilterDrawer = memo(({ close }: FilterDrawerProps) => {
 
     const handleClick = () => {
         dispatch(resetFilter());
+        close();
     };
 
     return (

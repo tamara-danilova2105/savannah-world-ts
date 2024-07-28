@@ -15,6 +15,7 @@ const CatalogPage = () => {
             {drawCreateModal(
                 <CreateCatCard changeCreateModal={changeCreateModal} />
             )}
+            {/* <Button onClick={changeCreateModal}>создать</Button> */}
 
             <HeaderSection section="Продаются котята">
                 <Text tag="h2" size='xl' className={styles.title}>
@@ -23,9 +24,6 @@ const CatalogPage = () => {
             </HeaderSection>
 
             <SearchCats />
-
-            {/* FIX LATER */}
-            {/* <Button onClick={changeCreateModal}>создать</Button> */}
         </main>
     );
 };

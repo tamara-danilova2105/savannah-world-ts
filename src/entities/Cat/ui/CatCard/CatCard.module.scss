@@ -34,12 +34,6 @@
     }
 }
 
-.text {
-    @include mobile-l {
-        font-size: var(--font-size-xs);
-    }
-}
-
 .btn {
     width: 100%;
     margin-top: 20px;
