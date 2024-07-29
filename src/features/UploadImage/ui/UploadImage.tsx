@@ -1,38 +1,28 @@
 import { ChangeEvent, memo } from 'react';
 import styles from './UploadImage.module.scss';
 import { downloadIcon } from '@/shared/assets/svg/downloadIcon';
-import { Input } from '../../../../shared/ui/Input/Input';
-import { useModal } from '@/shared/hooks/useModal';
-import { CropModal } from '../CropModal/CropModal';
+import { Input } from '../../../shared/ui/Input/Input';
 
 interface UploadImageProps {
     uploadFileFromDisk: (e: ChangeEvent<HTMLInputElement>) => void;
     imagePreview: string | null;
-    setCroppedFile: (dataUrl: string) => void; 
+    setIsCrop: (croped: boolean) => void;
 }
 
 export const UploadImage = memo((props: UploadImageProps) => {
     const { 
         uploadFileFromDisk, 
         imagePreview, 
-        setCroppedFile 
+        setIsCrop
     } = props;
-    const [changeCropModal, drawCropModal] = useModal();
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
         uploadFileFromDisk(e);
-        changeCropModal();
+        setIsCrop(true);
     };
 
     return (
         <div className={styles.upload_container}>
-            {drawCropModal(
-                <CropModal 
-                    imagePreview={imagePreview} 
-                    changeCropModal={changeCropModal}
-                    setCroppedFile={setCroppedFile}
-                />
-            )}
             {downloadIcon()}
             <Input
                 type='file'

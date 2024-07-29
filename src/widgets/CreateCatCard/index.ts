@@ -1,4 +1,4 @@
-import { CreateCatCard } from "./ui/CreateCatCard";
+import { CreateCatCard } from "./ui/CreateCatCard/CreateCatCard";
 
 export {
     CreateCatCard,

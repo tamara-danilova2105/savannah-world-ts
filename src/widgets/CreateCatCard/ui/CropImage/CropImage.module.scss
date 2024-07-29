@@ -1,13 +1,6 @@
 @import '@/app/styles/mixin.scss';
 @import '@/app/styles/media-queries.scss';
 
-.upload_container {
-    @include modal-content;
-    position: relative;
-    width: 800px;
-    height: 700px;
-}
-
 .title {
     @include mobile-l {
         font-size: var(--font-size-m);
@@ -20,12 +13,17 @@
 
 .image {
     width: auto;
-    max-height: 500px !important;
+    max-height: 400px !important;
 }
 
 .button {
     width: 100%;
     @include button-icon;
+
+    @include mobile-l {
+        font-size: var(--font-size-s);
+        padding: 5px 25px;
+    }
 }
 
 .canvas {

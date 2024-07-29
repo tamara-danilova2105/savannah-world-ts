@@ -1,27 +1,26 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
-import styles from './CropModal.module.scss';
+import styles from './CropImage.module.scss';
 import { Text } from '@/shared/ui/Text/Text';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
-import { SyntheticEvent, useRef, useState } from 'react';
+import { memo, SyntheticEvent, useRef, useState } from 'react';
 import ReactCrop, { centerCrop, convertToPixelCrop, Crop, makeAspectCrop } from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-interface CropModalProps {
+interface CropImageProps {
     imagePreview: string | null;
-    changeCropModal: () => void;
     setCroppedFile: (dataUrl: string) => void;
+    setIsCrop: (croped: boolean) => void;
 };
 
 const WIDTH = 300;
 const HEIGHT = 400;
 const ASPECT = 3 / 4;
 
-export const CropModal = (props: CropModalProps) => {
+export const CropImage = memo((props: CropImageProps) => {
     const { 
         imagePreview,
-        changeCropModal,
         setCroppedFile,
+        setIsCrop,
     } = props;
 
     const imgRef = useRef<HTMLImageElement | null>(null);    
@@ -85,17 +84,12 @@ export const CropModal = (props: CropModalProps) => {
             );
             const dataUrl = previewCanvasRef.current.toDataURL();
             setCroppedFile(dataUrl);
-            changeCropModal();
+            setIsCrop(false);
         };
     };
 
     return (
-        <Stack 
-            justify='center'
-            direction="column"
-            gap='16'
-            className={styles.upload_container}
-        >
+        <>
             <Text tag='h3' size='l' className={styles.title}>
                 Кадрировать фотографию
             </Text>
@@ -125,6 +119,6 @@ export const CropModal = (props: CropModalProps) => {
                 {arrowIcon()}
             </Button>
             {crop && <canvas className={styles.canvas} ref={previewCanvasRef} />}
-        </Stack>
+        </>
     );
-};
+});

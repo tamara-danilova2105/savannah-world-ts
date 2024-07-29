@@ -1,4 +1,4 @@
-import { UploadImage } from "./ui/UploadImage/UploadImage";
+import { UploadImage } from "./ui/UploadImage";
 
 export {
     UploadImage,

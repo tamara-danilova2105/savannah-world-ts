@@ -9,7 +9,7 @@ import { useAppSelector } from '@/app/providers/store/config/hooks';
 import { Text } from '@/shared/ui/Text/Text';
 import ReactPaginate from 'react-paginate';
 
-const countCart = 12;
+const LIMIT = 12;
 
 interface PageChangeEvent {
     selected: number;
@@ -46,7 +46,7 @@ export const SearchCats = () => {
         isLoading
     } = useGetCatsQuery(params);
 
-    let itemsPerPage = Math.ceil((totalCount || 0) / countCart);
+    let itemsPerPage = Math.ceil((totalCount || 0) / LIMIT);
 
     const handlePageChange = (event: PageChangeEvent) => {
         setSelectedPage(event.selected);
@@ -79,7 +79,7 @@ export const SearchCats = () => {
                     </Stack>
             }
             {
-                totalCount > countCart && 
+                totalCount > LIMIT && 
                 <Stack justify='center'>
                     <ReactPaginate 
                         nextLabel=">"

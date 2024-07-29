@@ -39,6 +39,7 @@
     cursor: default;
     background-color: var(--disabled-color);
     pointer-events: none;
+    padding: 8px 25px;
 
     &:hover {
         background: none;
