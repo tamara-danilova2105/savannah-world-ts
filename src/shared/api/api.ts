@@ -5,7 +5,7 @@ const config = {
     develop: 'http://localhost:8000',
 }
 
-export const apiUrl = config.production;
+export const apiUrl = config.develop;
 
 export const api = createApi({
     reducerPath: 'api',
@@ -19,5 +19,6 @@ export const api = createApi({
             return headers;
         }
     }),
+    tagTypes: ['Cats'],
     endpoints: (builder) => ({}),
 });

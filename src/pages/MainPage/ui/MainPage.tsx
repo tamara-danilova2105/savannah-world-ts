@@ -1,6 +1,6 @@
 import { AboutUs } from '@/entities/AboutUs';
 import { Faq } from '@/entities/Faq';
-import { OurKittens } from '@/entities/OurKittens';
+import { OurKittens } from '@/features/OurKittens';
 import { Characterictics } from '@/entities/Characteristics';
 import { GeneticSubgroups } from '@/entities/GeneticSubgroups';
 import { Advices } from '@/entities/Advices';
