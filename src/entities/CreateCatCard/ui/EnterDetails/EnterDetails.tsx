@@ -2,7 +2,6 @@ import { Text } from '@/shared/ui/Text/Text';
 import styles from './EnterDetails.module.scss';
 import closeIcon from '@/shared/assets/images/close.png';
 import { Stack } from '@/shared/ui/Stack/Stack';
-import { FormCatCard, getCatCard, resetCatCard, setCatCard } from '@/entities/FormCatCard';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
@@ -11,6 +10,8 @@ import { useSelector } from 'react-redux';
 import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
 import { UploadImage } from '../UploadImage/UploadImage';
 import { Loader } from '@/shared/ui/Loader/Loader';
+import { getCatCard, resetCatCard, setCatCard } from '../../../../features/Cats/model/slices/slice';
+import { FormCatCard } from '../FormCatCard/FormCatCard';
 
 interface EnterDetailsProps {
     changeCreateModal: () => void;

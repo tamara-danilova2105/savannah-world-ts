@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { createCatCard } from "@/entities/FormCatCard";
 import { api } from "@/shared/api/api";
 import { filter } from "@/features/Filter";
+import { catCard } from "@/features/Cats";
 
 const rootReducer = combineReducers({
-    createCatCard,
+    catCard,
     filter,
     [api.reducerPath]: api.reducer,
 });

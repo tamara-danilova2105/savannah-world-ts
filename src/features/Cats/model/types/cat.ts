@@ -7,3 +7,9 @@ export interface Cat {
     shipment: string;
     image: string;
 }
+
+export type CatCard = Omit<Cat, '_id' | 'image'>;
+
+export interface CreateCatCardSchema {
+    cat: CatCard
+}
