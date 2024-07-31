@@ -5,7 +5,6 @@ import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { Signin } from '@/features/Signin';
 import { signinIcon } from '@/shared/assets/svg/navbarIcons';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
-import { Button } from '@/shared/ui/Button/Button';
 
 export const NavbarMobile = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
