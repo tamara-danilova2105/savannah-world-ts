@@ -13,7 +13,7 @@ interface SignInProps {
 }
 
 export const Signin = memo(({ changeSigninModal }: SignInProps) => {
-    const [isError ] = useState(false);
+    const [isError] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
     return (
@@ -39,14 +39,24 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                 <Input
                     isError={isError}
                     placeholder='логин'
-                    onChange={() => {}}
+                    onChange={() => { }}
                 />
-                <Input
-                    isError={isError}
-                    type={!showPassword ? 'password' : 'text'}
-                    placeholder='пароль'
-                    onChange={() => {}}
-                />
+                <div className={styles.password}>
+                    <Input
+                        isError={isError}
+                        type={!showPassword ? 'password' : 'text'}
+                        placeholder='пароль'
+                        onChange={() => { }}
+                    />
+                    <button
+                        className={styles.password_btn}
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        {showPassword ? hidePasswordIcon() : showPasswordIcon()}
+                    </button>
+                </div>
+
                 <div className={styles.error}>
                     {
                         isError &&
@@ -59,13 +69,6 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                     войти {arrowIcon()}
                 </Button>
             </form>
-
-            <button
-                className={styles.password}
-                onClick={() => setShowPassword(!showPassword)}
-            >
-                {showPassword ? hidePasswordIcon() : showPasswordIcon()}
-            </button>
         </Stack>
     );
 });

@@ -28,13 +28,13 @@ export const NavbarMobile = () => {
                         />
                     ))
                 }
-                <Button
+                <button
                     className={styles.button}
                     onClick={changeSigninModal}
                 >
                     войти
                     {signinIcon()}
-                </Button>
+                </button>
             </nav>
         </div>
     );

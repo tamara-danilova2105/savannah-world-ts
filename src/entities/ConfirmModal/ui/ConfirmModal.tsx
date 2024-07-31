@@ -35,15 +35,16 @@ export const ConfirmModal = (props: ConfirmModalProps) => {
             <Text size="m" className={styles.text}>
                 {text}
             </Text>
-            <Stack gap='16'>
+            <Stack gap='16' className={styles.button_container}>
                 <Button
                     variant='secondary'
+                    className={styles.btn_cancel}
                     onClick={changeConfirmModal}
                 >
                     отмена
                 </Button>
                 <Button
-                    className={styles.button}
+                    className={styles.btn_delete}
                     onClick={onConfirm}
                 >
                     удалить

@@ -4,12 +4,7 @@
 .signin {
     width: 600px;
     @include modal-content;
-    
-
-    @include mobile-l {
-        width: 95%;
-        margin-left: 10px;
-    }
+    position: relative;
 
     .title {
         align-self: flex-start;
@@ -28,21 +23,23 @@
 
 .closeButton {
     cursor: pointer;
-    position: relative;
-    left: 250px;
-    top: 10px;
+    position: absolute;
+    left: 530px;
+    top: 15px;
     width: 50px;
     height: 50px;
 
     @include mobile-l {
-        left: 160px;
+        left: 87%;
         width: 40px;
         height: 40px;
     }
 
     @include mobile-m {
-        top: 5px;
-        left: 150px;
+        left: 85%;
+        top: 10px;
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -73,16 +70,15 @@
 
 .password {
     position: relative;
-    left: 170px;
-    bottom: 185px;
-    width: 80px;
-    height: 0;
+}
+
+.password_btn {
+    position: absolute;
+    background: none;
+    top: 8px;
+    right: 15px;
 
     @include mobile-l {
-        left: 160px;
-    }
-
-    @include mobile-m {
-        left: 130px;
+        top: 4px; 
     }
 }

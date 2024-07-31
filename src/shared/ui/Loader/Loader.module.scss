@@ -1,3 +1,5 @@
+@import '@/app/styles/media-queries.scss';
+
 .loader {
     width: 28px;
     height: 28px;
@@ -7,6 +9,11 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+
+    @include mobile-l {
+        width: 22px;
+        height: 22px;
+    }
 }
 
 @keyframes rotation {

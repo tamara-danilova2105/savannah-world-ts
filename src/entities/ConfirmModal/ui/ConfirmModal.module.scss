@@ -7,19 +7,42 @@
 }
 
 .title {
-    margin-top: 40px;
+
+    @include mobile-l {
+        font-size: var(--font-size-m);
+    }
 }
 
 .text {
     text-align: justify;
+
+    @include mobile-l {
+        font-size: var(--font-size-s);
+    }
 }
 
-.button {
+.button_container {
+    @include mobile-l {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+}
+
+.btn_cancel {
+    width: 200px;
+
+    @include mobile-l {
+        width: 60%;
+    }
+}
+
+.btn_delete {
     width: 200px;
     @include button-icon;
 
     @include mobile-l {
-        font-size: var(--font-size-s);
-        padding: 5px 25px;
+        width: 60%;
     }
 }

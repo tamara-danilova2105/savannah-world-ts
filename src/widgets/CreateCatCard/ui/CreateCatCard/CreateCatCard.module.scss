@@ -5,16 +5,13 @@
     @include modal-content;
     position: relative;
     width: 800px;
-    height: 600px;
 
     @include tablet-m {
         width: 600px;
-        height: 900px;
     }
 
     @include mobile-l {
         width: 96%;
-        height: 700px;
         margin-left: 10px;
     }
 }

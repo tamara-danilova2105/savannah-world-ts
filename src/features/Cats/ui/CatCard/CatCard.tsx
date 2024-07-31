@@ -60,7 +60,6 @@ export const CatCard = memo((props: CatCardProps) => {
                     <DeleteCat id={_id} />
                 </div>
             }
-
         </Stack>
     );
 });

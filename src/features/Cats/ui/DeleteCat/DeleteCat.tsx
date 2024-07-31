@@ -7,7 +7,7 @@ import { ConfirmModal } from "@/entities/ConfirmModal";
 
 interface DeleteCatProps {
     id: string;
-}
+};
 
 export const DeleteCat = (props: DeleteCatProps) => {
     const { id } = props;

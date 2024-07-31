@@ -5,17 +5,26 @@
     font-size: var(--font-size-m);
     font-weight: 700;
     text-transform: var(--text-uppercase);
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;   
+    user-select: none;
+    
+    @include mobile-l {
+        height: 36px;
+        font-size: var(--font-size-s);
+    }
 }
 
 .accent {
     background-color: var(--dark-brown-color);
     color: var(--white-color);
-    padding: 8px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), var(--dark-brown-color));
@@ -27,7 +36,6 @@
     border: 2px solid var(--dark-brown-color);
     color: var(--dark-brown-color);
     background-color: transparent;
-    padding: 6px 25px;
 
     &:hover {
         background: linear-gradient(to left, var(--brown-color), transparent);
@@ -39,7 +47,6 @@
     cursor: default;
     background-color: var(--disabled-color);
     pointer-events: none;
-    padding: 8px 25px;
 
     &:hover {
         background: none;
