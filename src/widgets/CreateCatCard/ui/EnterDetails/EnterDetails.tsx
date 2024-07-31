@@ -2,14 +2,14 @@ import { Text } from '@/shared/ui/Text/Text';
 import styles from './EnterDetails.module.scss';
 import closeIcon from '@/shared/assets/images/close.png';
 import { Stack } from '@/shared/ui/Stack/Stack';
-import { UploadImage } from '@/features/UploadImage';
-import { FormCatCard, getCatCard, resetCatCard, setCatCard } from '@/features/FormCatCard';
+import { FormCatCard, getCatCard, resetCatCard, setCatCard } from '@/entities/FormCatCard';
 import { Button } from '@/shared/ui/Button/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
+import { UploadImage } from '../UploadImage/UploadImage';
 
 interface EnterDetailsProps {
     changeCreateModal: () => void;

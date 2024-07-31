@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Cat, CatCard, CatList } from '@/entities/Cat';
+import { Cat, CatCard, CatList } from '@/features/Cats';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
