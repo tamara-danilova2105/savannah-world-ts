@@ -10,6 +10,7 @@ import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
 import { UploadImage } from '../UploadImage/UploadImage';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 interface EnterDetailsProps {
     changeCreateModal: () => void;
@@ -99,7 +100,7 @@ export const EnterDetails = (props: EnterDetailsProps) => {
                     >
                         сохранить
                         {isLoading
-                            ? <span className={styles.loader} />
+                            ? <Loader />
                             : <>{arrowIcon()}</>
                         }
                     </Button>

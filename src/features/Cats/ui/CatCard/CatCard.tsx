@@ -6,9 +6,8 @@ import { apiUrl } from '@/shared/api/api';
 import { memo } from 'react';
 import { Cat } from '../../model/types/cat';
 import { editIcon } from '@/shared/assets/svg/editIcon';
-import { deleteIcon } from '@/shared/assets/svg/deleteIcon';
-import { useDeleteCatMutation } from '@/pages/CatalogPage/api/api';
 import styles from './CatCard.module.scss';
+import { DeleteCat } from '../DeleteCat/DeleteCat';
 
 interface CatCardProps {
     cat: Cat;
@@ -19,17 +18,6 @@ interface CatCardProps {
 export const CatCard = memo((props: CatCardProps) => {
     const { _id, image, name_cat, generate, sex, age, shipment } = props.cat;
     const { isCatalog, onClick } = props;
-
-    const [deleteCat, { isLoading, error }] = useDeleteCatMutation();
-
-    const deleteCatCard = async () => {
-        try {
-            await deleteCat(_id).unwrap();
-        } catch (err) {
-            console.error("Failed to delete cat:", err);
-        }
-    };
-
 
     return (
         <Stack
@@ -65,17 +53,11 @@ export const CatCard = memo((props: CatCardProps) => {
                     подробнее {arrowIcon()}
                 </Button>
             }
-            {/* FIX LATER */}
             {
                 isCatalog &&
                 <div className={styles.edit}>
                     {editIcon()}
-                    <Button
-                        className={styles.delete}
-                        onClick={deleteCatCard}
-                    >
-                        {deleteIcon()}
-                    </Button>
+                    <DeleteCat id={_id} />
                 </div>
             }
 
