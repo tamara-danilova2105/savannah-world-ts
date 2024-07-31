@@ -8,6 +8,7 @@ import styles from './CatalogPage.module.scss';
 
 const CatalogPage = () => {
     const [changeCreateModal, drawCreateModal] = useModal();
+    const isAdmin = false; //FIX LATER
 
     return (
         <main className={styles.main}>
@@ -15,7 +16,12 @@ const CatalogPage = () => {
             {drawCreateModal(
                 <CreateCatCard changeCreateModal={changeCreateModal} />
             )}
-            <Button onClick={changeCreateModal}>создать</Button>
+            {
+                isAdmin &&
+                <Button onClick={changeCreateModal}>
+                    создать
+                </Button>
+            }
 
             <HeaderSection section="Продаются котята">
                 <Text tag="h2" size='xl' className={styles.title}>

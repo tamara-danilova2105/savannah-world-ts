@@ -18,6 +18,7 @@ interface CatCardProps {
 export const CatCard = memo((props: CatCardProps) => {
     const { _id, image, name_cat, generate, sex, age, shipment } = props.cat;
     const { isCatalog, onClick } = props;
+    const isAdmin = false; //FIX LATER
 
     return (
         <Stack
@@ -54,7 +55,7 @@ export const CatCard = memo((props: CatCardProps) => {
                 </Button>
             }
             {
-                isCatalog &&
+                (isCatalog && isAdmin) &&
                 <div className={styles.edit}>
                     {editIcon()}
                     <DeleteCat id={_id} />
