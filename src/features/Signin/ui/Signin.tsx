@@ -8,7 +8,7 @@ import { Text } from "@/shared/ui/Text/Text";
 import styles from './Signin.module.scss';
 import { hidePasswordIcon, showPasswordIcon } from "@/shared/assets/svg/passwordIcons";
 import { useLoginAdminMutation } from "../api/api";
-import Cookies from "js-cookie";
+import { useAuth } from "@/shared/hooks/useAuth";
 
 interface SignInProps {
     changeSigninModal?: () => void;
@@ -18,6 +18,7 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
     const [showPassword, setShowPassword] = useState(false);
     const [username, setUserName] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const { login } = useAuth();
 
     const [loginAdmin, { error }] = useLoginAdminMutation();
 
@@ -26,7 +27,7 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
 
         try {
             const response = await loginAdmin({ username, password }).unwrap();
-            Cookies.set('authToken', response.token, { expires: 1 });
+            login(response.token); 
             
             if (changeSigninModal) changeSigninModal();
         } catch (error) {

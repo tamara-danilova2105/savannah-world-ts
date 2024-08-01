@@ -12,7 +12,12 @@ import { useAuth } from '@/shared/hooks/useAuth';
 export const Navbar = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig);
-    const { isAuth } = useAuth();
+    const { isAuth, logout } = useAuth();
+
+    const handleClick = () => {
+        if (isAuth) logout();
+        else changeSigninModal();     
+    }
 
     return (
         <>
@@ -58,7 +63,7 @@ export const Navbar = () => {
                 <Button
                     className={styles.buttonSigin}
                     variant="secondary"
-                    onClick={changeSigninModal}
+                    onClick={handleClick}
                 >
                     {isAuth ? 'выйти' : 'войти'} 
                 </Button>

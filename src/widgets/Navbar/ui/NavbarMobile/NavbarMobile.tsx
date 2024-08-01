@@ -11,8 +11,6 @@ export const NavbarMobile = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig, true);
     const { isAuth, logout } = useAuth();
-
-    console.log(isAuth);
     
     const handleClick = () => {
         if (isAuth) logout();

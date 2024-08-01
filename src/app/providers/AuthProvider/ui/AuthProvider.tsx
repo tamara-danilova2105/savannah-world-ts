@@ -8,11 +8,13 @@ interface AuthProviderProps {
 interface AuthContextProps {
     isAuth: boolean;
     logout: () => void;
+    login: (token: string) => void;
 }
 
 export const AuthContext = createContext<AuthContextProps>({
     isAuth: false,
-    logout: () => {}
+    logout: () => {},
+    login: (tokin) => {}
 });
 
 export const AuthProvider = (props: AuthProviderProps) => {
@@ -35,13 +37,18 @@ export const AuthProvider = (props: AuthProviderProps) => {
         };
     }, []);
 
+    const login = (token: string) => {
+        Cookies.set('authToken', token, { expires: 1 });
+        setIsAuth(true);
+    };
+
     const logout = () => {
         Cookies.remove('authToken');
         setIsAuth(false);
     };
 
     return (
-        <AuthContext.Provider value={{ isAuth, logout }}>
+        <AuthContext.Provider value={{ isAuth, logout, login }}>
             {children}
         </AuthContext.Provider>
     );
