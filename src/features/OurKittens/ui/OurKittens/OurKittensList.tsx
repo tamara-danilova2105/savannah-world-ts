@@ -10,6 +10,7 @@ import { Cat, CatCard, CatList } from '@/features/Cats';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 export const OurKittensList = () => {
 
@@ -23,7 +24,7 @@ export const OurKittensList = () => {
         data: { cats } = {},
         error,
         isLoading
-    } = useGetCatsQuery({shipment: ['готов к отправке']});
+    } = useGetCatsQuery({ shipment: ['готов к отправке'] });
 
     if (error) return null;
 
@@ -38,16 +39,16 @@ export const OurKittensList = () => {
                 <Text tag="h2" size='xl' className={styles.title}>
                     Выберите себе <span>питомца</span>
                 </Text>
-                
+
             </HeaderSection>
 
             <Stack
                 justify='between'
                 className={styles.container_desktop}
             >
-                <CatList 
-                    cats={cats?.slice(0, 3)} 
-                    isLoading={isLoading} 
+                <CatList
+                    cats={cats?.slice(0, 3)}
+                    isLoading={isLoading}
                     skeletons={3}
                 />
             </Stack>
@@ -68,14 +69,19 @@ export const OurKittensList = () => {
                         },
                     }}
                 >
-                    {cats?.slice(0, 3).map((cat: Cat) =>
-                        <SwiperSlide key={cat._id}>
-                            <CatCard
-                                cat={cat}
-                                onClick={handleClick}
-                            />
-                        </SwiperSlide>
-                    )}
+                    {
+                        isLoading
+                            ? <Skeleton />
+                            : cats?.slice(0, 3).map((cat: Cat) =>
+                                <SwiperSlide key={cat._id}>
+                                    <CatCard
+                                        cat={cat}
+                                        onClick={handleClick}
+                                    />
+                                </SwiperSlide>
+                            )
+                    }
+
                 </Swiper>
             </div>
         </section>
