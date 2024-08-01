@@ -7,14 +7,33 @@ import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
 import { Text } from "@/shared/ui/Text/Text";
 import styles from './Signin.module.scss';
 import { hidePasswordIcon, showPasswordIcon } from "@/shared/assets/svg/passwordIcons";
+import { useLoginAdminMutation } from "../api/api";
+import Cookies from "js-cookie";
 
 interface SignInProps {
     changeSigninModal?: () => void;
 }
 
 export const Signin = memo(({ changeSigninModal }: SignInProps) => {
-    const [isError] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [username, setUserName] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    const [loginAdmin, { error }] = useLoginAdminMutation();
+
+    const handleSignin = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        try {
+            const response = await loginAdmin({ username, password }).unwrap();
+            Cookies.set('authToken', response.token, { expires: 1 });
+            
+            if (changeSigninModal) changeSigninModal();
+        } catch (error) {
+            console.error('ERROR')
+            
+        }
+    };
 
     return (
         <Stack
@@ -35,18 +54,18 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                 Введите данные, чтобы войти в систему
             </Text>
 
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSignin}>
                 <Input
-                    isError={isError}
+                    isError={!!error}
                     placeholder='логин'
-                    onChange={() => { }}
+                    onChange={(e) => setUserName(e.target.value)}
                 />
                 <div className={styles.password}>
                     <Input
-                        isError={isError}
+                        isError={!!error}
                         type={!showPassword ? 'password' : 'text'}
                         placeholder='пароль'
-                        onChange={() => { }}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <button
                         className={styles.password_btn}
@@ -59,13 +78,16 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
 
                 <div className={styles.error}>
                     {
-                        isError &&
+                        error &&
                         <Text size='xs' className={styles.text}>
                             Введен неверный логин и/или пароль
                         </Text>
                     }
                 </div>
-                <Button className={styles.buttonSignin}>
+                <Button
+                    className={styles.buttonSignin}
+                    type="submit"
+                >
                     войти {arrowIcon()}
                 </Button>
             </form>

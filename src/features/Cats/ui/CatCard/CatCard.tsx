@@ -8,6 +8,7 @@ import { Cat } from '../../model/types/cat';
 import { editIcon } from '@/shared/assets/svg/editIcon';
 import styles from './CatCard.module.scss';
 import { DeleteCat } from '../DeleteCat/DeleteCat';
+import { useAuth } from '@/shared/hooks/useAuth';
 
 interface CatCardProps {
     cat: Cat;
@@ -18,7 +19,7 @@ interface CatCardProps {
 export const CatCard = memo((props: CatCardProps) => {
     const { _id, image, name_cat, generate, sex, age, shipment } = props.cat;
     const { isCatalog, onClick } = props;
-    const isAdmin = false; //FIX LATER
+    const { isAuth } = useAuth();
 
     return (
         <Stack
@@ -55,7 +56,7 @@ export const CatCard = memo((props: CatCardProps) => {
                 </Button>
             }
             {
-                (isCatalog && isAdmin) &&
+                (isCatalog && isAuth) &&
                 <div className={styles.edit}>
                     {editIcon()}
                     <DeleteCat id={_id} />

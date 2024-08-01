@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/providers/store/config/store';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from './app/providers/ErrorBoundary';
+import { AuthProvider } from './app/providers/AuthProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +15,9 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <ErrorBoundary>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </ErrorBoundary>
     </Provider>
   </BrowserRouter>

@@ -81,7 +81,6 @@ export const OurKittensList = () => {
                                 </SwiperSlide>
                             )
                     }
-
                 </Swiper>
             </div>
         </section>

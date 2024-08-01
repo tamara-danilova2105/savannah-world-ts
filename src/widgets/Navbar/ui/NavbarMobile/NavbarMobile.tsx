@@ -5,10 +5,19 @@ import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { Signin } from '@/features/Signin';
 import { signinIcon } from '@/shared/assets/svg/navbarIcons';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
+import { useAuth } from '@/shared/hooks/useAuth';
 
 export const NavbarMobile = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig, true);
+    const { isAuth, logout } = useAuth();
+
+    console.log(isAuth);
+    
+    const handleClick = () => {
+        if (isAuth) logout();
+        else changeSigninModal();     
+    }
 
     return (
         <div className={styles.container}>
@@ -29,9 +38,9 @@ export const NavbarMobile = () => {
                 }
                 <button
                     className={styles.button}
-                    onClick={changeSigninModal}
+                    onClick={handleClick}
                 >
-                    войти
+                    {isAuth ? 'выйти' : 'войти'}
                     {signinIcon()}
                 </button>
             </nav>

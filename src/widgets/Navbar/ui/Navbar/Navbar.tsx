@@ -7,10 +7,12 @@ import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { emailIcons, instagramIcon, phoneIcon, telegrmaIcon, vkIcon } from '@/shared/assets/svg/footerIcons';
+import { useAuth } from '@/shared/hooks/useAuth';
 
 export const Navbar = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
     const routes = useAppRoutes(routeConfig);
+    const { isAuth } = useAuth();
 
     return (
         <>
@@ -58,7 +60,7 @@ export const Navbar = () => {
                     variant="secondary"
                     onClick={changeSigninModal}
                 >
-                    войти
+                    {isAuth ? 'выйти' : 'войти'} 
                 </Button>
             </div>
         </>

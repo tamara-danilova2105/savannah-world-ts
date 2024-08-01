@@ -1,29 +1,11 @@
 import { api } from "@/shared/api/api";
+import { createApiConfig } from "@/shared/api/helper";
 
 interface CatTag {
     type: 'Cats';
     id: string; 
 };
 const CATS_TAG: CatTag[] = [{ type: 'Cats', id: 'LIST' }];
-
-interface ApiConfig {
-    url: string;
-    method: HttpMethod;
-    body?: Record<string, string> | FormData;
-}
-
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
-
-const createApiConfig = (
-    method: HttpMethod, 
-    url: string, 
-    body?: Record<string, string> | FormData,
-): ApiConfig => ({
-    url,
-    method,
-    ...(body && { body })
-});
-
 
 const catsApi = api.injectEndpoints({
     endpoints: (build) => ({
