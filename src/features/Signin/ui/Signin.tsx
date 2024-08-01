@@ -9,6 +9,7 @@ import styles from './Signin.module.scss';
 import { hidePasswordIcon, showPasswordIcon } from "@/shared/assets/svg/passwordIcons";
 import { useLoginAdminMutation } from "../api/api";
 import { useAuth } from "@/shared/hooks/useAuth";
+import { Loader } from "@/shared/ui/Loader/Loader";
 
 interface SignInProps {
     changeSigninModal?: () => void;
@@ -20,7 +21,7 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
     const [password, setPassword] = useState<string>('');
     const { login } = useAuth();
 
-    const [loginAdmin, { error }] = useLoginAdminMutation();
+    const [loginAdmin, { isLoading, error }] = useLoginAdminMutation();
 
     const handleSignin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -89,7 +90,11 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                     className={styles.buttonSignin}
                     type="submit"
                 >
-                    войти {arrowIcon()}
+                    войти
+                    {isLoading
+                        ? <Loader />
+                        : <>{arrowIcon()}</>
+                    }
                 </Button>
             </form>
         </Stack>
