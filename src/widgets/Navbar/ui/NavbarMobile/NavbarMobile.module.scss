@@ -52,9 +52,13 @@
     align-items: center;
     color: var(--black-color);
     text-transform: uppercase;
-    background-color: transparent;
+    background: none;
     font-weight: normal;
     font-size: var(--font-size-xs);
+
+    &:hover {
+        background: none;
+    }
 
     svg {
         fill: var(--black-color);
