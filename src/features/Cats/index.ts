@@ -1,6 +1,7 @@
 import { CatList } from './ui/CatList/CatList';
 import { CatCard } from './ui/CatCard/CatCard';
 import { 
+    getCatCard,
     default as catCard,
 } from './model/slices/slice';
 
@@ -10,4 +11,5 @@ export {
     CatList,
     CatCard,
     catCard,
+    getCatCard,
 }

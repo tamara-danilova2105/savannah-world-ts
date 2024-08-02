@@ -1,10 +1,9 @@
 import { deleteIcon } from "@/shared/assets/svg/deleteIcon";
 import { Button } from "@/shared/ui/Button/Button";
-import styles from './DeleteCat.module.scss';
 import { useDeleteCatMutation } from "@/widgets/SearchCats/api/api";
 import { useModal } from "@/shared/hooks/useModal";
 import { ConfirmModal } from "@/entities/ConfirmModal";
-
+import styles from './DeleteCat.module.scss';
 interface DeleteCatProps {
     id: string;
 };
@@ -34,13 +33,12 @@ export const DeleteCat = (props: DeleteCatProps) => {
                     isLoading={isLoading}
                 />
             )}
-            <Button
-                className={styles.delete}
+            <Button 
+                className={styles.btn} 
                 onClick={changeConfirmModal}
             >
                 {deleteIcon()}
             </Button>
         </>
-
     );
 };

@@ -1,7 +1,10 @@
 import { getFilterText } from '@/features/Filter/lib/data';
 import { ListBox } from '@/shared/ui/ListBox/ListBox';
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback } from 'react';
 import styles from './SelectItem.module.scss';
+import { useSelector } from 'react-redux';
+import { CatCard } from '@/features/Cats/model/types/cat';
+import { getCatCard } from '@/features/Cats';
 
 interface SelectItemProps { 
     filter: string;
@@ -11,11 +14,11 @@ interface SelectItemProps {
 
 export const SelectItem = memo((props: SelectItemProps) => {
     const { filter, options, setForm } = props;
-    
-    const [selected, setSelected] = useState<string>('');
+
+    const cat = useSelector(getCatCard);
+    const selected = cat[filter as keyof CatCard];
     
     const changeSelect = useCallback((option: string) => {
-        setSelected(option);
         setForm?.(filter, option);
     }, [filter, setForm]);
 

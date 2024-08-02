@@ -3,14 +3,25 @@ import styles from './CreateCatCard.module.scss';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { EnterDetails } from '../EnterDetails/EnterDetails';
 import { CropImage } from '../CropImage/CropImage';
+import { apiUrl } from '@/shared/api/api';
+import { CatCard } from '@/features/Cats/model/types/cat';
 
 interface CreateCatCardProps {
     changeCreateModal: () => void;
+    image?: string;
 }
 
-export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
+export const CreateCatCard = (props: CreateCatCardProps) => {
+    const { 
+        changeCreateModal, 
+        image,
+    } = props;
+
     const [isCrop, setIsCrop] = useState(false);
-    const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [imagePreview, setImagePreview] = useState<string | null>(
+        image ? `${apiUrl}/uploads/${image}` : null
+    );
+    
     const [file, setFile] = useState<File | null>(null);
     const [fileName, setFileName] = useState<string>("");
 
@@ -38,7 +49,6 @@ export const CreateCatCard = ({ changeCreateModal }: CreateCatCardProps) => {
             console.error("Ошибка при преобразовании dataUrl в файл:", error);
         }
     }, [setFile, setImagePreview, fileName]);
-
 
     return (
         <Stack

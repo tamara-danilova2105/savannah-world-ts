@@ -5,10 +5,10 @@ import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { apiUrl } from '@/shared/api/api';
 import { memo } from 'react';
 import { Cat } from '../../model/types/cat';
-import { editIcon } from '@/shared/assets/svg/editIcon';
 import styles from './CatCard.module.scss';
 import { DeleteCat } from '../DeleteCat/DeleteCat';
 import { useAuth } from '@/shared/hooks/useAuth';
+import { EditCat } from '../EditCat/EditCat';
 
 interface CatCardProps {
     cat: Cat;
@@ -57,8 +57,8 @@ export const CatCard = memo((props: CatCardProps) => {
             }
             {
                 (isCatalog && isAuth) &&
-                <div className={styles.edit}>
-                    {editIcon()}
+                <div className={styles.admin}>
+                    <EditCat cat={props.cat} />
                     <DeleteCat id={_id} />
                 </div>
             }

@@ -4,12 +4,16 @@ import { dataFilter } from '@/features/Filter/lib/data';
 import { SelectItem } from '../SelectItem/SelectItem';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { Input } from '@/shared/ui/Input/Input';
+import { useSelector } from 'react-redux';
+import { getCatCard } from '@/features/Cats';
 
 interface FormCatCardProps {
     setForm?: (filter: string, option: string) => void;
 };
 
 export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
+
+    const cat = useSelector(getCatCard);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -27,6 +31,7 @@ export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
                 required
                 name='name_cat'
                 onChange={handleChange}
+                defaultValue={cat['name_cat']}
             />
 
             <Stack

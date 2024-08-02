@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/app/providers/store/config/store";
-import { CreateCatCardSchema } from "../types/cat";
+import { Cat, CreateCatCardSchema } from "../types/cat";
 
 const initialState: CreateCatCardSchema = {
     cat: {
@@ -12,10 +12,13 @@ const initialState: CreateCatCardSchema = {
     }
 }
 
-export const сatCardSlice = createSlice({
-    name: 'сatCard',
+export const catCardSlice = createSlice({
+    name: 'catCard',
     initialState,
     reducers: {
+        initCatCard: (state, action: PayloadAction<Cat>) => {
+            state.cat = action.payload;
+        },
         setCatCard: (state, action: PayloadAction<{ key: string, value: string }>) => {
             const { key, value } = action.payload; 
             state.cat = {
@@ -27,6 +30,6 @@ export const сatCardSlice = createSlice({
     },
 })
 
-export const { setCatCard, resetCatCard } = сatCardSlice.actions;
+export const { initCatCard, setCatCard, resetCatCard } = catCardSlice.actions;
 export const getCatCard = (state: RootState) => state.catCard.cat;
-export default сatCardSlice.reducer;
+export default catCardSlice.reducer;
