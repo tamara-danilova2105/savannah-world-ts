@@ -7,36 +7,41 @@ import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSaveCatMutation, useUploadFileMutation } from '@/widgets/SearchCats/api/api';
+import { useSaveCatMutation, useUpdateCatMutation, useUploadFileMutation } from '@/widgets/SearchCats/api/api';
 import { UploadImage } from '../UploadImage/UploadImage';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { getCatCard, resetCatCard, setCatCard } from '../../../../features/Cats/model/slices/slice';
 import { FormCatCard } from '../FormCatCard/FormCatCard';
 
 interface EnterDetailsProps {
-    changeCreateModal: () => void;
     imagePreview: string | null;
-    uploadFileFromDisk: (e: ChangeEvent<HTMLInputElement>) => void;
     file: File | null;
+    isCreate?: boolean;
+    id?: string
+    changeCreateModal: () => void;
+    uploadFileFromDisk: (e: ChangeEvent<HTMLInputElement>) => void;
     setIsCrop: (croped: boolean) => void;
 }
 
 export const EnterDetails = (props: EnterDetailsProps) => {
     const {
-        changeCreateModal,
         imagePreview,
-        uploadFileFromDisk,
         file,
+        isCreate,
+        id,
+        changeCreateModal,
+        uploadFileFromDisk,
         setIsCrop,
     } = props;
 
     const dispatch = useAppDispatch();
     const cat = useSelector(getCatCard);
     const [saveCat, { isLoading: isSaving }] = useSaveCatMutation();
+    const [updateCat, { isLoading: isUpdating }] = useUpdateCatMutation();
     const [uploadFile, { isLoading: isUploading }] = useUploadFileMutation();
     const [statusReq, setStatusReq] = useState({ text: '', isError: false });
     const [disabled, setDisabled] = useState(true);
-    const isLoading = isSaving || isUploading;
+    const isLoading = isSaving || isUploading || isUpdating;
 
     const resetFormData = () => {
         changeCreateModal();
@@ -49,8 +54,8 @@ export const EnterDetails = (props: EnterDetailsProps) => {
 
     useEffect(() => {
         const isEmpty = Object.values(cat).every(value => value !== '');
-        setDisabled(!isEmpty || !file);
-    }, [cat, file]);
+        setDisabled(!isEmpty || (!file && !imagePreview));
+    }, [cat, file, imagePreview]);
 
     const handleSaveCat = async () => {
         try {
@@ -59,7 +64,13 @@ export const EnterDetails = (props: EnterDetailsProps) => {
                 ...cat,
                 image: fileResponse.url.split('/')[2]
             };
-            await saveCat(updatedCat).unwrap();
+
+            if (isCreate) {
+                await saveCat(updatedCat).unwrap();
+            } else {
+                await updateCat({id, ...updatedCat}).unwrap();
+            }
+            
             setStatusReq({
                 text: "Карточка питомца сохранена успешно",
                 isError: false,
@@ -80,7 +91,7 @@ export const EnterDetails = (props: EnterDetailsProps) => {
                 onClick={resetFormData}
             />
             <Text tag='h3' size='l' className={styles.title}>
-                Создать карточку питомца
+                {isCreate ? 'Создать карточку питомца' : 'Обновить карточку питомца'}
             </Text>
 
             <Stack

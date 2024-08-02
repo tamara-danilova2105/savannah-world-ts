@@ -4,17 +4,20 @@ import { ChangeEvent, useCallback, useState } from 'react';
 import { EnterDetails } from '../EnterDetails/EnterDetails';
 import { CropImage } from '../CropImage/CropImage';
 import { apiUrl } from '@/shared/api/api';
-import { CatCard } from '@/features/Cats/model/types/cat';
 
 interface CreateCatCardProps {
     changeCreateModal: () => void;
     image?: string;
+    id?: string;
+    isCreate?: boolean;
 }
 
 export const CreateCatCard = (props: CreateCatCardProps) => {
     const { 
         changeCreateModal, 
         image,
+        id,
+        isCreate,
     } = props;
 
     const [isCrop, setIsCrop] = useState(false);
@@ -64,6 +67,8 @@ export const CreateCatCard = (props: CreateCatCardProps) => {
                     uploadFileFromDisk={uploadFileFromDisk}
                     file={file}
                     setIsCrop={setIsCrop}
+                    isCreate={isCreate}
+                    id={id}
                 />
                 : <CropImage
                     imagePreview={imagePreview}

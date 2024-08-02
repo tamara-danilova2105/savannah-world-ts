@@ -3,11 +3,6 @@ import style from './AddNewCatCard.module.scss';
 import { useAuth } from '@/shared/hooks/useAuth';
 import { CreateCatCard } from '@/entities/CreateCatCard';
 import { Button } from '@/shared/ui/Button/Button';
-import { useSaveCatMutation } from '@/widgets/SearchCats/api/api';
-import { BaseQueryFn, MutationDefinition } from '@reduxjs/toolkit/query';
-import { Cat } from '@/features/Cats';
-
-type SaveCatMutationDefinition = MutationDefinition<Cat, BaseQueryFn, string, void>
 
 
 export const AddNewCatCard = () => {
@@ -18,6 +13,7 @@ export const AddNewCatCard = () => {
         <>
             {drawCreateModal(
                 <CreateCatCard
+                    isCreate
                     changeCreateModal={changeCreateModal}
                 />
             )}

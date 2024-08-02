@@ -27,6 +27,7 @@ export const EditCat = (props: EditCatProps) => {
                 <CreateCatCard
                     changeCreateModal={changeCreateModal}
                     image={cat.image}
+                    id={cat._id}
                 />
             )}
             <Button
