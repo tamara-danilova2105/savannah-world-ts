@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { FormEvent, memo, useState } from "react";
 import closeIcon from '@/shared/assets/images/close.png';
 import { Input } from "@/shared/ui/Input/Input";
 import { Stack } from "@/shared/ui/Stack/Stack";
@@ -23,7 +23,7 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
 
     const [loginAdmin, { isLoading, error }] = useLoginAdminMutation();
 
-    const handleSignin = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSignin = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {

@@ -7,7 +7,7 @@ import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSaveCatMutation, useUploadFileMutation } from '@/pages/CatalogPage/api/api';
+import { useSaveCatMutation, useUploadFileMutation } from '@/widgets/SearchCats/api/api';
 import { UploadImage } from '../UploadImage/UploadImage';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { getCatCard, resetCatCard, setCatCard } from '../../../../features/Cats/model/slices/slice';

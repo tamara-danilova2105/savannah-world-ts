@@ -1,4 +1,4 @@
-import { ChangeEvent, memo } from 'react';
+import { ChangeEvent, FormEvent, memo } from 'react';
 import styles from './FormCatCard.module.scss';
 import { dataFilter } from '@/features/Filter/lib/data';
 import { SelectItem } from '../SelectItem/SelectItem';
@@ -14,10 +14,14 @@ export const FormCatCard = memo(({ setForm }: FormCatCardProps) => {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setForm?.(name, value);
-    }
+    };
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    };
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <Input
                 placeholder="имя"
                 required

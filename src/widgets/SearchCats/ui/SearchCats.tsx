@@ -2,7 +2,7 @@ import { Filter } from '@/features/Filter';
 import styles from './SearchCats.module.scss';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { CatList } from '@/features/Cats';
-import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
+import { useGetCatsQuery } from '@/widgets/SearchCats/api/api';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { selectFilterParams } from '@/features/Filter/model/selectors/selectors'
 import { useAppSelector } from '@/app/providers/store/config/hooks';

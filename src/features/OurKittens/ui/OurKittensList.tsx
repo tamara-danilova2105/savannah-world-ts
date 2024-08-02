@@ -9,8 +9,9 @@ import 'swiper/css/pagination';
 import { Cat, CatCard, CatList } from '@/features/Cats';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
-import { useGetCatsQuery } from '@/pages/CatalogPage/api/api';
+import { useGetCatsQuery } from '@/widgets/SearchCats/api/api';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { breakpoints } from '../lib';
 
 export const OurKittensList = () => {
 
@@ -58,16 +59,7 @@ export const OurKittensList = () => {
                     modules={[Pagination]}
                     loop={true}
                     pagination={{ clickable: true }}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                        },
-                        1024: {
-                            slidesPerView: 2,
-                            spaceBetween: 120,
-                        },
-                    }}
+                    breakpoints={breakpoints}
                 >
                     {
                         isLoading

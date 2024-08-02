@@ -5,10 +5,11 @@ import { useModal } from "@/shared/hooks/useModal";
 import { SearchCats } from '@/widgets/SearchCats';
 import { CreateCatCard } from "@/entities/CreateCatCard";
 import styles from './CatalogPage.module.scss';
+import { useAuth } from "@/shared/hooks/useAuth";
 
 const CatalogPage = () => {
     const [changeCreateModal, drawCreateModal] = useModal();
-    const isAdmin = false; //FIX LATER
+    const { isAuth } = useAuth();
 
     return (
         <main className={styles.main}>
@@ -17,7 +18,7 @@ const CatalogPage = () => {
                 <CreateCatCard changeCreateModal={changeCreateModal} />
             )}
             {
-                isAdmin &&
+                isAuth &&
                 <Button onClick={changeCreateModal}>
                     создать
                 </Button>
