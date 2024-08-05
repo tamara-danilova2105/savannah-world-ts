@@ -59,16 +59,25 @@ export const EnterDetails = (props: EnterDetailsProps) => {
 
     const handleSaveCat = async () => {
         try {
-            const fileResponse = await uploadFile(file).unwrap();
-            const updatedCat = {
-                ...cat,
-                image: fileResponse.url.split('/')[2]
-            };
-
             if (isCreate) {
+                const fileResponse = await uploadFile(file).unwrap();
+                const updatedCat = {
+                    ...cat,
+                    image: fileResponse.url.split('/')[2]
+                };
                 await saveCat(updatedCat).unwrap();
+
             } else {
-                await updateCat({id, ...updatedCat}).unwrap();
+                if (file) {
+                    const fileResponse = await uploadFile(file).unwrap();
+                    const updatedCat = {
+                        ...cat,
+                        image: fileResponse.url.split('/')[2]
+                    };
+                    await updateCat({id, ...updatedCat}).unwrap();
+                } else {
+                    await updateCat({id, ...cat}).unwrap();
+                }               
             }
             
             setStatusReq({
