@@ -6,23 +6,33 @@ export interface IAccordionItem {
 
 export const accordionFaq: IAccordionItem[] = [
     {
-        id: 1,
-        question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?',
-        answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?'
-    },
-    {
-        id: 2,
-        question: 'Lorem ipsum dolor sit',       
-        answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna?'
-    },
-    {
         id: 3,
-        question: 'Lorem ipsum dolor',
-        answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore?'
+        question: 'Какие медицинские процедуры проходят котята до продажи?',
+        answer:'Все наши котята проходят полный курс вакцинации, регулярно обследуются ветеринаром, и имеют чипы для идентификации. Мы также проводим все необходимые генетические тесты для обеспечения здоровья и благополучия наших котят.'
     },
     {
         id: 4,
-        question: 'Lorem ipsum',
-        answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et?'
-    }
+        question: 'Можно ли посетить питомник перед покупкой котенка?',
+        answer:'Мы всегда рады принять потенциальных покупателей в нашем питомнике. Мы считаем важным, чтобы будущие владельцы лично убедились в условиях содержания животных и могли заранее познакомиться со своим будущим питомцем.'
+    },
+    {
+        id: 5,
+        question: 'Какие гарантии питомник предоставляет после покупки котенка?',
+        answer:'Мы предоставляем полную гарантию на здоровье котенка в течение первого года жизни. Это включает бесплатные консультации ветеринара и, при необходимости, лечение заболеваний, обнаруженных в первый год после покупки.'
+    },
+    {
+        id: 7,
+        question: 'Как начать процесс покупки котенка породы саванна?',
+        answer:'...'
+    },
+    {
+        id: 8,
+        question: 'Какие условия оплаты и возможны ли рассрочки?',
+        answer:'...'
+    },
+    {
+        id: 10,
+        question: 'Как происходит транспортировка котенка?',
+        answer:'...'
+    },
 ]

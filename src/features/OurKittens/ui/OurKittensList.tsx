@@ -12,13 +12,14 @@ import { Stack } from '@/shared/ui/Stack/Stack';
 import { useGetCatsQuery } from '@/widgets/SearchCats/api/api';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { breakpoints } from '../lib';
+import { getRouteCatalog } from '@/shared/const/router';
 
 export const OurKittensList = () => {
 
     const navigate = useNavigate();
 
     const handleClick = useCallback(() => {
-        navigate("/catalog");
+        navigate(getRouteCatalog());
     }, [navigate]);
 
     const {

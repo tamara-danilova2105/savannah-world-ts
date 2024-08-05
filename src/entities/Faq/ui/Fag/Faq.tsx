@@ -12,6 +12,7 @@ export const Faq = () => {
             direction='column'
             align='start'
             gap="48"
+            max
             className={styles.section}
         >
             <HeaderSection section="FAQ">

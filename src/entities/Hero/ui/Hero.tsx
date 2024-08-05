@@ -22,10 +22,17 @@ import styles from './Hero.module.scss';
 import { Text } from "@/shared/ui/Text/Text";
 import { getRouteCatalog } from "@/shared/const/router";
 import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/shared/ui/Button/Button";
+import { useCallback } from "react";
 
 export const Hero = () => {
+    const navigate = useNavigate();
+
+    const handleClick = useCallback(() => {
+        navigate(getRouteCatalog());
+    }, [navigate]);
+
     return (
         <header className={styles.hero}>
             <picture>
@@ -56,10 +63,11 @@ export const Hero = () => {
                     SAVANNAH WORLD<br />
                     <span className={styles.text}>Питомник кошек Саванны </span>
                 </Text>
-                <Button className={styles.button}>
-                    <Link to={getRouteCatalog()}>
-                        купить котенка {arrowIcon()}
-                    </Link>
+                <Button 
+                    onClick={handleClick} 
+                    className={styles.button}
+                >
+                    купить котенка {arrowIcon()}
                 </Button>
             </div>
         </header>

@@ -1,6 +1,7 @@
 import { FC, useCallback, useState } from 'react';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { IAccordionItem } from '@/entities/Faq/libs/data';
+import styles from './Accordion.module.scss';
 
 interface AccordionProps {
     data: IAccordionItem[];
@@ -15,7 +16,7 @@ export const Accordion: FC<AccordionProps> = ({ data }) => {
     }, []);
 
     return (
-        <ul>
+        <ul className={styles.list}>
             {data.map(element =>
                 <AccordionItem
                     key={element.id}
