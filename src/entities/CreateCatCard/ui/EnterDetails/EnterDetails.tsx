@@ -119,7 +119,7 @@ export const EnterDetails = (props: EnterDetailsProps) => {
                         disabled={disabled}
                         className={styles.button}
                     >
-                        сохранить
+                        {isCreate ? 'сохранить' : 'редактировать'}
                         {isLoading
                             ? <Loader />
                             : <>{arrowIcon()}</>

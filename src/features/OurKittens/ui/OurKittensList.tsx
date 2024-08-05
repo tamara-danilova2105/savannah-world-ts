@@ -40,7 +40,6 @@ export const OurKittensList = () => {
                 <Text tag="h2" size='xl' className={styles.title}>
                     Выберите себе <span>питомца</span>
                 </Text>
-
             </HeaderSection>
 
             <Stack

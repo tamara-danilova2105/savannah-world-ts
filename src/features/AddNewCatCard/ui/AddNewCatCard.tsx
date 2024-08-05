@@ -1,8 +1,9 @@
 import { useModal } from '@/shared/hooks/useModal';
-import style from './AddNewCatCard.module.scss';
+import styles from './AddNewCatCard.module.scss';
 import { useAuth } from '@/shared/hooks/useAuth';
 import { CreateCatCard } from '@/entities/CreateCatCard';
-import { Button } from '@/shared/ui/Button/Button';
+import { HeaderSection } from '@/shared/ui/HeaderSection';
+import { Text } from '@/shared/ui/Text/Text';
 
 
 export const AddNewCatCard = () => {
@@ -17,12 +18,16 @@ export const AddNewCatCard = () => {
                     changeCreateModal={changeCreateModal}
                 />
             )}
-            {
-                isAuth &&
-                <Button onClick={changeCreateModal}>
-                    создать
-                </Button>
-            }
+            <HeaderSection
+                section="Продаются котята"
+                hasButton={isAuth}
+                handleClick={changeCreateModal}
+                button='создать питомца'
+            >
+                <Text tag="h2" size='xl' className={styles.title}>
+                    Котята <span>готовые стать</span> частью семьи
+                </Text>
+            </HeaderSection>
         </>
     );
 };
