@@ -52,6 +52,7 @@
     padding: 15px 50px;
     font-size: var(--font-size-s);
     box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
+    text-indent: 20px;
 
     @include tablet-m {
         padding: 10px 30px;
