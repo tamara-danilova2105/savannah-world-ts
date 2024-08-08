@@ -1,6 +1,6 @@
 import { deleteIcon } from "@/shared/assets/svg/deleteIcon";
 import { Button } from "@/shared/ui/Button/Button";
-import { useDeleteCatMutation } from "@/widgets/SearchCats/api/api";
+import { useDeleteCatMutation } from "@/features/Cats/api/api";
 import { useModal } from "@/shared/hooks/useModal";
 import { ConfirmModal } from "@/entities/ConfirmModal";
 import styles from './DeleteCat.module.scss';

@@ -4,6 +4,21 @@
     flex-wrap: wrap;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    row-gap: 32px; 
+
+    @include tablet-l {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-l {
+        grid-template-columns: 1fr;
+    }
+}
+
 .error {
     text-align: center;
     color: var(--red-color);

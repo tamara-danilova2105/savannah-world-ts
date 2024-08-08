@@ -9,6 +9,14 @@
     width: 350px;
     position: relative;
 
+    @include desktop-m {
+        width: 300px;
+    }
+
+    @include tablet-l {
+        width: 350px;
+    }
+
     @include tablet-m {
         width: 300px;
     }

@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import { Cat, CatCard, CatList } from '@/features/Cats';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Stack } from '@/shared/ui/Stack/Stack';
-import { useGetCatsQuery } from '@/widgets/SearchCats/api/api';
+import { useGetCatsQuery } from '@/features/Cats/api/api';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { breakpoints } from '../lib';
 import { getRouteCatalog } from '@/shared/const/router';

@@ -2,7 +2,7 @@ import { Filter } from '@/features/Filter';
 import styles from './SearchCats.module.scss';
 import { Stack } from '@/shared/ui/Stack/Stack';
 import { CatList } from '@/features/Cats';
-import { useGetCatsQuery } from '@/widgets/SearchCats/api/api';
+import { useGetCatsQuery } from '@/features/Cats/api/api';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { selectFilterParams } from '@/features/Filter/model/selectors/selectors'
 import { useAppSelector } from '@/app/providers/store/config/hooks';
@@ -66,17 +66,14 @@ export const SearchCats = () => {
                     ? <Text size='l' className={styles.error}>
                         Сервер временно недоступен. Пожалуйста, обновите страницу или попробуйте позже.
                     </Text>
-                    : <Stack
-                        gap="32" justify='between'
-                        className={styles.catlist}
-                    >
+                    : <div className={styles.grid}>
                         <CatList 
                             cats={cats} 
                             isLoading={isLoading} 
                             skeletons={6}
                             isCatalog
                         />
-                    </Stack>
+                    </div>
             }
             {
                 totalCount > LIMIT && 

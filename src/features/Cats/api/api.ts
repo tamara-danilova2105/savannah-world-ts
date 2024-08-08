@@ -10,19 +10,19 @@ const CATS_TAG: CatTag[] = [{ type: 'Cats', id: 'LIST' }];
 const catsApi = api.injectEndpoints({
     endpoints: (build) => ({
         getCats: build.query({
-            query: (params) => `?${new URLSearchParams(params).toString()}`,
+            query: (params) => createApiConfig('GET', `/cats?${new URLSearchParams(params).toString()}`),
             providesTags: () => CATS_TAG,
         }),
         saveCat: build.mutation({
-            query: (newCats) => createApiConfig('POST', '/', newCats),
+            query: (newCats) => createApiConfig('POST', '/cats', newCats),
             invalidatesTags: CATS_TAG,
         }),
         updateCat: build.mutation({
-            query: ({ id, ...updatedCat }) => createApiConfig('PUT', `/${id}`, updatedCat),
+            query: ({ id, ...updatedCat }) => createApiConfig('PUT', `/cats/${id}`, updatedCat),
             invalidatesTags: CATS_TAG,
         }),
         deleteCat: build.mutation({
-            query: (id) => createApiConfig('DELETE', `/${id}`),
+            query: (id) => createApiConfig('DELETE', `/cats/${id}`),
             invalidatesTags: CATS_TAG,
         }),
         uploadFile: build.mutation({
