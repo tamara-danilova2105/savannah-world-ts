@@ -46,6 +46,7 @@ export const OurKittensList = () => {
             <Stack
                 justify='between'
                 className={styles.container_desktop}
+                gap='48'
             >
                 <CatList
                     cats={cats?.slice(0, 3)}

@@ -9,6 +9,7 @@
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     row-gap: 32px; 
+    column-gap: 48px;
 
     @include tablet-l {
         grid-template-columns: repeat(2, 1fr);
