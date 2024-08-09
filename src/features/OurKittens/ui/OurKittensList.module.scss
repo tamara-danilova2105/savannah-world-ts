@@ -7,6 +7,10 @@
 .container_desktop {
     margin-top: 48px;
 
+    @include desktop-m {
+        gap: 16px;
+    }
+
     @include tablet-l {
         display: none;
     }

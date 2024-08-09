@@ -9,20 +9,7 @@
     width: 100%;
     position: relative;
 
-    // @include desktop-m {
-    //     width: 300px;
-    // }
-
-    // @include tablet-l {
-    //     width: 350px;
-    // }
-
-    // @include tablet-m {
-    //     width: 300px;
-    // }
-
-    @include mobile-l {
-        // width: 100%;
+    @include desktop-m {
         padding: 25px;
     }
 }

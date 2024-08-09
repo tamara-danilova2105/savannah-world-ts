@@ -49,7 +49,7 @@ export const OurKittensList = () => {
                 gap='48'
             >
                 <CatList
-                    cats={cats?.slice(0, 3)}
+                    cats={cats?.slice(0, 4)}
                     isLoading={isLoading}
                     skeletons={3}
                 />
@@ -65,7 +65,7 @@ export const OurKittensList = () => {
                     {
                         isLoading
                             ? <Skeleton />
-                            : cats?.slice(0, 3).map((cat: Cat) =>
+                            : cats?.slice(0, 6).map((cat: Cat) =>
                                 <SwiperSlide key={cat._id}>
                                     <CatCard
                                         cat={cat}

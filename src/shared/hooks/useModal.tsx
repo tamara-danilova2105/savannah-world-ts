@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { Modal } from "../ui/Modal/Modal";
+import { Modal } from "../ui/Modal";
 
 type UseModalReturn = [
     () => void,
