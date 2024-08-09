@@ -4,6 +4,14 @@
     flex-wrap: wrap;
 }
 
+.no_result {
+    width: 100%;
+    height: calc(100vh - 480px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

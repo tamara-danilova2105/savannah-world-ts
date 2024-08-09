@@ -59,14 +59,13 @@ export const SearchCats = () => {
     
     return (
         <div ref={catalogRef}>
-            <Filter />
-            
+            <Filter />            
             {
                 error
                     ? <Text size='l' className={styles.error}>
                         Сервер временно недоступен. Пожалуйста, обновите страницу или попробуйте позже.
                     </Text>
-                    : <div className={styles.grid}>
+                    : <div className={(!isLoading && !cats?.length) ? styles.no_result : styles.grid}>
                         <CatList 
                             cats={cats} 
                             isLoading={isLoading} 
