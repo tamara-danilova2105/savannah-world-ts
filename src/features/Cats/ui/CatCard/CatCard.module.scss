@@ -12,6 +12,11 @@
     @include desktop-m {
         padding: 25px;
     }
+
+    span {
+        color: var(--dark-brown-color);
+        font-weight: 600;
+    }
 }
 
 .images {

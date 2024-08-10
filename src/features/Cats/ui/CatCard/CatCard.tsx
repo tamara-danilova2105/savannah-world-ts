@@ -36,16 +36,16 @@ export const CatCard = memo((props: CatCardProps) => {
                 {name_cat}
             </Text>
             <Text size="s" className={styles.text}>
-                Группа: {generate}
+                <span>Группа:</span> {generate}
             </Text>
             <Text size="s" className={styles.text}>
-                Пол: {sex}
+                <span>Пол:</span> {sex}
             </Text>
             <Text size="s" className={styles.text}>
-                Возраст: {age}
+                <span>Возраст:</span> {age}
             </Text>
             <Text size="s" className={styles.text}>
-                Статус: {shipment}
+                <span>Статус:</span> {shipment}
             </Text>
             {isCatalog &&
                 <Button

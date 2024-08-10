@@ -1,9 +1,10 @@
+import { Text } from '@/shared/ui/Text';
 import styles from './PetsPage.module.scss';
 
 export const PetsPage = () => {
     return (
         <main className={styles.main}>
-            Pets Page
+            <Text size='l'>Страница в разработке...</Text>
         </main>
     );
 };
