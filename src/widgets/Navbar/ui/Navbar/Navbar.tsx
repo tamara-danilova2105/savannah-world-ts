@@ -8,6 +8,7 @@ import { AppNavLink } from '../AppNavLink/AppNavLink';
 import { Stack } from '@/shared/ui/Stack';
 import { emailIcons, instagramIcon, phoneIcon, telegrmaIcon, vkIcon } from '@/shared/assets/svg/footerIcons';
 import { useAuth } from '@/shared/hooks/useAuth';
+import { contacts } from '@/widgets/Footer/lib/data';
 
 export const Navbar = () => {
     const [changeSigninModal, drawSiginModal] = useModal();
@@ -38,9 +39,15 @@ export const Navbar = () => {
                     </Stack>
                 </Stack>
                 <Stack gap='32' className={styles.contact}>
-                    {telegrmaIcon()}
-                    {vkIcon()}
-                    {instagramIcon()}
+                    <a href={contacts[3].href} target='_blank' rel="noreferrer">
+                        {telegrmaIcon()}
+                    </a>
+                    <a href={contacts[5].href} target='_blank' rel="noreferrer">
+                        {vkIcon()}
+                    </a>
+                    <a href={contacts[4].href} target='_blank' rel="noreferrer">
+                        {instagramIcon()}
+                    </a>
                 </Stack>
             </Stack>
             

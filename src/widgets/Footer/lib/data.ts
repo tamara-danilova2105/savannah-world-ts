@@ -31,25 +31,25 @@ export const contacts: Contacts[] = [
     {
         id: 3,
         icon: locationIcon(),
-        text: 'г.Москва, ул.Отрадная, дом 1'
+        text: 'г.Москва, ул. Savannah World, дом 1'
     },
     {
         id: 4,
         icon: telegrmaIcon(),
-        href: 'https://t.me/savannahworld',
+        href: 'https://t.me/tamaradanilova21',
         text: '@savannahworld'
     },
 
     {
         id: 5,
         icon: instagramIcon(),
-        href: 'https://instagram.com/@savannah_lana_photo',
+        href: 'https://instagram.com/savannah_lana_photo',
         text: '@savannah_lana_photo'
     },
     {
         id: 6,
         icon: vkIcon(),
-        href: 'https://vk.com/savannahworld',
-        text: '@savannahworld'
+        href: 'https://vk.com/id18786936',
+        text: 'Savannah World'
     },
 ];

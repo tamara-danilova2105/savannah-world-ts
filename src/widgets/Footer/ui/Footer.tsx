@@ -2,7 +2,7 @@ import { memo } from 'react';
 import styles from './Footer.module.scss';
 import { Stack } from '@/shared/ui/Stack';
 import { contacts } from '../lib/data';
-import { Text } from '@/shared/ui/Text/ui/Text';
+import { Text } from '@/shared/ui/Text';
 
 export const Footer = memo(() => {
     return (
@@ -29,13 +29,19 @@ export const Footer = memo(() => {
                     direction='column'
                     gap='16'
                     align='end'
-                    className={styles.mediaDesktop}
+                    className={styles.media_desktop}
                 >
                     {contacts.slice(3).map(contact =>
-                        <Stack key={contact.id} gap='16'>
+                        <a 
+                            key={contact.id}
+                            className={styles.link_media}
+                            href={contact.href}
+                            target='_blank'
+                            rel="noreferrer"
+                        >
                             {contact.text}
                             {contact.icon}
-                        </Stack>
+                        </a>
                     )}
                 </Stack>
                 <Stack

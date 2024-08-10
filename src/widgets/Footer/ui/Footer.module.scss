@@ -44,9 +44,17 @@
     }
 }
 
-.mediaDesktop {
+.media_desktop {
     @include mobile-l {
         display: none;
+    }
+
+    .link_media {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        color: var(--black-color);
     }
 }
 
