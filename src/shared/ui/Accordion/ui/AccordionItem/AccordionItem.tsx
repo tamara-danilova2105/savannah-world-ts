@@ -1,10 +1,10 @@
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button/ui/Button';
-import styles from './AccordionItem.module.scss';
 import { plusIcon } from '@/shared/assets/svg/plusIcon';
 import { minusIcon } from '@/shared/assets/svg/minusIcon';
 import { IAccordionItem } from '@/entities/Faq/libs/data';
-import { memo } from 'react';
+import styles from './AccordionItem.module.scss';
 
 interface AccordionItemProps {
     className?: string;

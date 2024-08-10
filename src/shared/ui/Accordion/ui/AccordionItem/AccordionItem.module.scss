@@ -10,8 +10,9 @@
     justify-content: space-between;
     align-items: center;
     font-size: var(--font-size-s);
-    padding: 10px 50px;
+    padding: 5px 50px;
     height: max-content;
+    text-transform: lowercase;
 
     @include tablet-m {
         padding: 10px 30px;
