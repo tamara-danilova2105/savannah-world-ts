@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { Cat } from "../../model/types/cat";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { CatCard } from "../CatCard/CatCard";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import styles from './CatList.module.scss';
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 interface CatListProps {
     cats?: Cat[];

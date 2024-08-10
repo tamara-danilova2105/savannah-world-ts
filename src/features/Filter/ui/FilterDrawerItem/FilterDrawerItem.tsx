@@ -1,11 +1,11 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import styles from './FilterDrawerItem.module.scss';
 import { getFilterText } from '../../lib/data';
-import { Checkbox } from '@/shared/ui/CheckBox/CheckBox';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { memo, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/config/hooks';
 import { setFilter } from '../../model/slices/slice';
+import { Checkbox } from '@/shared/ui/CheckBox';
 
 interface FilterDrawerItemProps {
     filter: string;

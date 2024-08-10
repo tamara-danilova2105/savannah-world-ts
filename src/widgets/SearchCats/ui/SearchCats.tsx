@@ -1,12 +1,12 @@
 import { Filter } from '@/features/Filter';
 import styles from './SearchCats.module.scss';
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import { CatList } from '@/features/Cats';
 import { useGetCatsQuery } from '@/features/Cats/api/api';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { selectFilterParams } from '@/features/Filter/model/selectors/selectors'
 import { useAppSelector } from '@/app/providers/store/config/hooks';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import ReactPaginate from 'react-paginate';
 
 const LIMIT = 12;

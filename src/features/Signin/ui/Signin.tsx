@@ -1,15 +1,15 @@
-import { FormEvent, memo, useState } from "react";
+import { ChangeEvent, FormEvent, memo, useState } from "react";
 import closeIcon from '@/shared/assets/images/close.png';
-import { Input } from "@/shared/ui/Input/Input";
-import { Stack } from "@/shared/ui/Stack/Stack";
-import { Button } from "@/shared/ui/Button/Button";
+import { Stack } from "@/shared/ui/Stack";
 import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import styles from './Signin.module.scss';
 import { hidePasswordIcon, showPasswordIcon } from "@/shared/assets/svg/passwordIcons";
 import { useLoginAdminMutation } from "../api/api";
 import { useAuth } from "@/shared/hooks/useAuth";
-import { Loader } from "@/shared/ui/Loader/Loader";
+import { Button } from "@/shared/ui/Button";
+import { Input } from "@/shared/ui/Input";
+import { Loader } from "@/shared/ui/Loader";
 
 interface SignInProps {
     changeSigninModal?: () => void;
@@ -60,14 +60,14 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                 <Input
                     isError={!!error}
                     placeholder='логин'
-                    onChange={(e) => setUserName(e.target.value)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
                 />
                 <div className={styles.password}>
                     <Input
                         isError={!!error}
                         type={!showPassword ? 'password' : 'text'}
                         placeholder='пароль'
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                     />
                     <button
                         className={styles.password_btn}

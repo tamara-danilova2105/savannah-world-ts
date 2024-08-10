@@ -1,8 +1,8 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import styles from './AboutUsDescription.module.scss';
 import aboutPicture from '@/shared/assets/images/aboutus.png';
 import { HeaderSection } from "@/shared/ui/HeaderSection";
+import { Stack } from "@/shared/ui/Stack";
 
 export const AboutUsDescription = () => {
     return (

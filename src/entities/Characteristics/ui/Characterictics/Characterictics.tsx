@@ -1,5 +1,5 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
-import { Text } from '@/shared/ui/Text/Text';
+import { Stack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { characteristicsData } from '../../lib/data';
 import styles from './Characterictics.module.scss';
 import { checkIcon } from '@/shared/assets/svg/checkIcon';

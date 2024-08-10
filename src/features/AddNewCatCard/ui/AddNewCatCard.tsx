@@ -3,7 +3,7 @@ import styles from './AddNewCatCard.module.scss';
 import { useAuth } from '@/shared/hooks/useAuth';
 import { CreateCatCard } from '@/entities/CreateCatCard';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 
 
 export const AddNewCatCard = () => {

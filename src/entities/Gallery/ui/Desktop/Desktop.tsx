@@ -1,4 +1,4 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import styles from './Desktop.module.scss';
 import { gallery } from '../../lib/data';
 

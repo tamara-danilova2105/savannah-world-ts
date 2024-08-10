@@ -1,6 +1,6 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
+import { Stack } from "@/shared/ui/Stack";
 import styles from './Advices.module.scss'
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { dataAdvices } from "../../lib/data";
 import { AdviceCard } from "../AdviceCard/AdviceCard";
 import { HeaderSection } from "@/shared/ui/HeaderSection";

@@ -1,17 +1,17 @@
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import styles from './EnterDetails.module.scss';
 import closeIcon from '@/shared/assets/images/close.png';
-import { Stack } from '@/shared/ui/Stack/Stack';
-import { Button } from '@/shared/ui/Button/Button';
+import { Stack } from '@/shared/ui/Stack';
+import { Button } from '@/shared/ui/Button/ui/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSaveCatMutation, useUpdateCatMutation, useUploadFileMutation } from '@/features/Cats/api/api';
 import { UploadImage } from '../UploadImage/UploadImage';
-import { Loader } from '@/shared/ui/Loader/Loader';
 import { getCatCard, resetCatCard, setCatCard } from '../../../../features/Cats/model/slices/slice';
 import { FormCatCard } from '../FormCatCard/FormCatCard';
+import { Loader } from '@/shared/ui/Loader';
 
 interface EnterDetailsProps {
     imagePreview: string | null;

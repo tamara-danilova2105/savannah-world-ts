@@ -1,12 +1,12 @@
 import { memo } from "react";
 import styles from './FilterDrawer.module.scss';
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { dataFilter } from "../../lib/data";
-import { Stack } from "@/shared/ui/Stack/Stack";
-import { Button } from "@/shared/ui/Button/Button";
+import { Stack } from "@/shared/ui/Stack";
 import { FilterDrawerItem } from "../FilterDrawerItem/FilterDrawerItem";
 import { useAppDispatch } from "@/app/providers/store/config/hooks";
 import { resetFilter } from "../../model/slices/slice";
+import { Button } from "@/shared/ui/Button";
 
 interface FilterDrawerProps {
     close: () => void;

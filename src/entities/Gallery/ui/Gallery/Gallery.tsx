@@ -1,7 +1,7 @@
 import { HeaderSection } from '@/shared/ui/HeaderSection';
 import { Desktop } from '../Desktop/Desktop';
 import styles from './Gallery.module.scss';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { SwiperGallery } from '../Swiper/Swiper';
 
 export const Gallery = () => {

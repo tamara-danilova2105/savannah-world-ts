@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import styles from './Footer.module.scss';
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import { contacts } from '../lib/data';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 
 export const Footer = memo(() => {
     return (

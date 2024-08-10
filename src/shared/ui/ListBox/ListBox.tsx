@@ -1,10 +1,10 @@
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
 import { memo, MouseEvent } from "react";
-import styles from './ListBox.module.scss';
-import { Checkbox } from "../CheckBox/CheckBox";
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
+import { Checkbox } from "../CheckBox/ui/CheckBox";
 import { arrowDownIcon, arrowUpIcon } from "@/shared/assets/svg/arrowIcons";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Badge } from "../Badge/Badge";
+import { Badge } from "../Badge";
+import styles from './ListBox.module.scss';
 
 interface ListBoxProps {
     className?: string;

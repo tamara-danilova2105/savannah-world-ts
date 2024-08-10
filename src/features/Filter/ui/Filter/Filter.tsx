@@ -2,11 +2,11 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { FilterBar } from "../FilterBar/FilterBar";
 import styles from './Filter.module.scss';
 import { FilterDrawer } from "../FilterDrawer/FilterDrawer";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
 import { filterIcon } from "@/shared/assets/svg/filterIcon";
 import { useAppSelector } from "@/app/providers/store/config/hooks";
 import { selectFilterParams } from "../../model/selectors/selectors";
-import { Badge } from "@/shared/ui/Badge/Badge";
+import { Badge } from "@/shared/ui/Badge";
+import { Drawer } from "@/shared/ui/Drawer";
 
 export const Filter = memo(() => {
     const [isOpen, setIsOpen] = useState(false);

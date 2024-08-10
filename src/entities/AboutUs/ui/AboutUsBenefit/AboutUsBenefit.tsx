@@ -1,8 +1,8 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
 import styles from './AboutUsBenefit.module.scss';
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { benefits } from "../../lib/data";
 import { HeaderSection } from "@/shared/ui/HeaderSection";
+import { Stack } from '@/shared/ui/Stack';
 
 export const AboutUsBenefit = () => {
     return (

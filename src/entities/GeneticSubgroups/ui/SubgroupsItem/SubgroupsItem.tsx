@@ -1,4 +1,4 @@
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { GeneticSubgroup } from '../../libs/data';
 import styles from './SubgroupsItem.module.scss';
 

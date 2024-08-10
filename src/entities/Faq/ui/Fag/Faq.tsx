@@ -1,9 +1,9 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
-import { Text } from "@/shared/ui/Text/Text";
-import { Accordion } from "../../../../shared/ui/Accordion/AccordionList/Accordion";
+import { Stack } from "@/shared/ui/Stack";
+import { Text } from "@/shared/ui/Text";
 import { accordionFaq } from "../../libs/data";
 import styles from './Faq.module.scss';
 import { HeaderSection } from "@/shared/ui/HeaderSection";
+import { Accordion } from "@/shared/ui/Accordion";
 
 export const Faq = () => {
     return (

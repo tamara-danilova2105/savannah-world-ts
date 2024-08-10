@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import styles from './OurKittensList.module.scss';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { useNavigate } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -8,11 +8,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Cat, CatCard, CatList } from '@/features/Cats';
 import { HeaderSection } from '@/shared/ui/HeaderSection';
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import { useGetCatsQuery } from '@/features/Cats/api/api';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { breakpoints } from '../lib';
 import { getRouteCatalog } from '@/shared/const/router';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 export const OurKittensList = () => {
 

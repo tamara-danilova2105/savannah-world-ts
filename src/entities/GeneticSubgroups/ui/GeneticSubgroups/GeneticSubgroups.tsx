@@ -1,6 +1,6 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import styles from './GeneticSubgroups.module.scss';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { geneticSubgroupsData } from '../../libs/data';
 import { SubgroupsItem } from '../SubgroupsItem/SubgroupsItem';
 import { HeaderSection } from '@/shared/ui/HeaderSection';

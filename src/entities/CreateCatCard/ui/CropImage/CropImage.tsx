@@ -1,6 +1,6 @@
 import styles from './CropImage.module.scss';
-import { Text } from '@/shared/ui/Text/Text';
-import { Button } from '@/shared/ui/Button/Button';
+import { Text } from '@/shared/ui/Text/ui/Text';
+import { Button } from '@/shared/ui/Button/ui/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 import { memo, SyntheticEvent, useRef, useState } from 'react';
 import ReactCrop, { centerCrop, convertToPixelCrop, Crop, makeAspectCrop } from 'react-image-crop';

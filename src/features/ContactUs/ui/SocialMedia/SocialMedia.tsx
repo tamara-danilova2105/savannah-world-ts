@@ -1,4 +1,4 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
+import { Stack } from "@/shared/ui/Stack";
 import { Link } from "react-router-dom";
 import styles from './SocialMedia.module.scss';
 import whatsappIcon from '@/shared/assets/images/whatsapp.png';

@@ -1,7 +1,7 @@
-import { Text } from "../../../../shared/ui/Text/Text";
-import { Stack } from "../../../../shared/ui/Stack/Stack";
+import { Text } from "../../../../shared/ui/Text/ui/Text";
 import styles from "./AdviceCard.module.scss";
 import { Advice } from "../../lib/data";
+import { Stack } from "@/shared/ui/Stack";
 
 interface AdviceCardProps {
     advice: Advice; 

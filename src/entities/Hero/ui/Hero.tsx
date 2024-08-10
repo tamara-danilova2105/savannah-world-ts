@@ -18,13 +18,13 @@ import picture_320 from "@/shared/assets/banner/banner_320x180.jpg";
 import picture_320_2x from "@/shared/assets/banner/banner_320x180@2x.jpg";
 import picture_320webp from "@/shared/assets/banner/banner_320x180.webp";
 import picture_320_2xwebp from "@/shared/assets/banner/banner_320x180@2x.webp";
-import styles from './Hero.module.scss';
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { getRouteCatalog } from "@/shared/const/router";
 import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/shared/ui/Button/Button";
 import { useCallback } from "react";
+import { Button } from "@/shared/ui/Button";
+import styles from './Hero.module.scss';
 
 export const Hero = () => {
     const navigate = useNavigate();

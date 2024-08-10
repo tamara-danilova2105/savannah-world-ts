@@ -1,7 +1,7 @@
-import { Stack } from "@/shared/ui/Stack/Stack";
 import { AboutUsDescription } from "../AboutUsDescription/AboutUsDescription";
 import styles from './AboutUsMain.module.scss';
 import { AboutUsBenefit } from "../AboutUsBenefit/AboutUsBenefit";
+import { Stack } from "@/shared/ui/Stack";
 
 export const AboutUs = () => {
     return (

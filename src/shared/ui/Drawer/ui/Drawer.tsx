@@ -1,7 +1,7 @@
 import { memo, ReactNode } from "react";
 import styles from './Drawer.module.scss';
 import { closeIcon } from "@/shared/assets/svg/closeIcon";
-import { Stack } from "../Stack/Stack";
+import { Stack } from "../../Stack/ui/Stack";
 
 interface DrawerProps {
     children: ReactNode;

@@ -1,4 +1,4 @@
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import styles from './CreateCatCard.module.scss';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { EnterDetails } from '../EnterDetails/EnterDetails';

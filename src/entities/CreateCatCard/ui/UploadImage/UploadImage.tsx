@@ -1,7 +1,7 @@
 import { ChangeEvent, memo } from 'react';
 import styles from './UploadImage.module.scss';
 import { downloadIcon } from '@/shared/assets/svg/downloadIcon';
-import { Input } from '../../../../shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 
 interface UploadImageProps {
     uploadFileFromDisk: (e: ChangeEvent<HTMLInputElement>) => void;

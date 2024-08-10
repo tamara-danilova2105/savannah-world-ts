@@ -1,11 +1,11 @@
 import styles from './Navbar.module.scss';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/ui/Button';
 import { useModal } from '@/shared/hooks/useModal';
 import { Signin } from '@/features/Signin';
 import { useAppRoutes } from '@/shared/hooks/useAppRoutes';
 import { routeConfig } from '@/app/providers/router/config/routerConfig';
 import { AppNavLink } from '../AppNavLink/AppNavLink';
-import { Stack } from '@/shared/ui/Stack/Stack';
+import { Stack } from '@/shared/ui/Stack';
 import { emailIcons, instagramIcon, phoneIcon, telegrmaIcon, vkIcon } from '@/shared/assets/svg/footerIcons';
 import { useAuth } from '@/shared/hooks/useAuth';
 

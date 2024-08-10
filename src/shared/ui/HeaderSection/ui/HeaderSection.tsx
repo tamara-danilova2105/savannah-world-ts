@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import styles from './HeaderSection.module.scss';
-import { Text } from '@/shared/ui/Text/Text';
-import { Stack } from '@/shared/ui/Stack/Stack';
-import { Button } from '@/shared/ui/Button/Button';
+import { Text } from '@/shared/ui/Text/ui/Text';
+import { Stack } from '@/shared/ui/Stack';
+import { Button } from '@/shared/ui/Button/ui/Button';
 import { arrowIcon } from '@/shared/assets/svg/arrowIcons';
 
 interface HeaderSectionProps {

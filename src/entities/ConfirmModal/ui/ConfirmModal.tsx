@@ -1,9 +1,9 @@
-import { Button } from "@/shared/ui/Button/Button";
-import { Stack } from "../../../shared/ui/Stack/Stack"
-import { Text } from "../../../shared/ui/Text/Text"
-import styles from './ConfirmModal.module.scss';
-import { Loader } from "@/shared/ui/Loader/Loader";
+import { Text } from "../../../shared/ui/Text/ui/Text"
 import { arrowIcon } from "@/shared/assets/svg/arrowIcons";
+import { Button } from "@/shared/ui/Button";
+import styles from './ConfirmModal.module.scss';
+import { Loader } from "@/shared/ui/Loader";
+import { Stack } from "@/shared/ui/Stack";
 
 interface ConfirmModalProps {
     changeConfirmModal: () => void;
