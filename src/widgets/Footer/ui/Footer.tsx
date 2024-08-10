@@ -50,9 +50,14 @@ export const Footer = memo(() => {
                     className={styles.mediaMobile}
                 >
                     {contacts.slice(3).map(contact =>
-                        <span key={contact.id}>
+                        <a 
+                            key={contact.id}
+                            href={contact.href}
+                            target='_blank'
+                            rel="noreferrer"
+                        >
                             {contact.icon}
-                        </span>
+                        </a>
                     )}
                 </Stack>
             </Stack>
