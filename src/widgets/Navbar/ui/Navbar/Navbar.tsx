@@ -39,15 +39,26 @@ export const Navbar = () => {
                     </Stack>
                 </Stack>
                 <Stack gap='32' className={styles.contact}>
-                    <a href={contacts[3].href} target='_blank' rel="noreferrer">
-                        {telegrmaIcon()}
-                    </a>
-                    <a href={contacts[5].href} target='_blank' rel="noreferrer">
-                        {vkIcon()}
-                    </a>
-                    <a href={contacts[4].href} target='_blank' rel="noreferrer">
-                        {instagramIcon()}
-                    </a>
+                    <button className={styles.button_media}>
+                        <a href={contacts[3].href} target='_blank' rel="noreferrer">
+                            {telegrmaIcon()}
+                        </a>
+                        <span className='visually-hidden'>открыть телеграм</span>
+                    </button>
+
+                    <button className={styles.button_media}>
+                        <a href={contacts[5].href} target='_blank' rel="noreferrer">
+                            {vkIcon()}
+                        </a>
+                        <span className='visually-hidden'>открыть вконтакте</span>
+                    </button>
+
+                    <button className={styles.button_media}>
+                        <a href={contacts[4].href} target='_blank' rel="noreferrer">
+                            {instagramIcon()}
+                        </a>
+                        <span className='visually-hidden'>открыть вконтакте</span>
+                    </button>
                 </Stack>
             </Stack>
             

@@ -7,8 +7,7 @@ import { SwiperGallery } from '../Swiper/Swiper';
 export const Gallery = () => {
 
     const handleClick = () => {
-        console.log('test');
-
+        window.open('https://www.instagram.com/savannah_lana_photo/', '_blank');
     }
     return (
         <section className={styles.section}>
