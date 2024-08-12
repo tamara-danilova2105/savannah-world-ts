@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import styles from './FilterDrawer.module.scss';
 import { Text } from "@/shared/ui/Text";
 import { dataFilter } from "../../lib/data";
@@ -15,10 +15,10 @@ interface FilterDrawerProps {
 export const FilterDrawer = memo(({ close }: FilterDrawerProps) => {
     const dispatch = useAppDispatch();
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         dispatch(resetFilter());
         close();
-    };
+    }, [dispatch, close]);
 
     return (
         <Stack

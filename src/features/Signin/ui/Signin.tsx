@@ -32,10 +32,11 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
             
             if (changeSigninModal) changeSigninModal();
         } catch (error) {
-            console.error('ERROR')
-            
+            console.error('Error during login:', error);
         }
     };
+
+    const PasswordToggleIcon = showPassword ? hidePasswordIcon : showPasswordIcon;
 
     return (
         <Stack
@@ -74,7 +75,7 @@ export const Signin = memo(({ changeSigninModal }: SignInProps) => {
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                     >
-                        {showPassword ? hidePasswordIcon() : showPasswordIcon()}
+                        <PasswordToggleIcon />
                     </button>
                 </div>
 
