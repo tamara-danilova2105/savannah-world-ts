@@ -1,3 +1,4 @@
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppRoutesProps } from "@/shared/type/router"
 import { NavLink } from "react-router-dom";
 
@@ -17,7 +18,11 @@ export const AppNavLink = (props: AppNavLinkProps) => {
         <NavLink
             key={route.path}
             className={({ isActive }) =>
-                `${styles.link} ${isActive ? styles.opened_page : (isDefaultStyle ? styles.default : '')}`
+                classNames(
+                    styles.link, 
+                    {[styles.opened_page]: isActive, 
+                    [styles.default]: !isActive && isDefaultStyle}, [],
+                )
             }
             to={route.path}
         >

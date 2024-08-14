@@ -8,7 +8,7 @@ import { AppNavLink } from '../AppNavLink/AppNavLink';
 import { useAuth } from '@/shared/hooks/useAuth';
 
 export const NavbarMobile = () => {
-    const [changeSigninModal, drawSiginModal] = useModal();
+    const [changeSigninModal, drawSigninModal] = useModal();
     const routes = useAppRoutes(routeConfig, true);
     const { isAuth, logout } = useAuth();
     
@@ -19,7 +19,7 @@ export const NavbarMobile = () => {
 
     return (
         <div className={styles.container}>
-            {drawSiginModal(
+            {drawSigninModal(
                 <Signin changeSigninModal={changeSigninModal} />
             )}
 

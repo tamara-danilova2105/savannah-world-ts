@@ -11,7 +11,7 @@ import { useAuth } from '@/shared/hooks/useAuth';
 import { contacts } from '@/widgets/Footer/lib/data';
 
 export const Navbar = () => {
-    const [changeSigninModal, drawSiginModal] = useModal();
+    const [changeSigninModal, drawSigninModal] = useModal();
     const routes = useAppRoutes(routeConfig);
     const { isAuth, logout } = useAuth();
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
 
     return (
         <>
-            {drawSiginModal(
+            {drawSigninModal(
                 <Signin changeSigninModal={changeSigninModal} />
             )}
 
@@ -87,5 +87,5 @@ export const Navbar = () => {
                 </Button>
             </div>
         </>
-    )
-}
+    );
+};
