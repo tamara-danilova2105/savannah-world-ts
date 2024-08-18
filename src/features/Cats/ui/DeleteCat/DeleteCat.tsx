@@ -4,6 +4,7 @@ import { useModal } from "@/shared/hooks/useModal";
 import { ConfirmModal } from "@/entities/ConfirmModal";
 import { Button } from "@/shared/ui/Button";
 import styles from './DeleteCat.module.scss';
+import { useCallback } from "react";
 
 interface DeleteCatProps {
     id: string;
@@ -15,13 +16,13 @@ export const DeleteCat = (props: DeleteCatProps) => {
     const [deleteCat, { isLoading }] = useDeleteCatMutation();
     const [changeConfirmModal, drawConfirmModal] = useModal();
 
-    const deleteCatCard = async () => {
+    const deleteCatCard = useCallback(async () => {
         try {
             await deleteCat(id).unwrap();
         } catch (err) {
             console.error("Failed to delete cat:", err);
         }
-    };
+    }, [id, deleteCat]);
 
     return (
         <>

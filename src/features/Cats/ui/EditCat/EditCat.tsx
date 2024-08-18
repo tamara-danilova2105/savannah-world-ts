@@ -6,6 +6,7 @@ import { useAppDispatch } from '@/app/providers/store/config/hooks';
 import { Cat } from '../../model/types/cat';
 import { initCatCard } from '../../model/slices/slice';
 import styles from './EditCat.module.scss';
+import { useCallback } from 'react';
 
 interface EditCatProps {
     cat: Cat;
@@ -16,10 +17,10 @@ export const EditCat = (props: EditCatProps) => {
     const [changeCreateModal, drawCreateModal] = useModal();
     const dispatch = useAppDispatch();
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         dispatch(initCatCard(cat));
         changeCreateModal();
-    };
+    }, [cat, dispatch, changeCreateModal]);
 
     return (
         <>

@@ -4,6 +4,7 @@ import { Button } from "@/shared/ui/Button";
 import styles from './ConfirmModal.module.scss';
 import { Loader } from "@/shared/ui/Loader";
 import { Stack } from "@/shared/ui/Stack";
+import { memo } from "react";
 
 interface ConfirmModalProps {
     changeConfirmModal: () => void;
@@ -14,7 +15,7 @@ interface ConfirmModalProps {
     error?: boolean;
 }
 
-export const ConfirmModal = (props: ConfirmModalProps) => {
+export const ConfirmModal = memo((props: ConfirmModalProps) => {
     const {
         changeConfirmModal,
         onConfirm,
@@ -56,4 +57,4 @@ export const ConfirmModal = (props: ConfirmModalProps) => {
             </Stack>
         </Stack>
     );
-};
+});

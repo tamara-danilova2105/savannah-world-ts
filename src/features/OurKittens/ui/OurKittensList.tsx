@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import styles from './OurKittensList.module.scss';
 import { Text } from '@/shared/ui/Text/ui/Text';
 import { useNavigate } from 'react-router';
@@ -18,15 +18,33 @@ export const OurKittensList = () => {
 
     const navigate = useNavigate();
 
-    const handleClick = useCallback(() => {
-        navigate(getRouteCatalog());
-    }, [navigate]);
-
     const {
         data: { cats } = {},
         error,
         isLoading
     } = useGetCatsQuery({ shipment: ['готов к отправке'] });
+
+    const handleNavigateToCatalog = useCallback(() => {
+        navigate(getRouteCatalog());
+    }, [navigate]);
+
+    const catsForDesktop = useMemo(() => cats?.slice(0, 4), [cats]);
+    const catsForMobile = useMemo(() => cats?.slice(0, 6), [cats]);
+
+    const renderSlides = useCallback(() => {
+        if (isLoading) {
+            return <Skeleton />;
+        }
+    
+        return catsForMobile?.map((cat: Cat) => (
+            <SwiperSlide key={cat._id}>
+                <CatCard
+                    cat={cat}
+                    onClick={handleNavigateToCatalog}
+                />
+            </SwiperSlide>
+        ));
+    }, [isLoading, catsForMobile, handleNavigateToCatalog]);
 
     if (error) return null;
 
@@ -35,7 +53,7 @@ export const OurKittensList = () => {
             <HeaderSection
                 section="Наши котята"
                 hasButton
-                handleClick={handleClick}
+                handleClick={handleNavigateToCatalog}
                 button='купить котенка'
             >
                 <Text tag="h2" size='xl' className={styles.title}>
@@ -49,7 +67,7 @@ export const OurKittensList = () => {
                 gap='32'
             >
                 <CatList
-                    cats={cats?.slice(0, 4)}
+                    cats={catsForDesktop}
                     isLoading={isLoading}
                     skeletons={3}
                 />
@@ -62,18 +80,7 @@ export const OurKittensList = () => {
                     pagination={{ clickable: true }}
                     breakpoints={breakpoints}
                 >
-                    {
-                        isLoading
-                            ? <Skeleton />
-                            : cats?.slice(0, 6).map((cat: Cat) =>
-                                <SwiperSlide key={cat._id}>
-                                    <CatCard
-                                        cat={cat}
-                                        onClick={handleClick}
-                                    />
-                                </SwiperSlide>
-                            )
-                    }
+                    {renderSlides()}
                 </Swiper>
             </div>
         </section>
