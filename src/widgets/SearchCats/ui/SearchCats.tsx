@@ -9,7 +9,7 @@ import { useAppSelector } from '@/app/providers/store/config/hooks';
 import { Text } from '@/shared/ui/Text/ui/Text';
 import ReactPaginate from 'react-paginate';
 
-const LIMIT = 12;
+const MAX_ITEMS_PER_PAGE = 12;
 
 interface PageChangeEvent {
     selected: number;
@@ -46,7 +46,7 @@ export const SearchCats = () => {
         isLoading
     } = useGetCatsQuery(params);
 
-    let itemsPerPage = Math.ceil((totalCount || 0) / LIMIT);
+    let itemsPerPage = Math.ceil((totalCount || 0) / MAX_ITEMS_PER_PAGE);
 
     const handlePageChange = (event: PageChangeEvent) => {
         setSelectedPage(event.selected);
@@ -75,7 +75,7 @@ export const SearchCats = () => {
                     </div>
             }
             {
-                totalCount > LIMIT && 
+                totalCount > MAX_ITEMS_PER_PAGE && 
                 <Stack justify='center'>
                     <ReactPaginate 
                         nextLabel=">"
