@@ -26,7 +26,6 @@ export const GeneticSubgroups = () => {
         >
             <HeaderSection 
                 section="Подгруппы"
-                hasButton
                 handleClick={handleClick}
                 button='купить котенка'
             >
